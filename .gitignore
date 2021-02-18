@@ -1,6 +1,13 @@
 .vscode/
 .cache
 .eggs
+bin/
+etc/
+include/
+lib/
+lib64/
+share/
+/pyvenv.cfg
 **/__pycache__
 *~
 *.pyc
@@ -8,4 +15,4 @@
 build
 dist
 *_results
-datasets/
+

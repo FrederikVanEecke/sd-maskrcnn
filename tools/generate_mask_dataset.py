@@ -36,6 +36,9 @@ from autolab_core import TensorDataset, YamlConfig, Logger
 import autolab_core.utils as utils
 from perception import DepthImage, GrayscaleImage, BinaryImage, ColorImage
 
+import sys
+sys.path.append('/home/frederik/Documents/GitHub/sd-maskrcnn')
+
 from sd_maskrcnn.envs import BinHeapEnv
 from sd_maskrcnn.envs.constants import *
 
@@ -80,8 +83,8 @@ def generate_segmask_dataset(output_dataset_path, config, save_tensors=True, war
     max_objs_per_state = config['state_space']['heap']['max_objs']
 
     # read image parameters
-    im_height = config['state_space']['camera']['im_height']
-    im_width = config['state_space']['camera']['im_width']
+    im_height = config['state_space']['cameras']['general']['im_height']
+    im_width = config['state_space']['cameras']['general']['im_width']
     segmask_channels = max_objs_per_state + 1
 
     # create the dataset path and all subfolders if they don't exist
@@ -94,6 +97,15 @@ def generate_segmask_dataset(output_dataset_path, config, save_tensors=True, war
     color_dir = os.path.join(image_dir, 'color_ims')
     if image_config['color'] and not os.path.exists(color_dir):
         os.mkdir(color_dir)
+
+    trf_color_dir = os.path.join(image_dir, 'trf_color_ims')
+    if image_config['trf_color'] and not os.path.exists(trf_color_dir):
+        os.mkdir(trf_color_dir)
+    # trf_depth directory
+    trf_depth_dir = os.path.join(image_dir, 'trf_depth_ims')
+    if image_config['depth'] and not os.path.exists(trf_depth_dir):
+        os.mkdir(trf_depth_dir)
+    #
     depth_dir = os.path.join(image_dir, 'depth_ims')
     if image_config['depth'] and not os.path.exists(depth_dir):
         os.mkdir(depth_dir)
@@ -125,6 +137,7 @@ def generate_segmask_dataset(output_dataset_path, config, save_tensors=True, war
         state_tensor_config = state_dataset_config['tensors']
         image_tensor_config = image_dataset_config['tensors']
 
+        # POSE_DIM and POINT_DIM from envs/constants.py -> imported 
         obj_pose_dim = POSE_DIM * max_objs_per_state
         obj_com_dim = POINT_DIM * max_objs_per_state
         state_tensor_config['fields']['obj_poses']['height'] = obj_pose_dim
@@ -133,45 +146,64 @@ def generate_segmask_dataset(output_dataset_path, config, save_tensors=True, war
 
         image_tensor_config['fields']['camera_pose']['height'] = POSE_DIM
 
-        if image_config['color']:
-            image_tensor_config['fields']['color_im'] = {
-                'dtype': 'uint8',
-                'channels': 3,
-                'height': im_height,
-                'width': im_width
-            }
-        
-        if image_config['depth']:
-            image_tensor_config['fields']['depth_im'] = {
-                'dtype': 'float32',
-                'channels': 1,
-                'height': im_height,
-                'width': im_width
-            }
-        
-        if image_config['modal']:
-            image_tensor_config['fields']['modal_segmasks'] = {
-                'dtype': 'uint8',
-                'channels': segmask_channels,
-                'height': im_height,
-                'width': im_width
-            }
+        # do not save image tensors-> to much memory 
 
-        if image_config['amodal']:
-            image_tensor_config['fields']['amodal_segmasks'] = {
-                'dtype': 'uint8',
-                'channels': segmask_channels,
-                'height': im_height,
-                'width': im_width
-            }
+        # if image_config['color']:
+        #     image_tensor_config['fields']['color_im'] = {
+        #         'dtype': 'uint8',
+        #         'channels': 3,
+        #         'height': im_height,
+        #         'width': im_width
+        #     }
+            
+
+        # if image_config['trf_color']:
+        #     image_tensor_config['fields']['trf_color_im'] = {
+        #         'dtype': 'uint8',
+        #         'channels': 3,
+        #         'height': im_height,
+        #         'width': im_width
+        #     }
+
+        # if image_config['depth']:
+        #     image_tensor_config['fields']['depth_im'] = {
+        #         'dtype': 'float32',
+        #         'channels': 1,
+        #         'height': im_height,
+        #         'width': im_width
+        #     }
+
+        # if image_config['tranformed_depth']:
+        #     image_tensor_config['fields']['tranformed_depth_im'] = {
+        #         'dtype': 'float32',
+        #         'channels': 1,
+        #         'height': im_height,
+        #         'width': im_width
+        #     }
         
-        if image_config['semantic']:
-            image_tensor_config['fields']['semantic_segmasks'] = {
-                'dtype': 'uint8',
-                'channels': 1,
-                'height': im_height,
-                'width': im_width
-            }
+        # if image_config['modal']:
+        #     image_tensor_config['fields']['modal_segmasks'] = {
+        #         'dtype': 'uint8',
+        #         'channels': segmask_channels,
+        #         'height': im_height,
+        #         'width': im_width
+        #     }
+
+        # if image_config['amodal']:
+        #     image_tensor_config['fields']['amodal_segmasks'] = {
+        #         'dtype': 'uint8',
+        #         'channels': segmask_channels,
+        #         'height': im_height,
+        #         'width': im_width
+        #     }
+        
+        # if image_config['semantic']:
+        #     image_tensor_config['fields']['semantic_segmasks'] = {
+        #         'dtype': 'uint8',
+        #         'channels': 1,
+        #         'height': im_height,
+        #         'width': im_width
+        #     }
 
         # create dataset filenames
         state_dataset_path = os.path.join(output_dataset_path, 'state_tensors')
@@ -219,6 +251,7 @@ def generate_segmask_dataset(output_dataset_path, config, save_tensors=True, war
         # read templates
         state_datapoint = state_dataset.datapoint_template
         image_datapoint = image_dataset.datapoint_template
+        
     
     if warm_start:
 
@@ -255,8 +288,16 @@ def generate_segmask_dataset(output_dataset_path, config, save_tensors=True, war
             im_ind = int(im_basename.split('_')[1])
             if os.path.exists(os.path.join(depth_dir, im_name)):
                 os.remove(os.path.join(depth_dir, im_name))
+                #
+            if os.path.exists(os.path.join(trf_depth_dir, im_name)):
+                os.remove(os.path.join(trf_depth_dir, im_name))
+                #
             if os.path.exists(os.path.join(color_dir, im_name)):
                 os.remove(os.path.join(color_dir, im_name))
+            #
+            if os.path.exists(os.path.join(trf_color_dir, im_name)):
+                os.remove(os.path.join(trf_color_dir, im_name))
+            #
             if os.path.exists(os.path.join(semantic_dir, im_name)):
                 os.remove(os.path.join(semantic_dir, im_name))
             if os.path.exists(os.path.join(modal_dir, im_basename)):
@@ -287,6 +328,7 @@ def generate_segmask_dataset(output_dataset_path, config, save_tensors=True, war
         train_inds = []
         test_inds = []
     
+
     # generate states and images
     state_id = num_prev_states
     while state_id < num_states:
@@ -361,12 +403,23 @@ def generate_segmask_dataset(output_dataset_path, config, save_tensors=True, war
                     if num_images_per_state > 1:
                         env.reset_camera()
                     
-                    obs = env.render_camera_image(color=image_config['color'])
-                    if image_config['color']:
-                        color_obs, depth_obs = obs
+                    obs = env.render_camera_image(color=image_config['color'], transformed = image_config['tranformed_depth'])
+                    if image_config['color'] and image_config['tranformed_depth']:
+                        color_obs, depth_obs, trnf_depth = obs
                     else:
-                        depth_obs = obs
-                                        
+                        depth_obs, trnf_depth = obs
+
+                    if image_config['trf_color']:
+                        cam = env._camera
+                        view = env._view_camera 
+                        env._camera = view
+                        env._view_camera = cam 
+                        env._update_scene()
+                        obs = env.render_camera_image(color=image_config['color'], transformed = image_config['tranformed_depth'])
+                        if image_config['color'] and image_config['tranformed_depth']:
+                            trf_color_obs,_,_ = obs
+                        else:
+                            _, _ = obs
                     # vis obs
                     if vis_config['obs']:
                         if image_config['depth']:
@@ -401,7 +454,7 @@ def generate_segmask_dataset(output_dataset_path, config, save_tensors=True, war
                         if image_config['semantic']:
                             for j in range(env.num_objects):
                                 this_obj_px = np.where(modal_segmasks[:,:,j] > 0)
-                                stacked_segmask_arr[this_obj_px[0], this_obj_px[1],0] = j+1
+                                stacked_segmask_arr[this_obj_px[0], this_obj_px[1],0] = 255-(j+1)
 
                     # visualize
                     if vis_config['semantic']:
@@ -411,17 +464,27 @@ def generate_segmask_dataset(output_dataset_path, config, save_tensors=True, war
 
                     if save_tensors:    
                         # save image data as tensors
-                        if image_config['color']:
-                            image_datapoint['color_im'] = color_obs
-                        if image_config['depth']:
-                            image_datapoint['depth_im'] = depth_obs[:,:,None]
-                        if image_config['modal']:
-                            image_datapoint['modal_segmasks'] = modal_segmask_arr
-                        if image_config['amodal']:
-                            image_datapoint['amodal_segmasks'] = amodal_segmask_arr
-                        if image_config['semantic']:
-                            image_datapoint['semantic_segmasks'] = stacked_segmask_arr
-                            
+                        # do not save this-> takes to much memory 
+                        # if image_config['trf_color']:
+                        #     image_datapoint['color_im'] = trf_color
+                        # if image_config['color']:
+                        #     image_datapoint['color_im'] = color_obs
+                        # if image_config['depth']:
+                        #     image_datapoint['depth_im'] = depth_obs[:,:,None]
+                        # #
+                        # if image_config['tranformed_depth']: 
+                        #     image_datapoint['tranformed_depth_im'] = depth_obs[:,:,None]
+                        # #
+                        # if image_config['modal']:
+                        #     image_datapoint['modal_segmasks'] = modal_segmask_arr
+                        # if image_config['amodal']:
+                        #     image_datapoint['amodal_segmasks'] = amodal_segmask_arr
+                        # if image_config['semantic']:
+                        #     image_datapoint['semantic_segmasks'] = stacked_segmask_arr
+
+                        # for each image we store camera characteristics 
+
+
                         image_datapoint['camera_pose'] = env.camera.pose.vec
                         image_datapoint['camera_intrs'] = env.camera.intrinsics.vec
                         image_datapoint['state_ind'] = state_id
@@ -433,8 +496,14 @@ def generate_segmask_dataset(output_dataset_path, config, save_tensors=True, war
                     # Save depth image and semantic masks
                     if image_config['color']:
                         ColorImage(color_obs).save(os.path.join(color_dir, 'image_{:06d}.png'.format(num_images_per_state*state_id + k)))
+                    if image_config['trf_color']:
+                        ColorImage(trf_color_obs).save(os.path.join(trf_color_dir, 'image_{:06d}.png'.format(num_images_per_state*state_id + k)))
                     if image_config['depth']:
                         DepthImage(depth_obs).save(os.path.join(depth_dir, 'image_{:06d}.png'.format(num_images_per_state*state_id + k)))
+                    #
+                    if image_config['tranformed_depth']:
+                        DepthImage(trnf_depth).save(os.path.join(trf_depth_dir, 'image_{:06d}.png'.format(num_images_per_state*state_id + k)))
+                    #
                     if image_config['modal']:
                         modal_id_dir = os.path.join(modal_dir, 'image_{:06d}'.format(num_images_per_state*state_id + k))
                         if not os.path.exists(modal_id_dir):

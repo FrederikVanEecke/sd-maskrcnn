@@ -149,9 +149,10 @@ class CameraState(State):
 
 class HeapAndCameraState(object):
     """ State of a heap and camera. """
-    def __init__(self, heap_state, cam_state):
+    def __init__(self, heap_state, cam_state, view_cam_state):
         self.heap = heap_state
         self.camera = cam_state
+        self.view_camera = view_cam_state
 
     @property
     def obj_keys(self):

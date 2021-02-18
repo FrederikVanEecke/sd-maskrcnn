@@ -21,6 +21,12 @@ MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 Author: Mike Danielczuk
 """
 
+"""
+    EDITS 
+
+    included self.times_min, self.times_max indicating how many times each object in /meshes is added. -> specifiy in config file.
+"""
+
 import os
 import time
 import numpy as np
@@ -40,15 +46,17 @@ class CameraStateSpace(gym.Space):
         self._config = config
 
         # read params
-        self.frame = config['name']
+        #self.frame = config['name']
 
         # random variable for pose of camera
-        self.camera_rv = CameraRandomVariable(config)
+        self.cameras = CameraRandomVariable(config)
+        #self.view_camera = CameraRandomVariable(config['view_camera'])
 
     def sample(self):
         """ Sample a camera state. """
-        pose, intrinsics = self.camera_rv.sample(size=1)
-        return CameraState(self.frame, pose, intrinsics)
+        (pose, intrinsics, frame), (view_pose, view_intrinsics, view_frame) = self.cameras.sample(size=1)
+        #view_pose, view_intrinsics = self.view_camera.sample(size=1)
+        return CameraState(frame, pose, intrinsics), CameraState(view_frame, view_pose, view_intrinsics)
 
 class HeapStateSpace(gym.Space):
     """ State space for object heaps. """
@@ -63,6 +71,10 @@ class HeapStateSpace(gym.Space):
         # read subconfigs
         obj_config = config['objects']
         workspace_config = config['workspace']
+
+        # times
+        self.times_min = obj_config['times_min']
+        self.times_max = obj_config['times_max']
 
         self.num_objs_rv = sstats.poisson(config['mean_objs']-1)
         self.max_objs = config['max_objs']
@@ -243,6 +255,8 @@ class HeapStateSpace(gym.Space):
         objs_in_heap = []
         total_drops = 0
         while total_drops < total_num_objs and len(objs_in_heap) < num_objs:
+            # add each object a random number of times 
+
             obj_key = sample_keys[obj_inds[total_drops]]
             obj_mesh = trimesh.load_mesh(self.mesh_filenames[obj_key])
             obj_mesh.visual = trimesh.visual.ColorVisuals(obj_mesh, vertex_colors=(0.7,0.7,0.7,1.0))
@@ -363,7 +377,7 @@ class HeapAndCameraStateSpace(gym.Space):
     def __init__(self, physics_engine, config):
         
         heap_config = config['heap']
-        cam_config = config['camera']
+        cam_config = config['cameras']
         
         # individual state spaces
         self.heap = HeapStateSpace(physics_engine, heap_config)
@@ -404,6 +418,6 @@ class HeapAndCameraStateSpace(gym.Space):
         """ Sample a state. """
         # sample individual states
         heap_state = self.heap.sample()
-        cam_state = self.camera.sample()
+        cam_state, view_cam_state = self.camera.sample()
 
-        return HeapAndCameraState(heap_state, cam_state)
+        return HeapAndCameraState(heap_state, cam_state, view_cam_state)

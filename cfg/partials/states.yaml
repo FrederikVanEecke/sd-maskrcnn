@@ -2,18 +2,18 @@ state_space:
   heap:
     workspace:          # Workspace boundaries define what region the objects can be dropped in
       min:              # x,y,z
-        - -0.2
-        - -0.25
+        - -0.5
+        - -0.5
         - 0.0
       max:              # x,y,z
-        - 0.2
-        - 0.25
+        - 0.5
+        - 0.5
         - 0.3
 
       objects:          # static workspace objects
         bin:
           mesh_filename: data/bin/bin.obj
-          pose_filename: data/bin/bin_pose.tf
+          pose_filename: data/bin/bin_pose_new.tf
 
         plane:
           mesh_filename: data/plane/plane.obj
@@ -27,9 +27,9 @@ state_space:
         - 0.1
         - 0.1
 
-    mean_objs: 5        # Poisson dist mean for number of objects in each heap
-    min_objs: 2         # Min objs in each heap
-    max_objs: 10        # Max objs in each heap
+    mean_objs: 8      # Poisson dist mean for number of objects in each heap
+    min_objs: 3       # Min objs in each heap
+    max_objs: 15        # Max objs in each heap
     replace: 0          # Sample objects with replacement?
     max_obj_diam: 0.3   # Max diameter of object to be dropped (otherwise it will be skipped)
     drop_height: 0.2
@@ -40,55 +40,208 @@ state_space:
     mag_w_thresh: 0.1
 
     objects:
-      mesh_dir: datasets/objects/meshes/    # Directory containing meshes to be dropped
-      num_objects: 50                       # Number of objects in dataset (test and train)
-      train_pct: 0.8                        # Percentage of objects to be designated as train
+      mesh_dir: datasets/objects_custom/meshes/    # Directory containing meshes to be dropped
+      num_objects: 37                   # Number of objects in dataset (test and train)
+      times_min: 1                        # add each object minimal times_min times
+      times_max: 10                        # add each onject maximally times_min times 
+      train_pct: 0.75                        # Percentage of objects to be designated as train
       object_keys:                          # Folders containing meshes
         ycb: all                            # all -> all meshes in folder. Can also specify list of mesh names
 
       planar_translation:                   # Amount of translation around the center point to drop each object
         min:                                # Uniform random variable
-          - -0.025
-          - -0.025
+          - -0.3
+          - -0.3
         max:
-          - 0.025
-          - 0.025
+          - 0.3
+          - 0.3
 
       center_of_mass:                       # Std deviation for normal perturbation of object center of mass
         sigma: 0.0
 
       density: 4000                         # Fixed density for each object
 
-  camera:
-    name: camera
+  cameras: 
+    general: 
+      im_width: 2064
+      im_height: 1544
+      fx: 2266.27
+      fy: 2267.04
+      cx: 1038.2 
+      cy: 788.761
+      x: 0
+      y: 0 
+      radius: 0.7215
 
-    # Image size
-    im_width: 512
-    im_height: 384
+    send_cam: 
+      name: camera
+      elevation: -11.75
+      azimuth: 0
+      roll: -90
 
-    focal_length:                           # Camera intrinsics: fx and fy
-      min: 535                              # Sampled uniformly over the given range
-      max: 560
-    delta_optical_center:                   # Camera intrinsics: cx and cy
-      min: -2.5                             # Sampled uniformly over the given range
-      max: 2.5
+    view_cam: 
+      name: view_camera
+      elevation: 11.75
+      azimuth: 0
+      roll: 90
 
-    x:                                      # Variation in x position and y position
-      min: -0.05                            # Sampled uniformly over the given range
-      max: 0.05
-    y:
-      min: -0.05
-      max: 0.05
+    variation: 
+      var_radius: 0.02
+      var_elevation: 1
+      var_azimuth: 2
+      var_roll: 1
+    # name: camera 
+    # camera:
+    #   name: camera
+    #   # Image size 
+    #   im_width: 2064
+    #   im_height: 1544
 
-    radius:                                 # Uniform random variable for camera distance
-      min: 0.7
-      max: 0.9
-    elevation:                              # Uniform random variable for camera elevation
-      min: 0.01
-      max: 10
-    azimuth:                                # Uniform random variable for camera azimuth
-      min: 0
-      max: 360
-    roll:                                   # Uniform random variable for camera roll
-      min: -10
-      max: 10
+
+    #   focal_length:
+    #     fx: 2266.27
+    #     fy: 2267.04
+      
+    #   optical_center: 
+    #     cx: 1038.2
+    #     cy: 788.761
+
+    #   radius:                                 # Uniform random variable for camera distance
+    #     min: 0.7215434844830905
+    #     max: 0.7215434844830905
+    #   elevation:     #z                         # Uniform random variable for camera elevation
+    #     min: -11.75
+    #     max: -11.75
+    #   azimuth:      # x                         # Uniform random variable for camera azimuth
+    #     min: 0                    
+    #     max: 0
+    #   roll:                                   # Uniform random variable for camera roll
+    #     min: -90
+    #     max: -90
+    #   x:                                      # Variation in x position and y position
+    #     min: 0                         # Sampled uniformly over the given range
+    #     max: 0
+    #   y:
+    #     min: 0
+    #     max: 0
+
+    # view_camera: 
+    #   name: view_camera
+    #   # Image size 
+    #   im_width: 2064
+    #   im_height: 1544
+
+
+    #   focal_length:
+    #     fx: 2266.27
+    #     fy: 2267.04
+      
+    #   optical_center: 
+    #     cx: 1038.2
+    #     cy: 788.761
+
+    #   radius:                                 # Uniform random variable for camera distance
+    #     min: 0.7215434844830905      #0.7215434844830905
+    #     max: 0.7215434844830905
+    #   elevation:                              # Uniform random variable for camera elevation
+    #     min: 11.75
+    #     max: 11.75
+    #   azimuth:                               # Uniform random variable for camera azimuth
+    #     min: 0
+    #     max: 0
+    #   roll:                                   # Uniform random variable for camera roll
+    #     min: 90
+    #     max: 90
+    #   x:                                      # Variation in x position and y position
+    #     min: 0 #0.175                         # Sampled uniformly over the given range
+    #     max: 0 #0.175
+    #   y:
+    #     min: 0
+    #     max: 0
+
+
+#   fx=2266.27/precision
+# fy=2267.04/precision
+# ppx=1038.02/precision
+# ppy=788.761/precision
+# w=int(2064/precision)
+# h=int(1544/precision) # TO GET!
+# intrin={"fx":fx,"fy":fy,"ppx":ppx,"ppy":ppy,"w":w,"h":h}
+# intrinsics=np.array([[fx,0,ppx,0],[0,fy,ppy,0],[0,0,0,1]])
+# far=1.118
+# near=0.458
+# arctanx=(826-590)/(2*(1118-650))
+# arctany=(686-404)/(2*(1118-650))
+  ## nice look from the left 
+    #  radius:                                 # Uniform random variable for camera distance
+    #   min: 0.7826237921249264
+    #   max: 0.7826237921249264
+    # elevation:                              # Uniform random variable for camera elevation
+    #   min: -11.75
+    #   max: -11.75
+    # azimuth:                               # Uniform random variable for camera azimuth
+    #   min: 0
+    #   max: 0
+    # roll:                                   # Uniform random variable for camera roll
+    #   min: -90
+    #   max: -90
+
+  ## nice look from the right 
+  # radius:                                 # Uniform random variable for camera distance
+  #     min: 0.7826237921249264
+  #     max: 0.7826237921249264
+  #   elevation:                              # Uniform random variable for camera elevation
+  #     min: -11.75
+  #     max: -11.75
+  #   azimuth:                               # Uniform random variable for camera azimuth
+  #     min: 0
+  #     max: 0
+  #   roll:                                   # Uniform random variable for camera roll
+  #     min: 90
+  #     max: 90
+    
+  ## original camera setting   
+  # camera:
+  #   name: camera
+
+  #   # Image size
+  #   im_width: 512
+  #   im_height: 384
+
+  #   focal_length:                           # Camera intrinsics: fx and fy
+  #     min: 535                              # Sampled uniformly over the given range
+  #     max: 560
+  #   delta_optical_center:                   # Camera intrinsics: cx and cy
+  #     min: -2.5                             # Sampled uniformly over the given range
+  #     max: 2.5
+
+  #   x:                                      # Variation in x position and y position
+  #     min: -0.05                            # Sampled uniformly over the given range
+  #     max: 0.05
+  #   y:
+  #     min: -0.05
+  #     max: 0.05
+
+  #   radius:                                 # Uniform random variable for camera distance
+  #     min: 0.7
+  #     max: 0.9
+  #   elevation:                              # Uniform random variable for camera elevation
+  #     min: 0.01
+  #     max: 10
+  #   azimuth:                                # Uniform random variable for camera azimuth
+  #     min: 0
+  #     max: 360
+  #   roll:                                   # Uniform random variable for camera roll
+  #     min: -10
+  #     max: 10
+
+  ## original workspace 
+      # workspace:          # Workspace boundaries define what region the objects can be dropped in
+      # min:              # x,y,z
+      #   - -0.2
+      #   - -0.25
+      #   - 0.0
+      # max:              # x,y,z
+      #   - 0.2
+      #   - 0.25
+      #   - 0.3

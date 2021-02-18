@@ -180,16 +180,23 @@ class PybulletPhysicsEngine(PhysicsEngine):
         new_pose.translation = pose.rotation.dot(-com) + pose.translation
         return new_pose
 
+    #### CHECK    
     def _create_scene(self):
         self._scene = Scene()
-        camera = PerspectiveCamera(yfov=0.833, znear=0.05,
-                                    zfar=3.0, aspectRatio=1.0)
+        # camera = PerspectiveCamera(yfov=0.833, znear=0.05,
+        #                             zfar=3.0, aspectRatio=1.0)
+
+        camera = PerspectiveCamera(yfov=(686-404)/(2*(1118-650)), znear=0.458, zfar=1.118, aspectRatio=1.0)
         cn = Node()
         cn.camera = camera
         pose_m = np.array([[0.0,1.0,0.0,0.0],
                         [1.0,0.0,0.0,0.0],
                         [0.0,0.0,-1.0,0.88],
                         [0.0,0.0,0.0,1.0]])
+        # pose_m = np.array([[1.0,1.0,0.0,1.0],
+        #                 [1.0,1.0,0.0,0.0],
+        #                 [0.0,0.0,-1.0,0.88],
+        #                 [0.0,1.0,0.0,1.0]])
         pose_m[:,1:3] *= -1.0
         cn.matrix = pose_m
         self._scene.add_node(cn)

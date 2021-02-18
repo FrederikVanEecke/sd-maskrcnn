@@ -37,4 +37,4 @@ TRAIN_ID = 0
 TEST_ID = 1
 
 # Physical Constants
-GRAVITY_ACCEL = 9.81
+GRAVITY_ACCEL = 50 #9.81

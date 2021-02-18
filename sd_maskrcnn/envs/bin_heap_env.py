@@ -22,6 +22,8 @@ Author: Mike Danielczuk
 """
 
 import numpy as np
+from PIL import Image
+
 import gym
 
 from autolab_core import Logger
@@ -30,6 +32,8 @@ from pyrender import (Scene, IntrinsicsCamera, Mesh, DirectionalLight, Viewer,
 
 from .physics_engine import PybulletPhysicsEngine
 from .state_spaces import HeapAndCameraStateSpace
+
+from .depth_transform import depth_transformation 
 
 class BinHeapEnv(gym.Env):
     """ OpenAI Gym-style environment for creating object heaps in a bin. """
@@ -84,11 +88,13 @@ class BinHeapEnv(gym.Env):
         state = self._state_space.sample()
         self._state = state.heap
         self._camera = state.camera
+        self._view_camera = state.view_camera
     
     def _update_scene(self):
         # update camera
         camera = IntrinsicsCamera(self.camera.intrinsics.fx, self.camera.intrinsics.fy, 
                                   self.camera.intrinsics.cx, self.camera.intrinsics.cy)
+
         cn = next(iter(self._scene.get_nodes(name=self.camera.frame)))
         cn.camera = camera
         pose_m = self.camera.pose.matrix.copy()
@@ -160,7 +166,7 @@ class BinHeapEnv(gym.Env):
         """ Resets only the camera.
         Useful for generating image data for multiple camera views
         """
-        self._camera = self.state_space.camera.sample()
+        self._camera, self._view_camera = self.state_space.camera.sample()
         self._update_scene()     
 
     def reset(self):
@@ -180,19 +186,43 @@ class BinHeapEnv(gym.Env):
 
         Viewer(self.scene, use_raymond_lighting=True)
 
-    def render_camera_image(self, color=True):
+    def render_camera_image(self, color=True, transformed=True):
         """ Render the camera image for the current scene. """
         renderer = OffscreenRenderer(self.camera.width, self.camera.height)
         flags = RenderFlags.NONE if color else RenderFlags.DEPTH_ONLY
         image = renderer.render(self._scene, flags=flags)
         renderer.delete()
+
+        # gathering camera info for transform
+        # prev_mat = self._camera.pose.matrix
+        # new_mat = self._view_camera.pose.matrix
+        # intrinsics = self._camera.intrinsics
+        # view_intrinsics = 
+        # trans_mat=new_mat@np.linalg.inv(prev_mat)
+        
+
+        if color:
+            color_im, depth = image
+        else: 
+            depth = image
+
+        trnf_depth = depth_transformation(depth, self._camera, self._view_camera)
+
+        
+
+        if color: 
+
+            image = (color_im, depth, trnf_depth)
+        else: 
+            image = (depth, trnf_depth)
+
         return image
     
     def render_segmentation_images(self):
         """Renders segmentation masks (modal and amodal) for each object in the state.
         """
 
-        full_depth = self.render_camera_image(color=False)
+        _, full_depth = self.render_camera_image(color=False)
         modal_data = np.zeros((full_depth.shape[0], full_depth.shape[1], len(self.obj_keys)), dtype=np.uint8)
         amodal_data = np.zeros((full_depth.shape[0], full_depth.shape[1], len(self.obj_keys)), dtype=np.uint8)
         renderer = OffscreenRenderer(self.camera.width, self.camera.height)
@@ -207,6 +237,7 @@ class BinHeapEnv(gym.Env):
             node.mesh.is_visible = True
 
             depth = renderer.render(self._scene, flags=flags)
+            depth = depth_transformation(depth, self._camera, self._view_camera)
             amodal_mask = depth > 0.0
             modal_mask = np.logical_and(
                 (np.abs(depth - full_depth) < 1e-6), full_depth > 0.0
