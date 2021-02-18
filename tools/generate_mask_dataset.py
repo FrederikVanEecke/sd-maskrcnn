@@ -39,8 +39,10 @@ import autolab_core.utils as utils
 from perception import DepthImage, GrayscaleImage, BinaryImage, ColorImage
 
 import sys
-sys.path.append('/home/frederik/Documents/GitHub/sd-maskrcnn')
+sys.path.append(os.getcwd())
 
+
+import os 
 from sd_maskrcnn.envs import BinHeapEnv
 from sd_maskrcnn.envs.constants import *
 
