@@ -14,7 +14,7 @@ images:
   color: 1
   trf_color: 0
   depth: 1
-  tranformed_depth: 1 # vintecc depth 
+  tranformed_depth: 0 # vintecc depth 
   modal: 1
   amodal: 1
   semantic: 1

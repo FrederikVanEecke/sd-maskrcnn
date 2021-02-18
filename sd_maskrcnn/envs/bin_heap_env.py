@@ -186,10 +186,10 @@ class BinHeapEnv(gym.Env):
 
         Viewer(self.scene, use_raymond_lighting=True)
 
-    def render_camera_image(self, color=True, transformed=True):
+    def render_camera_image(self, transformed=True):
         """ Render the camera image for the current scene. """
         renderer = OffscreenRenderer(self.camera.width, self.camera.height)
-        flags = RenderFlags.NONE if color else RenderFlags.DEPTH_ONLY
+        flags = RenderFlags.NONE 
         image = renderer.render(self._scene, flags=flags)
         renderer.delete()
 
@@ -200,29 +200,31 @@ class BinHeapEnv(gym.Env):
         # view_intrinsics = 
         # trans_mat=new_mat@np.linalg.inv(prev_mat)
         
+        color_im, depth = image
 
-        if color:
-            color_im, depth = image
-        else: 
-            depth = image
+        if transformed:
+            trnf_depth = depth_transformation(depth, self._camera, self._view_camera)
 
-        trnf_depth = depth_transformation(depth, self._camera, self._view_camera)
 
-        
-
-        if color: 
+        if transformed: 
 
             image = (color_im, depth, trnf_depth)
         else: 
-            image = (depth, trnf_depth)
+            image = (color_im, depth)
 
         return image
     
-    def render_segmentation_images(self):
+    def render_segmentation_images(self, transformed=True):
         """Renders segmentation masks (modal and amodal) for each object in the state.
         """
 
-        _, full_depth = self.render_camera_image(color=False)
+        img = self.render_camera_image(transformed=transformed)
+
+        if transformed: 
+            _,_,full_depth = img
+        else:
+            _,full_depth = img 
+
         modal_data = np.zeros((full_depth.shape[0], full_depth.shape[1], len(self.obj_keys)), dtype=np.uint8)
         amodal_data = np.zeros((full_depth.shape[0], full_depth.shape[1], len(self.obj_keys)), dtype=np.uint8)
         renderer = OffscreenRenderer(self.camera.width, self.camera.height)
@@ -237,7 +239,8 @@ class BinHeapEnv(gym.Env):
             node.mesh.is_visible = True
 
             depth = renderer.render(self._scene, flags=flags)
-            depth = depth_transformation(depth, self._camera, self._view_camera)
+            if transformed:
+                depth = depth_transformation(depth, self._camera, self._view_camera)
             amodal_mask = depth > 0.0
             modal_mask = np.logical_and(
                 (np.abs(depth - full_depth) < 1e-6), full_depth > 0.0

@@ -103,7 +103,7 @@ def generate_segmask_dataset(output_dataset_path, config, save_tensors=True, war
         os.mkdir(trf_color_dir)
     # trf_depth directory
     trf_depth_dir = os.path.join(image_dir, 'trf_depth_ims')
-    if image_config['depth'] and not os.path.exists(trf_depth_dir):
+    if image_config['tranformed_depth'] and not os.path.exists(trf_depth_dir):
         os.mkdir(trf_depth_dir)
     #
     depth_dir = os.path.join(image_dir, 'depth_ims')
@@ -403,23 +403,12 @@ def generate_segmask_dataset(output_dataset_path, config, save_tensors=True, war
                     if num_images_per_state > 1:
                         env.reset_camera()
                     
-                    obs = env.render_camera_image(color=image_config['color'], transformed = image_config['tranformed_depth'])
-                    if image_config['color'] and image_config['tranformed_depth']:
+                    obs = env.render_camera_image(transformed = image_config['tranformed_depth'])
+                    if image_config['tranformed_depth']:
                         color_obs, depth_obs, trnf_depth = obs
                     else:
-                        depth_obs, trnf_depth = obs
+                        color_obs, depth_obs = obs
 
-                    if image_config['trf_color']:
-                        cam = env._camera
-                        view = env._view_camera 
-                        env._camera = view
-                        env._view_camera = cam 
-                        env._update_scene()
-                        obs = env.render_camera_image(color=image_config['color'], transformed = image_config['tranformed_depth'])
-                        if image_config['color'] and image_config['tranformed_depth']:
-                            trf_color_obs,_,_ = obs
-                        else:
-                            _, _ = obs
                     # vis obs
                     if vis_config['obs']:
                         if image_config['depth']:
@@ -435,7 +424,7 @@ def generate_segmask_dataset(output_dataset_path, config, save_tensors=True, war
                     if image_config['modal'] or image_config['amodal'] or image_config['semantic']:
                                             
                         # render segmasks
-                        amodal_segmasks, modal_segmasks = env.render_segmentation_images()
+                        amodal_segmasks, modal_segmasks = env.render_segmentation_images(transformed = image_config['tranformed_depth'])
 
                         # retrieve segmask data
                         modal_segmask_arr = np.iinfo(np.uint8).max * np.ones([im_height,

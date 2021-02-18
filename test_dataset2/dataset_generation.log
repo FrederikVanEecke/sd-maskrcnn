@@ -1,0 +1,17 @@
+02-18 14:58:00 root       INFO     Root logger now logging to test_dataset2/dataset_generation.log
+02-18 14:58:00 tools/generate_segmask_dataset.py INFO     Creating datasets
+02-18 14:58:00 tools/generate_segmask_dataset.py INFO     Creating env took 0.008 sec
+02-18 14:58:00 tools/generate_segmask_dataset.py INFO     State: 000000
+02-18 14:58:00 HeapStateSpace INFO     Sampling from train
+02-18 14:58:00 HeapStateSpace INFO     Sampling 7 objects
+02-18 14:58:02 HeapStateSpace WARNING  Object ycb~cube_b4 fell out of the workspace!
+02-18 14:58:02 root       INFO     Dataset test_dataset2/state_tensors: Writing tensor 0 to disk
+02-18 14:58:13 root       INFO     Dataset test_dataset2/image_tensors: Writing tensor 0 to disk
+02-18 14:58:14 tools/generate_segmask_dataset.py INFO     State: 000001
+02-18 14:58:14 HeapStateSpace INFO     Sampling from train
+02-18 14:58:14 HeapStateSpace INFO     Sampling 10 objects
+02-18 14:58:15 HeapStateSpace WARNING  Object ycb~cubei4 fell out of the workspace!
+02-18 14:58:17 root       INFO     Dataset test_dataset2/state_tensors: Writing tensor 1 to disk
+02-18 14:58:30 root       INFO     Dataset test_dataset2/image_tensors: Writing tensor 1 to disk
+02-18 14:58:31 tools/generate_segmask_dataset.py INFO     Generated 10 image datapoints
+02-18 14:58:31 tools/generate_segmask_dataset.py INFO     Mask dataset generation took 31.118 sec
