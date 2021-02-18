@@ -1,5 +1,5 @@
 !!omap
-- num_states: 2
+- num_states: 1
 - num_images_per_state: 5
 - states_per_flush: 10
 - states_per_garbage_collect: 10
@@ -124,6 +124,7 @@
   - modal: 1
   - amodal: 1
   - semantic: 1
+- downsample_factor: 4
 - vis: !!omap
   - state: 0
   - obs: 0

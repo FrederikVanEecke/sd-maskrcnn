@@ -31,6 +31,8 @@ import shutil
 import time
 import traceback
 import matplotlib.pyplot as plt
+import cv2
+from PIL import Image, ImageFilter 
 
 from autolab_core import TensorDataset, YamlConfig, Logger
 import autolab_core.utils as utils
@@ -46,6 +48,11 @@ SEED = 744
 
 # set up logger
 logger = Logger.get_logger('tools/generate_segmask_dataset.py')
+
+
+def downsample(image, factor): 
+    return cv2.resize(image, dsize=(int(image.shape[1]/factor), int(image.shape[0]/factor)), interpolation=cv2.INTER_CUBIC)
+
 
 def generate_segmask_dataset(output_dataset_path, config, save_tensors=True, warm_start=False):
     """ Generate a segmentation training dataset
@@ -483,30 +490,33 @@ def generate_segmask_dataset(output_dataset_path, config, save_tensors=True, war
                         image_dataset.add(image_datapoint)
 
                     # Save depth image and semantic masks
+                    factor = config['downsample_factor'] # factor of downsampling
                     if image_config['color']:
-                        ColorImage(color_obs).save(os.path.join(color_dir, 'image_{:06d}.png'.format(num_images_per_state*state_id + k)))
+                        ColorImage(downsample(color_obs,factor)).save(os.path.join(color_dir, 'image_{:06d}.png'.format(num_images_per_state*state_id + k)))
                     if image_config['trf_color']:
-                        ColorImage(trf_color_obs).save(os.path.join(trf_color_dir, 'image_{:06d}.png'.format(num_images_per_state*state_id + k)))
+                        ColorImage(downsample(trf_color_obs,factor)).save(os.path.join(trf_color_dir, 'image_{:06d}.png'.format(num_images_per_state*state_id + k)))
                     if image_config['depth']:
-                        DepthImage(depth_obs).save(os.path.join(depth_dir, 'image_{:06d}.png'.format(num_images_per_state*state_id + k)))
+                        DepthImage(downsample(depth_obs,factor)).save(os.path.join(depth_dir, 'image_{:06d}.png'.format(num_images_per_state*state_id + k)))
                     #
                     if image_config['tranformed_depth']:
-                        DepthImage(trnf_depth).save(os.path.join(trf_depth_dir, 'image_{:06d}.png'.format(num_images_per_state*state_id + k)))
+                        #trnf_depth=cv2.resize(trnf_depth, dsize=(int(trnf_depth.shape[1]/4), int(trnf_depth.shape[0]/4)), interpolation=cv2.INTER_LANCZOS4)
+                        #trnf_depth = Image.fromarray(np.array(trnf_depth)).filter(ImageFilter.MaxFilter(size = 3))
+                        DepthImage(downsample(trnf_depth,factor)).save(os.path.join(trf_depth_dir, 'image_{:06d}.png'.format(num_images_per_state*state_id + k)))
                     #
                     if image_config['modal']:
                         modal_id_dir = os.path.join(modal_dir, 'image_{:06d}'.format(num_images_per_state*state_id + k))
                         if not os.path.exists(modal_id_dir):
                             os.mkdir(modal_id_dir)
                         for i in range(env.num_objects):
-                            BinaryImage(modal_segmask_arr[:,:,i]).save(os.path.join(modal_id_dir, 'channel_{:03d}.png'.format(i)))
+                            BinaryImage(downsample(modal_segmask_arr[:,:,i],factor)).save(os.path.join(modal_id_dir, 'channel_{:03d}.png'.format(i)))
                     if image_config['amodal']:
                         amodal_id_dir = os.path.join(amodal_dir, 'image_{:06d}'.format(num_images_per_state*state_id + k))
                         if not os.path.exists(amodal_id_dir):
                             os.mkdir(amodal_id_dir)
                         for i in range(env.num_objects):
-                            BinaryImage(amodal_segmask_arr[:,:,i]).save(os.path.join(amodal_id_dir, 'channel_{:03d}.png'.format(i)))
+                            BinaryImage(downsample(amodal_segmask_arr[:,:,i],factor)).save(os.path.join(amodal_id_dir, 'channel_{:03d}.png'.format(i)))
                     if image_config['semantic']:
-                        GrayscaleImage(stacked_segmask_arr.squeeze()).save(os.path.join(semantic_dir, 'image_{:06d}.png'.format(num_images_per_state*state_id + k)))
+                        GrayscaleImage(downsample(stacked_segmask_arr.squeeze(),factor)).save(os.path.join(semantic_dir, 'image_{:06d}.png'.format(num_images_per_state*state_id + k)))
                     
                     # Save split
                     if split == TRAIN_ID:
