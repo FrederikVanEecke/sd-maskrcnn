@@ -502,7 +502,7 @@ def generate_segmask_dataset(output_dataset_path, config, save_tensors=True, war
                     #
                     if image_config['tranformed_depth']:
                         #trnf_depth=cv2.resize(trnf_depth, dsize=(int(trnf_depth.shape[1]/4), int(trnf_depth.shape[0]/4)), interpolation=cv2.INTER_LANCZOS4)
-                        #trnf_depth = Image.fromarray(np.array(trnf_depth)).filter(ImageFilter.MaxFilter(size = 3))
+                        #trnf_depth = np.array(Image.fromarray(np.array(trnf_depth)).filter(ImageFilter.MaxFilter(size = 5)))
                         DepthImage(downsample(trnf_depth,factor)).save(os.path.join(trf_depth_dir, 'image_{:06d}.png'.format(num_images_per_state*state_id + k)))
                     #
                     if image_config['modal']:
@@ -518,7 +518,8 @@ def generate_segmask_dataset(output_dataset_path, config, save_tensors=True, war
                         for i in range(env.num_objects):
                             BinaryImage(downsample(amodal_segmask_arr[:,:,i],factor)).save(os.path.join(amodal_id_dir, 'channel_{:03d}.png'.format(i)))
                     if image_config['semantic']:
-                        GrayscaleImage(downsample(stacked_segmask_arr.squeeze(),factor)).save(os.path.join(semantic_dir, 'image_{:06d}.png'.format(num_images_per_state*state_id + k)))
+                        im = np.array(Image.fromarray(np.array(stacked_segmask_arr.squeeze())).filter(ImageFilter.MaxFilter(size = 5)))
+                        GrayscaleImage(downsample(im,factor)).save(os.path.join(semantic_dir, 'image_{:06d}.png'.format(num_images_per_state*state_id + k)))
                     
                     # Save split
                     if split == TRAIN_ID:

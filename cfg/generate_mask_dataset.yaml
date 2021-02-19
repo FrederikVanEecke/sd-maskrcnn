@@ -1,4 +1,4 @@
-num_states: 1                                 # Total number of states in dataset
+num_states: 10                                 # Total number of states in dataset
 num_images_per_state: 5                            # Number of images per state
 states_per_flush: 10                                # Number of states before writing tensors (if saving tensors)
 states_per_garbage_collect: 10                      # Number of states before garbage collection (due to pybullet memory issues)
@@ -19,7 +19,7 @@ images:
   amodal: 1
   semantic: 1
 
-downsample_factor: 4 # all images are downsampled by this factor 
+downsample_factor: 1 # all images are downsampled by this factor 
 
 vis:                                                # Visualization flags for viewing each state and generated images
   state: 0

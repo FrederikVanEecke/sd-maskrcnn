@@ -63,12 +63,12 @@ state_space:
 
   cameras: 
     general: 
-      im_width: 2064
-      im_height: 1544
-      fx: 2266.27
-      fy: 2267.04
-      cx: 1038.2 
-      cy: 788.761
+      im_width: 516 #2064
+      im_height: 386 #1544
+      fx: 566.56 # 2266.27
+      fy: 566.76 # 2267.04
+      cx: 259.55 # 1038.2 
+      cy: 197.19 # 788.761
       x: 0
       y: 0 
       radius: 0.7215
