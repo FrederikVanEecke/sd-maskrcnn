@@ -5,6 +5,7 @@ bin/
 etc/
 include/
 lib/
+Scripts/
 lib64/
 share/
 test_dataset/

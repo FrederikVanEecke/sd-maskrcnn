@@ -14,3 +14,5 @@ pyrender>=0.1.23
 pybullet
 trimesh[easy]
 scipy
+Pillow 
+opencv-python
