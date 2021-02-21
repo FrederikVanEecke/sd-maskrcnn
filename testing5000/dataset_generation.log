@@ -1,0 +1,1608 @@
+02-21 20:35:20 root       INFO     Root logger now logging to testing5000/dataset_generation.log
+02-21 20:35:20 tools/generate_segmask_dataset.py INFO     Creating datasets
+02-21 20:35:20 tools/generate_segmask_dataset.py INFO     Creating env took 0.005 sec
+02-21 20:35:20 tools/generate_segmask_dataset.py INFO     State: 000000
+02-21 20:35:20 HeapStateSpace INFO     Sampling from test
+02-21 20:35:20 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:35:22 HeapStateSpace WARNING  Object ycb~cubei6 fell out of the workspace!
+02-21 20:35:23 root       INFO     Dataset testing5000/state_tensors: Writing tensor 0 to disk
+02-21 20:35:24 tools/generate_segmask_dataset.py INFO     State: 000001
+02-21 20:35:24 HeapStateSpace INFO     Sampling from train
+02-21 20:35:24 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:35:25 root       INFO     Dataset testing5000/state_tensors: Writing tensor 1 to disk
+02-21 20:35:26 tools/generate_segmask_dataset.py INFO     State: 000002
+02-21 20:35:26 HeapStateSpace INFO     Sampling from train
+02-21 20:35:26 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:35:27 root       INFO     Dataset testing5000/state_tensors: Writing tensor 2 to disk
+02-21 20:35:28 tools/generate_segmask_dataset.py INFO     State: 000003
+02-21 20:35:28 HeapStateSpace INFO     Sampling from train
+02-21 20:35:28 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:35:31 root       INFO     Dataset testing5000/state_tensors: Writing tensor 3 to disk
+02-21 20:35:32 tools/generate_segmask_dataset.py INFO     State: 000004
+02-21 20:35:32 HeapStateSpace INFO     Sampling from train
+02-21 20:35:32 HeapStateSpace INFO     Sampling 3 objects
+02-21 20:35:32 root       INFO     Dataset testing5000/state_tensors: Writing tensor 4 to disk
+02-21 20:35:33 root       INFO     Dataset testing5000/image_tensors: Writing tensor 0 to disk
+02-21 20:35:33 tools/generate_segmask_dataset.py INFO     State: 000005
+02-21 20:35:33 HeapStateSpace INFO     Sampling from train
+02-21 20:35:33 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:35:33 HeapStateSpace WARNING  Object ycb~cubei19 fell out of the workspace!
+02-21 20:35:35 root       INFO     Dataset testing5000/state_tensors: Writing tensor 5 to disk
+02-21 20:35:35 tools/generate_segmask_dataset.py INFO     State: 000006
+02-21 20:35:35 HeapStateSpace INFO     Sampling from train
+02-21 20:35:35 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:35:36 HeapStateSpace WARNING  Object ycb~cubed3 fell out of the workspace!
+02-21 20:35:37 root       INFO     Dataset testing5000/state_tensors: Writing tensor 6 to disk
+02-21 20:35:38 tools/generate_segmask_dataset.py INFO     State: 000007
+02-21 20:35:38 HeapStateSpace INFO     Sampling from train
+02-21 20:35:38 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:35:39 root       INFO     Dataset testing5000/state_tensors: Writing tensor 7 to disk
+02-21 20:35:40 tools/generate_segmask_dataset.py INFO     State: 000008
+02-21 20:35:40 HeapStateSpace INFO     Sampling from train
+02-21 20:35:40 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:35:41 HeapStateSpace WARNING  Object ycb~cubed3 fell out of the workspace!
+02-21 20:35:42 root       INFO     Dataset testing5000/state_tensors: Writing tensor 8 to disk
+02-21 20:35:43 tools/generate_segmask_dataset.py INFO     State: 000009
+02-21 20:35:43 HeapStateSpace INFO     Sampling from train
+02-21 20:35:43 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:35:44 HeapStateSpace WARNING  Object ycb~cubei9 fell out of the workspace!
+02-21 20:35:44 HeapStateSpace WARNING  Object ycb~cubei11 fell out of the workspace!
+02-21 20:35:46 root       INFO     Dataset testing5000/state_tensors: Writing tensor 9 to disk
+02-21 20:35:46 root       INFO     Dataset testing5000/image_tensors: Writing tensor 1 to disk
+02-21 20:35:46 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:35:46 tools/generate_segmask_dataset.py INFO     State: 000010
+02-21 20:35:46 HeapStateSpace INFO     Sampling from test
+02-21 20:35:46 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:35:47 root       INFO     Dataset testing5000/state_tensors: Writing tensor 10 to disk
+02-21 20:35:48 tools/generate_segmask_dataset.py INFO     State: 000011
+02-21 20:35:48 HeapStateSpace INFO     Sampling from test
+02-21 20:35:48 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:35:49 root       INFO     Dataset testing5000/state_tensors: Writing tensor 11 to disk
+02-21 20:35:50 tools/generate_segmask_dataset.py INFO     State: 000012
+02-21 20:35:50 HeapStateSpace INFO     Sampling from train
+02-21 20:35:50 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:35:50 HeapStateSpace WARNING  Object ycb~cubei5 fell out of the workspace!
+02-21 20:35:51 HeapStateSpace WARNING  Object ycb~cubed3 fell out of the workspace!
+02-21 20:35:52 root       INFO     Dataset testing5000/state_tensors: Writing tensor 12 to disk
+02-21 20:35:53 tools/generate_segmask_dataset.py INFO     State: 000013
+02-21 20:35:53 HeapStateSpace INFO     Sampling from train
+02-21 20:35:53 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:35:54 HeapStateSpace WARNING  Object ycb~cubed4 fell out of the workspace!
+02-21 20:35:55 root       INFO     Dataset testing5000/state_tensors: Writing tensor 13 to disk
+02-21 20:35:55 tools/generate_segmask_dataset.py INFO     State: 000014
+02-21 20:35:56 HeapStateSpace INFO     Sampling from train
+02-21 20:35:56 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:35:58 HeapStateSpace WARNING  Object ycb~cubei21 fell out of the workspace!
+02-21 20:35:58 root       INFO     Dataset testing5000/state_tensors: Writing tensor 14 to disk
+02-21 20:35:59 root       INFO     Dataset testing5000/image_tensors: Writing tensor 2 to disk
+02-21 20:35:59 tools/generate_segmask_dataset.py INFO     State: 000015
+02-21 20:35:59 HeapStateSpace INFO     Sampling from train
+02-21 20:35:59 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:36:02 root       INFO     Dataset testing5000/state_tensors: Writing tensor 15 to disk
+02-21 20:36:02 tools/generate_segmask_dataset.py INFO     State: 000016
+02-21 20:36:02 HeapStateSpace INFO     Sampling from train
+02-21 20:36:02 HeapStateSpace INFO     Sampling 13 objects
+02-21 20:36:03 HeapStateSpace WARNING  Object ycb~cubei21 fell out of the workspace!
+02-21 20:36:06 root       INFO     Dataset testing5000/state_tensors: Writing tensor 16 to disk
+02-21 20:36:07 tools/generate_segmask_dataset.py INFO     State: 000017
+02-21 20:36:07 HeapStateSpace INFO     Sampling from train
+02-21 20:36:07 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:36:08 HeapStateSpace WARNING  Object ycb~cubei1 fell out of the workspace!
+02-21 20:36:09 root       INFO     Dataset testing5000/state_tensors: Writing tensor 17 to disk
+02-21 20:36:10 tools/generate_segmask_dataset.py INFO     State: 000018
+02-21 20:36:10 HeapStateSpace INFO     Sampling from train
+02-21 20:36:10 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:36:12 root       INFO     Dataset testing5000/state_tensors: Writing tensor 18 to disk
+02-21 20:36:12 tools/generate_segmask_dataset.py INFO     State: 000019
+02-21 20:36:12 HeapStateSpace INFO     Sampling from train
+02-21 20:36:12 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:36:14 root       INFO     Dataset testing5000/state_tensors: Writing tensor 19 to disk
+02-21 20:36:15 root       INFO     Dataset testing5000/image_tensors: Writing tensor 3 to disk
+02-21 20:36:15 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:36:15 tools/generate_segmask_dataset.py INFO     State: 000020
+02-21 20:36:15 HeapStateSpace INFO     Sampling from train
+02-21 20:36:15 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:36:15 HeapStateSpace WARNING  Object ycb~cubei4 fell out of the workspace!
+02-21 20:36:16 root       INFO     Dataset testing5000/state_tensors: Writing tensor 20 to disk
+02-21 20:36:17 tools/generate_segmask_dataset.py INFO     State: 000021
+02-21 20:36:17 HeapStateSpace INFO     Sampling from train
+02-21 20:36:17 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:36:17 HeapStateSpace WARNING  Object ycb~cubed3 fell out of the workspace!
+02-21 20:36:17 HeapStateSpace WARNING  Object ycb~cubei14 fell out of the workspace!
+02-21 20:36:18 root       INFO     Dataset testing5000/state_tensors: Writing tensor 21 to disk
+02-21 20:36:19 tools/generate_segmask_dataset.py INFO     State: 000022
+02-21 20:36:19 HeapStateSpace INFO     Sampling from train
+02-21 20:36:19 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:36:20 root       INFO     Dataset testing5000/state_tensors: Writing tensor 22 to disk
+02-21 20:36:21 tools/generate_segmask_dataset.py INFO     State: 000023
+02-21 20:36:21 HeapStateSpace INFO     Sampling from train
+02-21 20:36:21 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:36:22 root       INFO     Dataset testing5000/state_tensors: Writing tensor 23 to disk
+02-21 20:36:23 tools/generate_segmask_dataset.py INFO     State: 000024
+02-21 20:36:23 HeapStateSpace INFO     Sampling from train
+02-21 20:36:23 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:36:24 root       INFO     Dataset testing5000/state_tensors: Writing tensor 24 to disk
+02-21 20:36:25 root       INFO     Dataset testing5000/image_tensors: Writing tensor 4 to disk
+02-21 20:36:25 tools/generate_segmask_dataset.py INFO     State: 000025
+02-21 20:36:25 HeapStateSpace INFO     Sampling from train
+02-21 20:36:25 HeapStateSpace INFO     Sampling 14 objects
+02-21 20:36:27 HeapStateSpace WARNING  Object ycb~cube_base fell out of the workspace!
+02-21 20:36:31 root       INFO     Dataset testing5000/state_tensors: Writing tensor 25 to disk
+02-21 20:36:31 tools/generate_segmask_dataset.py INFO     State: 000026
+02-21 20:36:31 HeapStateSpace INFO     Sampling from train
+02-21 20:36:31 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:36:32 HeapStateSpace WARNING  Object ycb~cubei3 fell out of the workspace!
+02-21 20:36:32 HeapStateSpace WARNING  Object ycb~cubed4 fell out of the workspace!
+02-21 20:36:34 root       INFO     Dataset testing5000/state_tensors: Writing tensor 26 to disk
+02-21 20:36:35 tools/generate_segmask_dataset.py INFO     State: 000027
+02-21 20:36:35 HeapStateSpace INFO     Sampling from train
+02-21 20:36:35 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:36:35 HeapStateSpace WARNING  Object ycb~cubei9 fell out of the workspace!
+02-21 20:36:36 root       INFO     Dataset testing5000/state_tensors: Writing tensor 27 to disk
+02-21 20:36:37 tools/generate_segmask_dataset.py INFO     State: 000028
+02-21 20:36:37 HeapStateSpace INFO     Sampling from train
+02-21 20:36:37 HeapStateSpace INFO     Sampling 3 objects
+02-21 20:36:37 root       INFO     Dataset testing5000/state_tensors: Writing tensor 28 to disk
+02-21 20:36:38 tools/generate_segmask_dataset.py INFO     State: 000029
+02-21 20:36:38 HeapStateSpace INFO     Sampling from train
+02-21 20:36:38 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:36:40 root       INFO     Dataset testing5000/state_tensors: Writing tensor 29 to disk
+02-21 20:36:41 root       INFO     Dataset testing5000/image_tensors: Writing tensor 5 to disk
+02-21 20:36:41 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:36:41 tools/generate_segmask_dataset.py INFO     State: 000030
+02-21 20:36:41 HeapStateSpace INFO     Sampling from train
+02-21 20:36:41 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:36:41 HeapStateSpace WARNING  Object ycb~cubei8 fell out of the workspace!
+02-21 20:36:43 root       INFO     Dataset testing5000/state_tensors: Writing tensor 30 to disk
+02-21 20:36:44 tools/generate_segmask_dataset.py INFO     State: 000031
+02-21 20:36:44 HeapStateSpace INFO     Sampling from test
+02-21 20:36:44 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:36:44 HeapStateSpace WARNING  Object ycb~cubei15 fell out of the workspace!
+02-21 20:36:45 root       INFO     Dataset testing5000/state_tensors: Writing tensor 31 to disk
+02-21 20:36:46 tools/generate_segmask_dataset.py INFO     State: 000032
+02-21 20:36:46 HeapStateSpace INFO     Sampling from test
+02-21 20:36:46 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:36:47 root       INFO     Dataset testing5000/state_tensors: Writing tensor 32 to disk
+02-21 20:36:48 tools/generate_segmask_dataset.py INFO     State: 000033
+02-21 20:36:48 HeapStateSpace INFO     Sampling from test
+02-21 20:36:48 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:36:48 HeapStateSpace WARNING  Object ycb~cubei10 fell out of the workspace!
+02-21 20:36:49 HeapStateSpace WARNING  Object ycb~cubed5 fell out of the workspace!
+02-21 20:36:50 root       INFO     Dataset testing5000/state_tensors: Writing tensor 33 to disk
+02-21 20:36:51 tools/generate_segmask_dataset.py INFO     State: 000034
+02-21 20:36:51 HeapStateSpace INFO     Sampling from train
+02-21 20:36:51 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:36:52 root       INFO     Dataset testing5000/state_tensors: Writing tensor 34 to disk
+02-21 20:36:53 root       INFO     Dataset testing5000/image_tensors: Writing tensor 6 to disk
+02-21 20:36:53 tools/generate_segmask_dataset.py INFO     State: 000035
+02-21 20:36:53 HeapStateSpace INFO     Sampling from test
+02-21 20:36:53 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:36:54 root       INFO     Dataset testing5000/state_tensors: Writing tensor 35 to disk
+02-21 20:36:55 tools/generate_segmask_dataset.py INFO     State: 000036
+02-21 20:36:55 HeapStateSpace INFO     Sampling from train
+02-21 20:36:55 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:36:56 HeapStateSpace WARNING  Object ycb~cube_b3 fell out of the workspace!
+02-21 20:36:57 root       INFO     Dataset testing5000/state_tensors: Writing tensor 36 to disk
+02-21 20:36:57 tools/generate_segmask_dataset.py INFO     State: 000037
+02-21 20:36:58 HeapStateSpace INFO     Sampling from train
+02-21 20:36:58 HeapStateSpace INFO     Sampling 11 objects
+02-21 20:37:00 HeapStateSpace WARNING  Object ycb~cube_b2 fell out of the workspace!
+02-21 20:37:00 root       INFO     Dataset testing5000/state_tensors: Writing tensor 37 to disk
+02-21 20:37:01 tools/generate_segmask_dataset.py INFO     State: 000038
+02-21 20:37:01 HeapStateSpace INFO     Sampling from test
+02-21 20:37:01 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:37:04 root       INFO     Dataset testing5000/state_tensors: Writing tensor 38 to disk
+02-21 20:37:04 tools/generate_segmask_dataset.py INFO     State: 000039
+02-21 20:37:05 HeapStateSpace INFO     Sampling from test
+02-21 20:37:05 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:37:07 root       INFO     Dataset testing5000/state_tensors: Writing tensor 39 to disk
+02-21 20:37:07 root       INFO     Dataset testing5000/image_tensors: Writing tensor 7 to disk
+02-21 20:37:08 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:37:08 tools/generate_segmask_dataset.py INFO     State: 000040
+02-21 20:37:08 HeapStateSpace INFO     Sampling from train
+02-21 20:37:08 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:37:09 HeapStateSpace WARNING  Object ycb~cubei8 fell out of the workspace!
+02-21 20:37:11 root       INFO     Dataset testing5000/state_tensors: Writing tensor 40 to disk
+02-21 20:37:11 tools/generate_segmask_dataset.py INFO     State: 000041
+02-21 20:37:11 HeapStateSpace INFO     Sampling from train
+02-21 20:37:11 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:37:11 HeapStateSpace WARNING  Object ycb~cubei5 fell out of the workspace!
+02-21 20:37:13 root       INFO     Dataset testing5000/state_tensors: Writing tensor 41 to disk
+02-21 20:37:14 tools/generate_segmask_dataset.py INFO     State: 000042
+02-21 20:37:14 HeapStateSpace INFO     Sampling from train
+02-21 20:37:14 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:37:16 root       INFO     Dataset testing5000/state_tensors: Writing tensor 42 to disk
+02-21 20:37:17 tools/generate_segmask_dataset.py INFO     State: 000043
+02-21 20:37:17 HeapStateSpace INFO     Sampling from test
+02-21 20:37:17 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:37:19 root       INFO     Dataset testing5000/state_tensors: Writing tensor 43 to disk
+02-21 20:37:20 tools/generate_segmask_dataset.py INFO     State: 000044
+02-21 20:37:20 HeapStateSpace INFO     Sampling from train
+02-21 20:37:20 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:37:22 root       INFO     Dataset testing5000/state_tensors: Writing tensor 44 to disk
+02-21 20:37:23 root       INFO     Dataset testing5000/image_tensors: Writing tensor 8 to disk
+02-21 20:37:23 tools/generate_segmask_dataset.py INFO     State: 000045
+02-21 20:37:23 HeapStateSpace INFO     Sampling from train
+02-21 20:37:23 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:37:25 root       INFO     Dataset testing5000/state_tensors: Writing tensor 45 to disk
+02-21 20:37:25 tools/generate_segmask_dataset.py INFO     State: 000046
+02-21 20:37:25 HeapStateSpace INFO     Sampling from train
+02-21 20:37:25 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:37:26 HeapStateSpace WARNING  Object ycb~cubed1 fell out of the workspace!
+02-21 20:37:27 root       INFO     Dataset testing5000/state_tensors: Writing tensor 46 to disk
+02-21 20:37:27 tools/generate_segmask_dataset.py INFO     State: 000047
+02-21 20:37:27 HeapStateSpace INFO     Sampling from train
+02-21 20:37:27 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:37:28 HeapStateSpace WARNING  Object ycb~cubei5 fell out of the workspace!
+02-21 20:37:29 root       INFO     Dataset testing5000/state_tensors: Writing tensor 47 to disk
+02-21 20:37:30 tools/generate_segmask_dataset.py INFO     State: 000048
+02-21 20:37:30 HeapStateSpace INFO     Sampling from train
+02-21 20:37:30 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:37:31 HeapStateSpace WARNING  Object ycb~cubei19 fell out of the workspace!
+02-21 20:37:31 HeapStateSpace WARNING  Object ycb~cubei1 fell out of the workspace!
+02-21 20:37:32 root       INFO     Dataset testing5000/state_tensors: Writing tensor 48 to disk
+02-21 20:37:33 tools/generate_segmask_dataset.py INFO     State: 000049
+02-21 20:37:33 HeapStateSpace INFO     Sampling from train
+02-21 20:37:33 HeapStateSpace INFO     Sampling 11 objects
+02-21 20:37:33 HeapStateSpace WARNING  Object ycb~cubei1 fell out of the workspace!
+02-21 20:37:35 HeapStateSpace WARNING  Object ycb~cubei8 fell out of the workspace!
+02-21 20:37:36 root       INFO     Dataset testing5000/state_tensors: Writing tensor 49 to disk
+02-21 20:37:37 root       INFO     Dataset testing5000/image_tensors: Writing tensor 9 to disk
+02-21 20:37:37 tools/generate_segmask_dataset.py INFO     Creating env took 0.007 sec
+02-21 20:37:37 tools/generate_segmask_dataset.py INFO     State: 000050
+02-21 20:37:37 HeapStateSpace INFO     Sampling from train
+02-21 20:37:37 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:37:38 root       INFO     Dataset testing5000/state_tensors: Writing tensor 50 to disk
+02-21 20:37:39 tools/generate_segmask_dataset.py INFO     State: 000051
+02-21 20:37:39 HeapStateSpace INFO     Sampling from test
+02-21 20:37:39 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:37:40 HeapStateSpace WARNING  Object ycb~cubei10 fell out of the workspace!
+02-21 20:37:40 root       INFO     Dataset testing5000/state_tensors: Writing tensor 51 to disk
+02-21 20:37:41 tools/generate_segmask_dataset.py INFO     State: 000052
+02-21 20:37:41 HeapStateSpace INFO     Sampling from train
+02-21 20:37:41 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:37:42 HeapStateSpace WARNING  Object ycb~cubei14 fell out of the workspace!
+02-21 20:37:44 root       INFO     Dataset testing5000/state_tensors: Writing tensor 52 to disk
+02-21 20:37:45 tools/generate_segmask_dataset.py INFO     State: 000053
+02-21 20:37:45 HeapStateSpace INFO     Sampling from train
+02-21 20:37:45 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:37:46 HeapStateSpace WARNING  Object ycb~cubei9 fell out of the workspace!
+02-21 20:37:46 root       INFO     Dataset testing5000/state_tensors: Writing tensor 53 to disk
+02-21 20:37:47 tools/generate_segmask_dataset.py INFO     State: 000054
+02-21 20:37:47 HeapStateSpace INFO     Sampling from train
+02-21 20:37:47 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:37:49 root       INFO     Dataset testing5000/state_tensors: Writing tensor 54 to disk
+02-21 20:37:50 root       INFO     Dataset testing5000/image_tensors: Writing tensor 10 to disk
+02-21 20:37:50 tools/generate_segmask_dataset.py INFO     State: 000055
+02-21 20:37:50 HeapStateSpace INFO     Sampling from train
+02-21 20:37:50 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:37:51 root       INFO     Dataset testing5000/state_tensors: Writing tensor 55 to disk
+02-21 20:37:52 tools/generate_segmask_dataset.py INFO     State: 000056
+02-21 20:37:52 HeapStateSpace INFO     Sampling from train
+02-21 20:37:52 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:37:56 root       INFO     Dataset testing5000/state_tensors: Writing tensor 56 to disk
+02-21 20:37:56 tools/generate_segmask_dataset.py INFO     State: 000057
+02-21 20:37:57 HeapStateSpace INFO     Sampling from test
+02-21 20:37:57 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:38:00 root       INFO     Dataset testing5000/state_tensors: Writing tensor 57 to disk
+02-21 20:38:01 tools/generate_segmask_dataset.py INFO     State: 000058
+02-21 20:38:01 HeapStateSpace INFO     Sampling from test
+02-21 20:38:01 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:38:02 HeapStateSpace WARNING  Object ycb~cubei16 fell out of the workspace!
+02-21 20:38:03 root       INFO     Dataset testing5000/state_tensors: Writing tensor 58 to disk
+02-21 20:38:04 tools/generate_segmask_dataset.py INFO     State: 000059
+02-21 20:38:04 HeapStateSpace INFO     Sampling from train
+02-21 20:38:04 HeapStateSpace INFO     Sampling 12 objects
+02-21 20:38:04 HeapStateSpace WARNING  Object ycb~cubei19 fell out of the workspace!
+02-21 20:38:07 root       INFO     Dataset testing5000/state_tensors: Writing tensor 59 to disk
+02-21 20:38:08 root       INFO     Dataset testing5000/image_tensors: Writing tensor 11 to disk
+02-21 20:38:08 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:38:08 tools/generate_segmask_dataset.py INFO     State: 000060
+02-21 20:38:08 HeapStateSpace INFO     Sampling from train
+02-21 20:38:08 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:38:10 root       INFO     Dataset testing5000/state_tensors: Writing tensor 60 to disk
+02-21 20:38:11 tools/generate_segmask_dataset.py INFO     State: 000061
+02-21 20:38:11 HeapStateSpace INFO     Sampling from test
+02-21 20:38:11 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:38:13 root       INFO     Dataset testing5000/state_tensors: Writing tensor 61 to disk
+02-21 20:38:14 tools/generate_segmask_dataset.py INFO     State: 000062
+02-21 20:38:14 HeapStateSpace INFO     Sampling from train
+02-21 20:38:14 HeapStateSpace INFO     Sampling 3 objects
+02-21 20:38:15 root       INFO     Dataset testing5000/state_tensors: Writing tensor 62 to disk
+02-21 20:38:16 tools/generate_segmask_dataset.py INFO     State: 000063
+02-21 20:38:16 HeapStateSpace INFO     Sampling from train
+02-21 20:38:16 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:38:18 root       INFO     Dataset testing5000/state_tensors: Writing tensor 63 to disk
+02-21 20:38:19 tools/generate_segmask_dataset.py INFO     State: 000064
+02-21 20:38:19 HeapStateSpace INFO     Sampling from train
+02-21 20:38:19 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:38:22 root       INFO     Dataset testing5000/state_tensors: Writing tensor 64 to disk
+02-21 20:38:23 root       INFO     Dataset testing5000/image_tensors: Writing tensor 12 to disk
+02-21 20:38:23 tools/generate_segmask_dataset.py INFO     State: 000065
+02-21 20:38:23 HeapStateSpace INFO     Sampling from train
+02-21 20:38:23 HeapStateSpace INFO     Sampling 11 objects
+02-21 20:38:26 root       INFO     Dataset testing5000/state_tensors: Writing tensor 65 to disk
+02-21 20:38:27 tools/generate_segmask_dataset.py INFO     State: 000066
+02-21 20:38:27 HeapStateSpace INFO     Sampling from train
+02-21 20:38:27 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:38:29 root       INFO     Dataset testing5000/state_tensors: Writing tensor 66 to disk
+02-21 20:38:30 tools/generate_segmask_dataset.py INFO     State: 000067
+02-21 20:38:30 HeapStateSpace INFO     Sampling from train
+02-21 20:38:30 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:38:31 root       INFO     Dataset testing5000/state_tensors: Writing tensor 67 to disk
+02-21 20:38:32 tools/generate_segmask_dataset.py INFO     State: 000068
+02-21 20:38:32 HeapStateSpace INFO     Sampling from test
+02-21 20:38:32 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:38:35 root       INFO     Dataset testing5000/state_tensors: Writing tensor 68 to disk
+02-21 20:38:36 tools/generate_segmask_dataset.py INFO     State: 000069
+02-21 20:38:36 HeapStateSpace INFO     Sampling from train
+02-21 20:38:36 HeapStateSpace INFO     Sampling 12 objects
+02-21 20:38:36 HeapStateSpace WARNING  Object ycb~cubei2 fell out of the workspace!
+02-21 20:38:37 HeapStateSpace WARNING  Object ycb~cube_b5 fell out of the workspace!
+02-21 20:38:40 HeapStateSpace WARNING  Object ycb~cubed3 fell out of the workspace!
+02-21 20:38:41 HeapStateSpace WARNING  Object ycb~cube_b2 fell out of the workspace!
+02-21 20:38:42 HeapStateSpace WARNING  Object ycb~cubei3 fell out of the workspace!
+02-21 20:38:43 root       INFO     Dataset testing5000/state_tensors: Writing tensor 69 to disk
+02-21 20:38:44 root       INFO     Dataset testing5000/image_tensors: Writing tensor 13 to disk
+02-21 20:38:44 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:38:44 tools/generate_segmask_dataset.py INFO     State: 000070
+02-21 20:38:44 HeapStateSpace INFO     Sampling from train
+02-21 20:38:44 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:38:45 root       INFO     Dataset testing5000/state_tensors: Writing tensor 70 to disk
+02-21 20:38:45 tools/generate_segmask_dataset.py INFO     State: 000071
+02-21 20:38:45 HeapStateSpace INFO     Sampling from train
+02-21 20:38:45 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:38:47 root       INFO     Dataset testing5000/state_tensors: Writing tensor 71 to disk
+02-21 20:38:48 tools/generate_segmask_dataset.py INFO     State: 000072
+02-21 20:38:48 HeapStateSpace INFO     Sampling from train
+02-21 20:38:48 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:38:48 HeapStateSpace WARNING  Object ycb~cubei21 fell out of the workspace!
+02-21 20:38:50 HeapStateSpace WARNING  Object ycb~cube_base fell out of the workspace!
+02-21 20:38:51 root       INFO     Dataset testing5000/state_tensors: Writing tensor 72 to disk
+02-21 20:38:52 tools/generate_segmask_dataset.py INFO     State: 000073
+02-21 20:38:52 HeapStateSpace INFO     Sampling from train
+02-21 20:38:52 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:38:53 HeapStateSpace WARNING  Object ycb~cubed4 fell out of the workspace!
+02-21 20:38:53 root       INFO     Dataset testing5000/state_tensors: Writing tensor 73 to disk
+02-21 20:38:54 tools/generate_segmask_dataset.py INFO     State: 000074
+02-21 20:38:54 HeapStateSpace INFO     Sampling from train
+02-21 20:38:54 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:38:55 HeapStateSpace WARNING  Object ycb~cube_b1 fell out of the workspace!
+02-21 20:38:56 root       INFO     Dataset testing5000/state_tensors: Writing tensor 74 to disk
+02-21 20:38:56 root       INFO     Dataset testing5000/image_tensors: Writing tensor 14 to disk
+02-21 20:38:56 tools/generate_segmask_dataset.py INFO     State: 000075
+02-21 20:38:56 HeapStateSpace INFO     Sampling from train
+02-21 20:38:56 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:38:56 HeapStateSpace WARNING  Object ycb~cubed1 fell out of the workspace!
+02-21 20:38:59 root       INFO     Dataset testing5000/state_tensors: Writing tensor 75 to disk
+02-21 20:38:59 tools/generate_segmask_dataset.py INFO     State: 000076
+02-21 20:38:59 HeapStateSpace INFO     Sampling from train
+02-21 20:38:59 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:39:00 HeapStateSpace WARNING  Object ycb~cube_b1 fell out of the workspace!
+02-21 20:39:00 HeapStateSpace WARNING  Object ycb~cubed4 fell out of the workspace!
+02-21 20:39:01 HeapStateSpace WARNING  Object ycb~cubei14 fell out of the workspace!
+02-21 20:39:02 HeapStateSpace WARNING  Object ycb~cubei20 fell out of the workspace!
+02-21 20:39:03 root       INFO     Dataset testing5000/state_tensors: Writing tensor 76 to disk
+02-21 20:39:03 tools/generate_segmask_dataset.py INFO     State: 000077
+02-21 20:39:03 HeapStateSpace INFO     Sampling from train
+02-21 20:39:03 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:39:04 HeapStateSpace WARNING  Object ycb~cube_b10 fell out of the workspace!
+02-21 20:39:07 root       INFO     Dataset testing5000/state_tensors: Writing tensor 77 to disk
+02-21 20:39:07 tools/generate_segmask_dataset.py INFO     State: 000078
+02-21 20:39:07 HeapStateSpace INFO     Sampling from train
+02-21 20:39:07 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:39:09 root       INFO     Dataset testing5000/state_tensors: Writing tensor 78 to disk
+02-21 20:39:10 tools/generate_segmask_dataset.py INFO     State: 000079
+02-21 20:39:10 HeapStateSpace INFO     Sampling from train
+02-21 20:39:10 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:39:11 root       INFO     Dataset testing5000/state_tensors: Writing tensor 79 to disk
+02-21 20:39:12 root       INFO     Dataset testing5000/image_tensors: Writing tensor 15 to disk
+02-21 20:39:12 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:39:12 tools/generate_segmask_dataset.py INFO     State: 000080
+02-21 20:39:12 HeapStateSpace INFO     Sampling from train
+02-21 20:39:12 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:39:13 root       INFO     Dataset testing5000/state_tensors: Writing tensor 80 to disk
+02-21 20:39:13 tools/generate_segmask_dataset.py INFO     State: 000081
+02-21 20:39:14 HeapStateSpace INFO     Sampling from train
+02-21 20:39:14 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:39:14 HeapStateSpace WARNING  Object ycb~cube_b6 fell out of the workspace!
+02-21 20:39:14 HeapStateSpace WARNING  Object ycb~cubei1 fell out of the workspace!
+02-21 20:39:15 HeapStateSpace WARNING  Object ycb~cubei2 fell out of the workspace!
+02-21 20:39:15 HeapStateSpace WARNING  Object ycb~cubei3 fell out of the workspace!
+02-21 20:39:16 HeapStateSpace WARNING  Object ycb~cubei5 fell out of the workspace!
+02-21 20:39:17 root       INFO     Dataset testing5000/state_tensors: Writing tensor 81 to disk
+02-21 20:39:17 tools/generate_segmask_dataset.py INFO     State: 000082
+02-21 20:39:17 HeapStateSpace INFO     Sampling from train
+02-21 20:39:17 HeapStateSpace INFO     Sampling 4 objects
+02-21 20:39:18 root       INFO     Dataset testing5000/state_tensors: Writing tensor 82 to disk
+02-21 20:39:19 tools/generate_segmask_dataset.py INFO     State: 000083
+02-21 20:39:19 HeapStateSpace INFO     Sampling from test
+02-21 20:39:19 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:39:21 HeapStateSpace WARNING  Object ycb~cubei6 fell out of the workspace!
+02-21 20:39:21 root       INFO     Dataset testing5000/state_tensors: Writing tensor 83 to disk
+02-21 20:39:22 tools/generate_segmask_dataset.py INFO     State: 000084
+02-21 20:39:22 HeapStateSpace INFO     Sampling from train
+02-21 20:39:22 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:39:22 HeapStateSpace WARNING  Object ycb~cubei8 fell out of the workspace!
+02-21 20:39:23 root       INFO     Dataset testing5000/state_tensors: Writing tensor 84 to disk
+02-21 20:39:24 root       INFO     Dataset testing5000/image_tensors: Writing tensor 16 to disk
+02-21 20:39:24 tools/generate_segmask_dataset.py INFO     State: 000085
+02-21 20:39:24 HeapStateSpace INFO     Sampling from train
+02-21 20:39:24 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:39:25 HeapStateSpace WARNING  Object ycb~cubei2 fell out of the workspace!
+02-21 20:39:26 root       INFO     Dataset testing5000/state_tensors: Writing tensor 85 to disk
+02-21 20:39:27 tools/generate_segmask_dataset.py INFO     State: 000086
+02-21 20:39:27 HeapStateSpace INFO     Sampling from train
+02-21 20:39:27 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:39:27 HeapStateSpace WARNING  Object ycb~cubei9 fell out of the workspace!
+02-21 20:39:28 root       INFO     Dataset testing5000/state_tensors: Writing tensor 86 to disk
+02-21 20:39:28 tools/generate_segmask_dataset.py INFO     State: 000087
+02-21 20:39:28 HeapStateSpace INFO     Sampling from train
+02-21 20:39:28 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:39:31 root       INFO     Dataset testing5000/state_tensors: Writing tensor 87 to disk
+02-21 20:39:31 tools/generate_segmask_dataset.py INFO     State: 000088
+02-21 20:39:32 HeapStateSpace INFO     Sampling from train
+02-21 20:39:32 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:39:32 HeapStateSpace WARNING  Object ycb~cubei9 fell out of the workspace!
+02-21 20:39:34 root       INFO     Dataset testing5000/state_tensors: Writing tensor 88 to disk
+02-21 20:39:35 tools/generate_segmask_dataset.py INFO     State: 000089
+02-21 20:39:35 HeapStateSpace INFO     Sampling from train
+02-21 20:39:35 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:39:35 HeapStateSpace WARNING  Object ycb~cube_base fell out of the workspace!
+02-21 20:39:36 HeapStateSpace WARNING  Object ycb~cubei2 fell out of the workspace!
+02-21 20:39:38 root       INFO     Dataset testing5000/state_tensors: Writing tensor 89 to disk
+02-21 20:39:38 root       INFO     Dataset testing5000/image_tensors: Writing tensor 17 to disk
+02-21 20:39:39 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:39:39 tools/generate_segmask_dataset.py INFO     State: 000090
+02-21 20:39:39 HeapStateSpace INFO     Sampling from test
+02-21 20:39:39 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:39:39 HeapStateSpace WARNING  Object ycb~cubei7 fell out of the workspace!
+02-21 20:39:40 HeapStateSpace WARNING  Object ycb~cubei18 fell out of the workspace!
+02-21 20:39:41 root       INFO     Dataset testing5000/state_tensors: Writing tensor 90 to disk
+02-21 20:39:42 tools/generate_segmask_dataset.py INFO     State: 000091
+02-21 20:39:42 HeapStateSpace INFO     Sampling from train
+02-21 20:39:42 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:39:43 root       INFO     Dataset testing5000/state_tensors: Writing tensor 91 to disk
+02-21 20:39:44 tools/generate_segmask_dataset.py INFO     State: 000092
+02-21 20:39:44 HeapStateSpace INFO     Sampling from train
+02-21 20:39:44 HeapStateSpace INFO     Sampling 11 objects
+02-21 20:39:44 HeapStateSpace WARNING  Object ycb~cubei20 fell out of the workspace!
+02-21 20:39:47 root       INFO     Dataset testing5000/state_tensors: Writing tensor 92 to disk
+02-21 20:39:48 tools/generate_segmask_dataset.py INFO     State: 000093
+02-21 20:39:48 HeapStateSpace INFO     Sampling from test
+02-21 20:39:48 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:39:49 root       INFO     Dataset testing5000/state_tensors: Writing tensor 93 to disk
+02-21 20:39:50 tools/generate_segmask_dataset.py INFO     State: 000094
+02-21 20:39:50 HeapStateSpace INFO     Sampling from train
+02-21 20:39:50 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:39:52 root       INFO     Dataset testing5000/state_tensors: Writing tensor 94 to disk
+02-21 20:39:53 root       INFO     Dataset testing5000/image_tensors: Writing tensor 18 to disk
+02-21 20:39:53 tools/generate_segmask_dataset.py INFO     State: 000095
+02-21 20:39:53 HeapStateSpace INFO     Sampling from train
+02-21 20:39:53 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:39:55 HeapStateSpace WARNING  Object ycb~cubed1 fell out of the workspace!
+02-21 20:39:55 root       INFO     Dataset testing5000/state_tensors: Writing tensor 95 to disk
+02-21 20:39:56 tools/generate_segmask_dataset.py INFO     State: 000096
+02-21 20:39:56 HeapStateSpace INFO     Sampling from train
+02-21 20:39:56 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:39:57 root       INFO     Dataset testing5000/state_tensors: Writing tensor 96 to disk
+02-21 20:39:58 tools/generate_segmask_dataset.py INFO     State: 000097
+02-21 20:39:58 HeapStateSpace INFO     Sampling from train
+02-21 20:39:58 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:39:59 HeapStateSpace WARNING  Object ycb~cube_b5 fell out of the workspace!
+02-21 20:39:59 root       INFO     Dataset testing5000/state_tensors: Writing tensor 97 to disk
+02-21 20:40:00 tools/generate_segmask_dataset.py INFO     State: 000098
+02-21 20:40:00 HeapStateSpace INFO     Sampling from train
+02-21 20:40:00 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:40:00 HeapStateSpace WARNING  Object ycb~cubei11 fell out of the workspace!
+02-21 20:40:01 root       INFO     Dataset testing5000/state_tensors: Writing tensor 98 to disk
+02-21 20:40:02 tools/generate_segmask_dataset.py INFO     State: 000099
+02-21 20:40:02 HeapStateSpace INFO     Sampling from train
+02-21 20:40:02 HeapStateSpace INFO     Sampling 12 objects
+02-21 20:40:05 root       INFO     Dataset testing5000/state_tensors: Writing tensor 99 to disk
+02-21 20:40:06 root       INFO     Dataset testing5000/image_tensors: Writing tensor 19 to disk
+02-21 20:40:06 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:40:06 tools/generate_segmask_dataset.py INFO     State: 000100
+02-21 20:40:06 HeapStateSpace INFO     Sampling from train
+02-21 20:40:06 HeapStateSpace INFO     Sampling 4 objects
+02-21 20:40:07 HeapStateSpace WARNING  Object ycb~cube_b6 fell out of the workspace!
+02-21 20:40:07 root       INFO     Dataset testing5000/state_tensors: Writing tensor 100 to disk
+02-21 20:40:08 tools/generate_segmask_dataset.py INFO     State: 000101
+02-21 20:40:08 HeapStateSpace INFO     Sampling from train
+02-21 20:40:08 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:40:10 HeapStateSpace WARNING  Object ycb~cubei21 fell out of the workspace!
+02-21 20:40:11 root       INFO     Dataset testing5000/state_tensors: Writing tensor 101 to disk
+02-21 20:40:12 tools/generate_segmask_dataset.py INFO     State: 000102
+02-21 20:40:12 HeapStateSpace INFO     Sampling from train
+02-21 20:40:12 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:40:12 HeapStateSpace WARNING  Object ycb~cubei8 fell out of the workspace!
+02-21 20:40:12 HeapStateSpace WARNING  Object ycb~cube_base fell out of the workspace!
+02-21 20:40:14 root       INFO     Dataset testing5000/state_tensors: Writing tensor 102 to disk
+02-21 20:40:15 tools/generate_segmask_dataset.py INFO     State: 000103
+02-21 20:40:15 HeapStateSpace INFO     Sampling from train
+02-21 20:40:15 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:40:18 root       INFO     Dataset testing5000/state_tensors: Writing tensor 103 to disk
+02-21 20:40:18 tools/generate_segmask_dataset.py INFO     State: 000104
+02-21 20:40:18 HeapStateSpace INFO     Sampling from train
+02-21 20:40:18 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:40:20 HeapStateSpace WARNING  Object ycb~cubei2 fell out of the workspace!
+02-21 20:40:22 root       INFO     Dataset testing5000/state_tensors: Writing tensor 104 to disk
+02-21 20:40:22 root       INFO     Dataset testing5000/image_tensors: Writing tensor 20 to disk
+02-21 20:40:22 tools/generate_segmask_dataset.py INFO     State: 000105
+02-21 20:40:22 HeapStateSpace INFO     Sampling from train
+02-21 20:40:22 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:40:24 root       INFO     Dataset testing5000/state_tensors: Writing tensor 105 to disk
+02-21 20:40:24 tools/generate_segmask_dataset.py INFO     State: 000106
+02-21 20:40:24 HeapStateSpace INFO     Sampling from train
+02-21 20:40:24 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:40:27 root       INFO     Dataset testing5000/state_tensors: Writing tensor 106 to disk
+02-21 20:40:27 tools/generate_segmask_dataset.py INFO     State: 000107
+02-21 20:40:27 HeapStateSpace INFO     Sampling from train
+02-21 20:40:27 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:40:28 HeapStateSpace WARNING  Object ycb~cubei19 fell out of the workspace!
+02-21 20:40:31 root       INFO     Dataset testing5000/state_tensors: Writing tensor 107 to disk
+02-21 20:40:31 tools/generate_segmask_dataset.py INFO     State: 000108
+02-21 20:40:31 HeapStateSpace INFO     Sampling from train
+02-21 20:40:31 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:40:32 root       INFO     Dataset testing5000/state_tensors: Writing tensor 108 to disk
+02-21 20:40:33 tools/generate_segmask_dataset.py INFO     State: 000109
+02-21 20:40:33 HeapStateSpace INFO     Sampling from train
+02-21 20:40:33 HeapStateSpace INFO     Sampling 13 objects
+02-21 20:40:33 HeapStateSpace WARNING  Object ycb~cubei12 fell out of the workspace!
+02-21 20:40:38 root       INFO     Dataset testing5000/state_tensors: Writing tensor 109 to disk
+02-21 20:40:39 root       INFO     Dataset testing5000/image_tensors: Writing tensor 21 to disk
+02-21 20:40:39 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:40:39 tools/generate_segmask_dataset.py INFO     State: 000110
+02-21 20:40:39 HeapStateSpace INFO     Sampling from train
+02-21 20:40:39 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:40:41 root       INFO     Dataset testing5000/state_tensors: Writing tensor 110 to disk
+02-21 20:40:42 tools/generate_segmask_dataset.py INFO     State: 000111
+02-21 20:40:42 HeapStateSpace INFO     Sampling from train
+02-21 20:40:42 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:40:43 root       INFO     Dataset testing5000/state_tensors: Writing tensor 111 to disk
+02-21 20:40:44 tools/generate_segmask_dataset.py INFO     State: 000112
+02-21 20:40:44 HeapStateSpace INFO     Sampling from train
+02-21 20:40:44 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:40:44 HeapStateSpace WARNING  Object ycb~cubei1 fell out of the workspace!
+02-21 20:40:45 root       INFO     Dataset testing5000/state_tensors: Writing tensor 112 to disk
+02-21 20:40:46 tools/generate_segmask_dataset.py INFO     State: 000113
+02-21 20:40:46 HeapStateSpace INFO     Sampling from test
+02-21 20:40:46 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:40:47 root       INFO     Dataset testing5000/state_tensors: Writing tensor 113 to disk
+02-21 20:40:48 tools/generate_segmask_dataset.py INFO     State: 000114
+02-21 20:40:48 HeapStateSpace INFO     Sampling from train
+02-21 20:40:48 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:40:50 root       INFO     Dataset testing5000/state_tensors: Writing tensor 114 to disk
+02-21 20:40:51 root       INFO     Dataset testing5000/image_tensors: Writing tensor 22 to disk
+02-21 20:40:51 tools/generate_segmask_dataset.py INFO     State: 000115
+02-21 20:40:51 HeapStateSpace INFO     Sampling from train
+02-21 20:40:51 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:40:51 HeapStateSpace WARNING  Object ycb~cube_b10 fell out of the workspace!
+02-21 20:40:53 root       INFO     Dataset testing5000/state_tensors: Writing tensor 115 to disk
+02-21 20:40:54 tools/generate_segmask_dataset.py INFO     State: 000116
+02-21 20:40:54 HeapStateSpace INFO     Sampling from train
+02-21 20:40:54 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:40:55 root       INFO     Dataset testing5000/state_tensors: Writing tensor 116 to disk
+02-21 20:40:56 tools/generate_segmask_dataset.py INFO     State: 000117
+02-21 20:40:56 HeapStateSpace INFO     Sampling from train
+02-21 20:40:56 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:40:57 root       INFO     Dataset testing5000/state_tensors: Writing tensor 117 to disk
+02-21 20:40:58 tools/generate_segmask_dataset.py INFO     State: 000118
+02-21 20:40:58 HeapStateSpace INFO     Sampling from test
+02-21 20:40:58 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:40:59 HeapStateSpace WARNING  Object ycb~cubei18 fell out of the workspace!
+02-21 20:41:00 root       INFO     Dataset testing5000/state_tensors: Writing tensor 118 to disk
+02-21 20:41:01 tools/generate_segmask_dataset.py INFO     State: 000119
+02-21 20:41:01 HeapStateSpace INFO     Sampling from test
+02-21 20:41:01 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:41:04 root       INFO     Dataset testing5000/state_tensors: Writing tensor 119 to disk
+02-21 20:41:05 root       INFO     Dataset testing5000/image_tensors: Writing tensor 23 to disk
+02-21 20:41:05 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:41:05 tools/generate_segmask_dataset.py INFO     State: 000120
+02-21 20:41:05 HeapStateSpace INFO     Sampling from train
+02-21 20:41:05 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:41:05 HeapStateSpace WARNING  Object ycb~cubei8 fell out of the workspace!
+02-21 20:41:06 HeapStateSpace WARNING  Object ycb~cubei11 fell out of the workspace!
+02-21 20:41:06 HeapStateSpace WARNING  Object ycb~cube_b1 fell out of the workspace!
+02-21 20:41:07 HeapStateSpace WARNING  Object ycb~cubei1 fell out of the workspace!
+02-21 20:41:08 root       INFO     Dataset testing5000/state_tensors: Writing tensor 120 to disk
+02-21 20:41:09 tools/generate_segmask_dataset.py INFO     State: 000121
+02-21 20:41:09 HeapStateSpace INFO     Sampling from test
+02-21 20:41:09 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:41:10 HeapStateSpace WARNING  Object ycb~cubei6 fell out of the workspace!
+02-21 20:41:11 root       INFO     Dataset testing5000/state_tensors: Writing tensor 121 to disk
+02-21 20:41:12 tools/generate_segmask_dataset.py INFO     State: 000122
+02-21 20:41:12 HeapStateSpace INFO     Sampling from train
+02-21 20:41:12 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:41:13 root       INFO     Dataset testing5000/state_tensors: Writing tensor 122 to disk
+02-21 20:41:14 tools/generate_segmask_dataset.py INFO     State: 000123
+02-21 20:41:14 HeapStateSpace INFO     Sampling from test
+02-21 20:41:14 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:41:15 root       INFO     Dataset testing5000/state_tensors: Writing tensor 123 to disk
+02-21 20:41:16 tools/generate_segmask_dataset.py INFO     State: 000124
+02-21 20:41:16 HeapStateSpace INFO     Sampling from test
+02-21 20:41:16 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:41:17 root       INFO     Dataset testing5000/state_tensors: Writing tensor 124 to disk
+02-21 20:41:18 root       INFO     Dataset testing5000/image_tensors: Writing tensor 24 to disk
+02-21 20:41:18 tools/generate_segmask_dataset.py INFO     State: 000125
+02-21 20:41:18 HeapStateSpace INFO     Sampling from train
+02-21 20:41:18 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:41:19 root       INFO     Dataset testing5000/state_tensors: Writing tensor 125 to disk
+02-21 20:41:20 tools/generate_segmask_dataset.py INFO     State: 000126
+02-21 20:41:20 HeapStateSpace INFO     Sampling from train
+02-21 20:41:20 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:41:22 root       INFO     Dataset testing5000/state_tensors: Writing tensor 126 to disk
+02-21 20:41:22 tools/generate_segmask_dataset.py INFO     State: 000127
+02-21 20:41:22 HeapStateSpace INFO     Sampling from train
+02-21 20:41:22 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:41:23 HeapStateSpace WARNING  Object ycb~cubed1 fell out of the workspace!
+02-21 20:41:23 HeapStateSpace WARNING  Object ycb~cubed4 fell out of the workspace!
+02-21 20:41:24 HeapStateSpace WARNING  Object ycb~cubei2 fell out of the workspace!
+02-21 20:41:25 root       INFO     Dataset testing5000/state_tensors: Writing tensor 127 to disk
+02-21 20:41:26 tools/generate_segmask_dataset.py INFO     State: 000128
+02-21 20:41:26 HeapStateSpace INFO     Sampling from train
+02-21 20:41:26 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:41:26 HeapStateSpace WARNING  Object ycb~cubed4 fell out of the workspace!
+02-21 20:41:27 HeapStateSpace WARNING  Object ycb~cubei12 fell out of the workspace!
+02-21 20:41:27 root       INFO     Dataset testing5000/state_tensors: Writing tensor 128 to disk
+02-21 20:41:28 tools/generate_segmask_dataset.py INFO     State: 000129
+02-21 20:41:28 HeapStateSpace INFO     Sampling from test
+02-21 20:41:28 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:41:29 root       INFO     Dataset testing5000/state_tensors: Writing tensor 129 to disk
+02-21 20:41:30 root       INFO     Dataset testing5000/image_tensors: Writing tensor 25 to disk
+02-21 20:41:30 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:41:30 tools/generate_segmask_dataset.py INFO     State: 000130
+02-21 20:41:30 HeapStateSpace INFO     Sampling from test
+02-21 20:41:30 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:41:33 root       INFO     Dataset testing5000/state_tensors: Writing tensor 130 to disk
+02-21 20:41:34 tools/generate_segmask_dataset.py INFO     State: 000131
+02-21 20:41:34 HeapStateSpace INFO     Sampling from train
+02-21 20:41:34 HeapStateSpace INFO     Sampling 12 objects
+02-21 20:41:37 HeapStateSpace WARNING  Object ycb~cube_b1 fell out of the workspace!
+02-21 20:41:38 root       INFO     Dataset testing5000/state_tensors: Writing tensor 131 to disk
+02-21 20:41:39 tools/generate_segmask_dataset.py INFO     State: 000132
+02-21 20:41:39 HeapStateSpace INFO     Sampling from train
+02-21 20:41:39 HeapStateSpace INFO     Sampling 12 objects
+02-21 20:41:43 root       INFO     Dataset testing5000/state_tensors: Writing tensor 132 to disk
+02-21 20:41:44 tools/generate_segmask_dataset.py INFO     State: 000133
+02-21 20:41:44 HeapStateSpace INFO     Sampling from test
+02-21 20:41:44 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:41:45 HeapStateSpace WARNING  Object ycb~cubei6 fell out of the workspace!
+02-21 20:41:45 root       INFO     Dataset testing5000/state_tensors: Writing tensor 133 to disk
+02-21 20:41:46 tools/generate_segmask_dataset.py INFO     State: 000134
+02-21 20:41:46 HeapStateSpace INFO     Sampling from test
+02-21 20:41:46 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:41:47 HeapStateSpace WARNING  Object ycb~cubei15 fell out of the workspace!
+02-21 20:41:49 root       INFO     Dataset testing5000/state_tensors: Writing tensor 134 to disk
+02-21 20:41:50 root       INFO     Dataset testing5000/image_tensors: Writing tensor 26 to disk
+02-21 20:41:50 tools/generate_segmask_dataset.py INFO     State: 000135
+02-21 20:41:50 HeapStateSpace INFO     Sampling from test
+02-21 20:41:50 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:41:51 root       INFO     Dataset testing5000/state_tensors: Writing tensor 135 to disk
+02-21 20:41:52 tools/generate_segmask_dataset.py INFO     State: 000136
+02-21 20:41:52 HeapStateSpace INFO     Sampling from train
+02-21 20:41:52 HeapStateSpace INFO     Sampling 4 objects
+02-21 20:41:52 HeapStateSpace WARNING  Object ycb~cubed1 fell out of the workspace!
+02-21 20:41:53 root       INFO     Dataset testing5000/state_tensors: Writing tensor 136 to disk
+02-21 20:41:54 tools/generate_segmask_dataset.py INFO     State: 000137
+02-21 20:41:54 HeapStateSpace INFO     Sampling from train
+02-21 20:41:54 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:41:55 HeapStateSpace WARNING  Object ycb~cubei5 fell out of the workspace!
+02-21 20:41:57 root       INFO     Dataset testing5000/state_tensors: Writing tensor 137 to disk
+02-21 20:41:57 tools/generate_segmask_dataset.py INFO     State: 000138
+02-21 20:41:57 HeapStateSpace INFO     Sampling from train
+02-21 20:41:57 HeapStateSpace INFO     Sampling 4 objects
+02-21 20:41:58 HeapStateSpace WARNING  Object ycb~cubei1 fell out of the workspace!
+02-21 20:41:58 root       INFO     Dataset testing5000/state_tensors: Writing tensor 138 to disk
+02-21 20:41:59 tools/generate_segmask_dataset.py INFO     State: 000139
+02-21 20:41:59 HeapStateSpace INFO     Sampling from train
+02-21 20:41:59 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:41:59 root       INFO     Dataset testing5000/state_tensors: Writing tensor 139 to disk
+02-21 20:42:00 root       INFO     Dataset testing5000/image_tensors: Writing tensor 27 to disk
+02-21 20:42:00 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:42:00 tools/generate_segmask_dataset.py INFO     State: 000140
+02-21 20:42:00 HeapStateSpace INFO     Sampling from train
+02-21 20:42:00 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:42:01 root       INFO     Dataset testing5000/state_tensors: Writing tensor 140 to disk
+02-21 20:42:02 tools/generate_segmask_dataset.py INFO     State: 000141
+02-21 20:42:02 HeapStateSpace INFO     Sampling from test
+02-21 20:42:02 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:42:02 HeapStateSpace WARNING  Object ycb~cubei7 fell out of the workspace!
+02-21 20:42:02 HeapStateSpace WARNING  Object ycb~cubei16 fell out of the workspace!
+02-21 20:42:03 HeapStateSpace WARNING  Object ycb~cubei17 fell out of the workspace!
+02-21 20:42:04 root       INFO     Dataset testing5000/state_tensors: Writing tensor 141 to disk
+02-21 20:42:05 tools/generate_segmask_dataset.py INFO     State: 000142
+02-21 20:42:05 HeapStateSpace INFO     Sampling from train
+02-21 20:42:05 HeapStateSpace INFO     Sampling 11 objects
+02-21 20:42:08 root       INFO     Dataset testing5000/state_tensors: Writing tensor 142 to disk
+02-21 20:42:09 tools/generate_segmask_dataset.py INFO     State: 000143
+02-21 20:42:09 HeapStateSpace INFO     Sampling from train
+02-21 20:42:09 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:42:10 HeapStateSpace WARNING  Object ycb~cubei14 fell out of the workspace!
+02-21 20:42:11 root       INFO     Dataset testing5000/state_tensors: Writing tensor 143 to disk
+02-21 20:42:12 tools/generate_segmask_dataset.py INFO     State: 000144
+02-21 20:42:12 HeapStateSpace INFO     Sampling from train
+02-21 20:42:12 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:42:14 root       INFO     Dataset testing5000/state_tensors: Writing tensor 144 to disk
+02-21 20:42:15 root       INFO     Dataset testing5000/image_tensors: Writing tensor 28 to disk
+02-21 20:42:15 tools/generate_segmask_dataset.py INFO     State: 000145
+02-21 20:42:15 HeapStateSpace INFO     Sampling from train
+02-21 20:42:15 HeapStateSpace INFO     Sampling 11 objects
+02-21 20:42:18 root       INFO     Dataset testing5000/state_tensors: Writing tensor 145 to disk
+02-21 20:42:19 tools/generate_segmask_dataset.py INFO     State: 000146
+02-21 20:42:19 HeapStateSpace INFO     Sampling from train
+02-21 20:42:19 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:42:20 root       INFO     Dataset testing5000/state_tensors: Writing tensor 146 to disk
+02-21 20:42:21 tools/generate_segmask_dataset.py INFO     State: 000147
+02-21 20:42:21 HeapStateSpace INFO     Sampling from test
+02-21 20:42:21 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:42:21 HeapStateSpace WARNING  Object ycb~cubei6 fell out of the workspace!
+02-21 20:42:23 root       INFO     Dataset testing5000/state_tensors: Writing tensor 147 to disk
+02-21 20:42:24 tools/generate_segmask_dataset.py INFO     State: 000148
+02-21 20:42:24 HeapStateSpace INFO     Sampling from test
+02-21 20:42:24 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:42:25 HeapStateSpace WARNING  Object ycb~cubed5 fell out of the workspace!
+02-21 20:42:27 root       INFO     Dataset testing5000/state_tensors: Writing tensor 148 to disk
+02-21 20:42:28 tools/generate_segmask_dataset.py INFO     State: 000149
+02-21 20:42:28 HeapStateSpace INFO     Sampling from train
+02-21 20:42:28 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:42:29 HeapStateSpace WARNING  Object ycb~cube_b10 fell out of the workspace!
+02-21 20:42:29 root       INFO     Dataset testing5000/state_tensors: Writing tensor 149 to disk
+02-21 20:42:30 root       INFO     Dataset testing5000/image_tensors: Writing tensor 29 to disk
+02-21 20:42:30 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:42:30 tools/generate_segmask_dataset.py INFO     State: 000150
+02-21 20:42:30 HeapStateSpace INFO     Sampling from train
+02-21 20:42:30 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:42:32 root       INFO     Dataset testing5000/state_tensors: Writing tensor 150 to disk
+02-21 20:42:33 tools/generate_segmask_dataset.py INFO     State: 000151
+02-21 20:42:33 HeapStateSpace INFO     Sampling from train
+02-21 20:42:33 HeapStateSpace INFO     Sampling 13 objects
+02-21 20:42:34 HeapStateSpace WARNING  Object ycb~cubed2 fell out of the workspace!
+02-21 20:42:35 HeapStateSpace WARNING  Object ycb~cubed4 fell out of the workspace!
+02-21 20:42:36 HeapStateSpace WARNING  Object ycb~cube_b2 fell out of the workspace!
+02-21 20:42:37 root       INFO     Dataset testing5000/state_tensors: Writing tensor 151 to disk
+02-21 20:42:38 tools/generate_segmask_dataset.py INFO     State: 000152
+02-21 20:42:38 HeapStateSpace INFO     Sampling from test
+02-21 20:42:38 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:42:40 HeapStateSpace WARNING  Object ycb~cubed5 fell out of the workspace!
+02-21 20:42:40 root       INFO     Dataset testing5000/state_tensors: Writing tensor 152 to disk
+02-21 20:42:41 tools/generate_segmask_dataset.py INFO     State: 000153
+02-21 20:42:41 HeapStateSpace INFO     Sampling from train
+02-21 20:42:41 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:42:41 HeapStateSpace WARNING  Object ycb~cubed2 fell out of the workspace!
+02-21 20:42:43 root       INFO     Dataset testing5000/state_tensors: Writing tensor 153 to disk
+02-21 20:42:43 tools/generate_segmask_dataset.py INFO     State: 000154
+02-21 20:42:43 HeapStateSpace INFO     Sampling from test
+02-21 20:42:43 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:42:43 HeapStateSpace WARNING  Object ycb~cubed5 fell out of the workspace!
+02-21 20:42:44 HeapStateSpace WARNING  Object ycb~cubei17 fell out of the workspace!
+02-21 20:42:44 HeapStateSpace WARNING  Object ycb~cubei10 fell out of the workspace!
+02-21 20:42:45 root       INFO     Dataset testing5000/state_tensors: Writing tensor 154 to disk
+02-21 20:42:46 root       INFO     Dataset testing5000/image_tensors: Writing tensor 30 to disk
+02-21 20:42:46 tools/generate_segmask_dataset.py INFO     State: 000155
+02-21 20:42:46 HeapStateSpace INFO     Sampling from test
+02-21 20:42:46 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:42:48 root       INFO     Dataset testing5000/state_tensors: Writing tensor 155 to disk
+02-21 20:42:49 tools/generate_segmask_dataset.py INFO     State: 000156
+02-21 20:42:49 HeapStateSpace INFO     Sampling from train
+02-21 20:42:49 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:42:50 HeapStateSpace WARNING  Object ycb~cube_b6 fell out of the workspace!
+02-21 20:42:52 root       INFO     Dataset testing5000/state_tensors: Writing tensor 156 to disk
+02-21 20:42:53 tools/generate_segmask_dataset.py INFO     State: 000157
+02-21 20:42:53 HeapStateSpace INFO     Sampling from test
+02-21 20:42:53 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:42:55 root       INFO     Dataset testing5000/state_tensors: Writing tensor 157 to disk
+02-21 20:42:56 tools/generate_segmask_dataset.py INFO     State: 000158
+02-21 20:42:56 HeapStateSpace INFO     Sampling from train
+02-21 20:42:56 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:42:58 root       INFO     Dataset testing5000/state_tensors: Writing tensor 158 to disk
+02-21 20:42:59 tools/generate_segmask_dataset.py INFO     State: 000159
+02-21 20:42:59 HeapStateSpace INFO     Sampling from train
+02-21 20:42:59 HeapStateSpace INFO     Sampling 11 objects
+02-21 20:42:59 HeapStateSpace WARNING  Object ycb~cubei3 fell out of the workspace!
+02-21 20:43:03 root       INFO     Dataset testing5000/state_tensors: Writing tensor 159 to disk
+02-21 20:43:03 root       INFO     Dataset testing5000/image_tensors: Writing tensor 31 to disk
+02-21 20:43:04 tools/generate_segmask_dataset.py INFO     Creating env took 0.007 sec
+02-21 20:43:04 tools/generate_segmask_dataset.py INFO     State: 000160
+02-21 20:43:04 HeapStateSpace INFO     Sampling from test
+02-21 20:43:04 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:43:05 HeapStateSpace WARNING  Object ycb~cubei15 fell out of the workspace!
+02-21 20:43:07 root       INFO     Dataset testing5000/state_tensors: Writing tensor 160 to disk
+02-21 20:43:08 tools/generate_segmask_dataset.py INFO     State: 000161
+02-21 20:43:08 HeapStateSpace INFO     Sampling from train
+02-21 20:43:08 HeapStateSpace INFO     Sampling 11 objects
+02-21 20:43:08 HeapStateSpace WARNING  Object ycb~cubei4 fell out of the workspace!
+02-21 20:43:11 root       INFO     Dataset testing5000/state_tensors: Writing tensor 161 to disk
+02-21 20:43:12 tools/generate_segmask_dataset.py INFO     State: 000162
+02-21 20:43:12 HeapStateSpace INFO     Sampling from train
+02-21 20:43:12 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:43:13 root       INFO     Dataset testing5000/state_tensors: Writing tensor 162 to disk
+02-21 20:43:14 tools/generate_segmask_dataset.py INFO     State: 000163
+02-21 20:43:14 HeapStateSpace INFO     Sampling from train
+02-21 20:43:14 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:43:14 root       INFO     Dataset testing5000/state_tensors: Writing tensor 163 to disk
+02-21 20:43:15 tools/generate_segmask_dataset.py INFO     State: 000164
+02-21 20:43:15 HeapStateSpace INFO     Sampling from train
+02-21 20:43:15 HeapStateSpace INFO     Sampling 12 objects
+02-21 20:43:19 root       INFO     Dataset testing5000/state_tensors: Writing tensor 164 to disk
+02-21 20:43:19 root       INFO     Dataset testing5000/image_tensors: Writing tensor 32 to disk
+02-21 20:43:19 tools/generate_segmask_dataset.py INFO     State: 000165
+02-21 20:43:19 HeapStateSpace INFO     Sampling from train
+02-21 20:43:19 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:43:21 root       INFO     Dataset testing5000/state_tensors: Writing tensor 165 to disk
+02-21 20:43:22 tools/generate_segmask_dataset.py INFO     State: 000166
+02-21 20:43:22 HeapStateSpace INFO     Sampling from train
+02-21 20:43:22 HeapStateSpace INFO     Sampling 12 objects
+02-21 20:43:24 HeapStateSpace WARNING  Object ycb~cubed1 fell out of the workspace!
+02-21 20:43:24 HeapStateSpace WARNING  Object ycb~cubei2 fell out of the workspace!
+02-21 20:43:25 HeapStateSpace WARNING  Object ycb~cube_base fell out of the workspace!
+02-21 20:43:26 HeapStateSpace WARNING  Object ycb~cubei3 fell out of the workspace!
+02-21 20:43:26 root       INFO     Dataset testing5000/state_tensors: Writing tensor 166 to disk
+02-21 20:43:27 tools/generate_segmask_dataset.py INFO     State: 000167
+02-21 20:43:27 HeapStateSpace INFO     Sampling from train
+02-21 20:43:27 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:43:30 root       INFO     Dataset testing5000/state_tensors: Writing tensor 167 to disk
+02-21 20:43:30 tools/generate_segmask_dataset.py INFO     State: 000168
+02-21 20:43:31 HeapStateSpace INFO     Sampling from test
+02-21 20:43:31 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:43:31 HeapStateSpace WARNING  Object ycb~cubei10 fell out of the workspace!
+02-21 20:43:32 root       INFO     Dataset testing5000/state_tensors: Writing tensor 168 to disk
+02-21 20:43:33 tools/generate_segmask_dataset.py INFO     State: 000169
+02-21 20:43:33 HeapStateSpace INFO     Sampling from test
+02-21 20:43:33 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:43:34 root       INFO     Dataset testing5000/state_tensors: Writing tensor 169 to disk
+02-21 20:43:35 root       INFO     Dataset testing5000/image_tensors: Writing tensor 33 to disk
+02-21 20:43:35 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:43:35 tools/generate_segmask_dataset.py INFO     State: 000170
+02-21 20:43:35 HeapStateSpace INFO     Sampling from train
+02-21 20:43:35 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:43:37 root       INFO     Dataset testing5000/state_tensors: Writing tensor 170 to disk
+02-21 20:43:38 tools/generate_segmask_dataset.py INFO     State: 000171
+02-21 20:43:38 HeapStateSpace INFO     Sampling from train
+02-21 20:43:38 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:43:40 HeapStateSpace WARNING  Object ycb~cube_b1 fell out of the workspace!
+02-21 20:43:41 root       INFO     Dataset testing5000/state_tensors: Writing tensor 171 to disk
+02-21 20:43:42 tools/generate_segmask_dataset.py INFO     State: 000172
+02-21 20:43:42 HeapStateSpace INFO     Sampling from train
+02-21 20:43:42 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:43:44 root       INFO     Dataset testing5000/state_tensors: Writing tensor 172 to disk
+02-21 20:43:45 tools/generate_segmask_dataset.py INFO     State: 000173
+02-21 20:43:45 HeapStateSpace INFO     Sampling from train
+02-21 20:43:45 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:43:48 root       INFO     Dataset testing5000/state_tensors: Writing tensor 173 to disk
+02-21 20:43:48 tools/generate_segmask_dataset.py INFO     State: 000174
+02-21 20:43:48 HeapStateSpace INFO     Sampling from train
+02-21 20:43:48 HeapStateSpace INFO     Sampling 11 objects
+02-21 20:43:50 HeapStateSpace WARNING  Object ycb~cubei1 fell out of the workspace!
+02-21 20:43:51 root       INFO     Dataset testing5000/state_tensors: Writing tensor 174 to disk
+02-21 20:43:52 root       INFO     Dataset testing5000/image_tensors: Writing tensor 34 to disk
+02-21 20:43:52 tools/generate_segmask_dataset.py INFO     State: 000175
+02-21 20:43:52 HeapStateSpace INFO     Sampling from train
+02-21 20:43:52 HeapStateSpace INFO     Sampling 14 objects
+02-21 20:43:53 HeapStateSpace WARNING  Object ycb~cubei8 fell out of the workspace!
+02-21 20:43:55 HeapStateSpace WARNING  Object ycb~cube_b3 fell out of the workspace!
+02-21 20:43:55 HeapStateSpace WARNING  Object ycb~cube_b1 fell out of the workspace!
+02-21 20:43:56 root       INFO     Dataset testing5000/state_tensors: Writing tensor 175 to disk
+02-21 20:43:57 tools/generate_segmask_dataset.py INFO     State: 000176
+02-21 20:43:57 HeapStateSpace INFO     Sampling from train
+02-21 20:43:57 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:43:58 HeapStateSpace WARNING  Object ycb~cubei4 fell out of the workspace!
+02-21 20:43:59 HeapStateSpace WARNING  Object ycb~cubei5 fell out of the workspace!
+02-21 20:44:00 root       INFO     Dataset testing5000/state_tensors: Writing tensor 176 to disk
+02-21 20:44:01 tools/generate_segmask_dataset.py INFO     State: 000177
+02-21 20:44:01 HeapStateSpace INFO     Sampling from train
+02-21 20:44:01 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:44:02 HeapStateSpace WARNING  Object ycb~cubei8 fell out of the workspace!
+02-21 20:44:02 HeapStateSpace WARNING  Object ycb~cube_b2 fell out of the workspace!
+02-21 20:44:04 HeapStateSpace WARNING  Object ycb~cubei14 fell out of the workspace!
+02-21 20:44:04 root       INFO     Dataset testing5000/state_tensors: Writing tensor 177 to disk
+02-21 20:44:05 tools/generate_segmask_dataset.py INFO     State: 000178
+02-21 20:44:05 HeapStateSpace INFO     Sampling from train
+02-21 20:44:05 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:44:05 HeapStateSpace WARNING  Object ycb~cubed2 fell out of the workspace!
+02-21 20:44:08 root       INFO     Dataset testing5000/state_tensors: Writing tensor 178 to disk
+02-21 20:44:08 tools/generate_segmask_dataset.py INFO     State: 000179
+02-21 20:44:08 HeapStateSpace INFO     Sampling from test
+02-21 20:44:08 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:44:09 HeapStateSpace WARNING  Object ycb~cubei17 fell out of the workspace!
+02-21 20:44:10 HeapStateSpace WARNING  Object ycb~cubei7 fell out of the workspace!
+02-21 20:44:10 root       INFO     Dataset testing5000/state_tensors: Writing tensor 179 to disk
+02-21 20:44:11 root       INFO     Dataset testing5000/image_tensors: Writing tensor 35 to disk
+02-21 20:44:11 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:44:11 tools/generate_segmask_dataset.py INFO     State: 000180
+02-21 20:44:11 HeapStateSpace INFO     Sampling from train
+02-21 20:44:11 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:44:13 root       INFO     Dataset testing5000/state_tensors: Writing tensor 180 to disk
+02-21 20:44:14 tools/generate_segmask_dataset.py INFO     State: 000181
+02-21 20:44:14 HeapStateSpace INFO     Sampling from train
+02-21 20:44:14 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:44:16 HeapStateSpace WARNING  Object ycb~cube_base fell out of the workspace!
+02-21 20:44:16 root       INFO     Dataset testing5000/state_tensors: Writing tensor 181 to disk
+02-21 20:44:17 tools/generate_segmask_dataset.py INFO     State: 000182
+02-21 20:44:17 HeapStateSpace INFO     Sampling from train
+02-21 20:44:17 HeapStateSpace INFO     Sampling 4 objects
+02-21 20:44:18 root       INFO     Dataset testing5000/state_tensors: Writing tensor 182 to disk
+02-21 20:44:19 tools/generate_segmask_dataset.py INFO     State: 000183
+02-21 20:44:19 HeapStateSpace INFO     Sampling from test
+02-21 20:44:19 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:44:19 HeapStateSpace WARNING  Object ycb~cubei6 fell out of the workspace!
+02-21 20:44:19 HeapStateSpace WARNING  Object ycb~cubei7 fell out of the workspace!
+02-21 20:44:20 HeapStateSpace WARNING  Object ycb~cubei18 fell out of the workspace!
+02-21 20:44:21 HeapStateSpace WARNING  Object ycb~cube_b7 fell out of the workspace!
+02-21 20:44:21 root       INFO     Dataset testing5000/state_tensors: Writing tensor 183 to disk
+02-21 20:44:22 tools/generate_segmask_dataset.py INFO     State: 000184
+02-21 20:44:22 HeapStateSpace INFO     Sampling from train
+02-21 20:44:22 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:44:23 HeapStateSpace WARNING  Object ycb~cubed3 fell out of the workspace!
+02-21 20:44:24 root       INFO     Dataset testing5000/state_tensors: Writing tensor 184 to disk
+02-21 20:44:25 root       INFO     Dataset testing5000/image_tensors: Writing tensor 36 to disk
+02-21 20:44:25 tools/generate_segmask_dataset.py INFO     State: 000185
+02-21 20:44:25 HeapStateSpace INFO     Sampling from train
+02-21 20:44:25 HeapStateSpace INFO     Sampling 11 objects
+02-21 20:44:29 root       INFO     Dataset testing5000/state_tensors: Writing tensor 185 to disk
+02-21 20:44:30 tools/generate_segmask_dataset.py INFO     State: 000186
+02-21 20:44:30 HeapStateSpace INFO     Sampling from test
+02-21 20:44:30 HeapStateSpace INFO     Sampling 4 objects
+02-21 20:44:30 root       INFO     Dataset testing5000/state_tensors: Writing tensor 186 to disk
+02-21 20:44:31 tools/generate_segmask_dataset.py INFO     State: 000187
+02-21 20:44:31 HeapStateSpace INFO     Sampling from train
+02-21 20:44:31 HeapStateSpace INFO     Sampling 12 objects
+02-21 20:44:33 HeapStateSpace WARNING  Object ycb~cubei19 fell out of the workspace!
+02-21 20:44:33 HeapStateSpace WARNING  Object ycb~cubei20 fell out of the workspace!
+02-21 20:44:35 root       INFO     Dataset testing5000/state_tensors: Writing tensor 187 to disk
+02-21 20:44:36 tools/generate_segmask_dataset.py INFO     State: 000188
+02-21 20:44:36 HeapStateSpace INFO     Sampling from train
+02-21 20:44:36 HeapStateSpace INFO     Sampling 4 objects
+02-21 20:44:36 root       INFO     Dataset testing5000/state_tensors: Writing tensor 188 to disk
+02-21 20:44:37 tools/generate_segmask_dataset.py INFO     State: 000189
+02-21 20:44:37 HeapStateSpace INFO     Sampling from test
+02-21 20:44:37 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:44:40 root       INFO     Dataset testing5000/state_tensors: Writing tensor 189 to disk
+02-21 20:44:40 root       INFO     Dataset testing5000/image_tensors: Writing tensor 37 to disk
+02-21 20:44:41 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:44:41 tools/generate_segmask_dataset.py INFO     State: 000190
+02-21 20:44:41 HeapStateSpace INFO     Sampling from train
+02-21 20:44:41 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:44:43 root       INFO     Dataset testing5000/state_tensors: Writing tensor 190 to disk
+02-21 20:44:44 tools/generate_segmask_dataset.py INFO     State: 000191
+02-21 20:44:44 HeapStateSpace INFO     Sampling from train
+02-21 20:44:44 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:44:45 HeapStateSpace WARNING  Object ycb~cubed1 fell out of the workspace!
+02-21 20:44:45 HeapStateSpace WARNING  Object ycb~cubei11 fell out of the workspace!
+02-21 20:44:48 root       INFO     Dataset testing5000/state_tensors: Writing tensor 191 to disk
+02-21 20:44:48 tools/generate_segmask_dataset.py INFO     State: 000192
+02-21 20:44:48 HeapStateSpace INFO     Sampling from train
+02-21 20:44:48 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:44:50 root       INFO     Dataset testing5000/state_tensors: Writing tensor 192 to disk
+02-21 20:44:50 tools/generate_segmask_dataset.py INFO     State: 000193
+02-21 20:44:50 HeapStateSpace INFO     Sampling from train
+02-21 20:44:50 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:44:52 root       INFO     Dataset testing5000/state_tensors: Writing tensor 193 to disk
+02-21 20:44:53 tools/generate_segmask_dataset.py INFO     State: 000194
+02-21 20:44:53 HeapStateSpace INFO     Sampling from test
+02-21 20:44:53 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:44:55 root       INFO     Dataset testing5000/state_tensors: Writing tensor 194 to disk
+02-21 20:44:56 root       INFO     Dataset testing5000/image_tensors: Writing tensor 38 to disk
+02-21 20:44:56 tools/generate_segmask_dataset.py INFO     State: 000195
+02-21 20:44:56 HeapStateSpace INFO     Sampling from test
+02-21 20:44:56 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:44:57 HeapStateSpace WARNING  Object ycb~cubei15 fell out of the workspace!
+02-21 20:44:58 root       INFO     Dataset testing5000/state_tensors: Writing tensor 195 to disk
+02-21 20:44:59 tools/generate_segmask_dataset.py INFO     State: 000196
+02-21 20:44:59 HeapStateSpace INFO     Sampling from train
+02-21 20:44:59 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:45:01 root       INFO     Dataset testing5000/state_tensors: Writing tensor 196 to disk
+02-21 20:45:01 tools/generate_segmask_dataset.py INFO     State: 000197
+02-21 20:45:02 HeapStateSpace INFO     Sampling from test
+02-21 20:45:02 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:45:03 root       INFO     Dataset testing5000/state_tensors: Writing tensor 197 to disk
+02-21 20:45:04 tools/generate_segmask_dataset.py INFO     State: 000198
+02-21 20:45:04 HeapStateSpace INFO     Sampling from train
+02-21 20:45:04 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:45:05 root       INFO     Dataset testing5000/state_tensors: Writing tensor 198 to disk
+02-21 20:45:06 tools/generate_segmask_dataset.py INFO     State: 000199
+02-21 20:45:06 HeapStateSpace INFO     Sampling from test
+02-21 20:45:06 HeapStateSpace INFO     Sampling 3 objects
+02-21 20:45:06 root       INFO     Dataset testing5000/state_tensors: Writing tensor 199 to disk
+02-21 20:45:07 root       INFO     Dataset testing5000/image_tensors: Writing tensor 39 to disk
+02-21 20:45:07 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:45:07 tools/generate_segmask_dataset.py INFO     State: 000200
+02-21 20:45:07 HeapStateSpace INFO     Sampling from train
+02-21 20:45:07 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:45:09 root       INFO     Dataset testing5000/state_tensors: Writing tensor 200 to disk
+02-21 20:45:09 tools/generate_segmask_dataset.py INFO     State: 000201
+02-21 20:45:09 HeapStateSpace INFO     Sampling from test
+02-21 20:45:09 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:45:11 root       INFO     Dataset testing5000/state_tensors: Writing tensor 201 to disk
+02-21 20:45:11 tools/generate_segmask_dataset.py INFO     State: 000202
+02-21 20:45:11 HeapStateSpace INFO     Sampling from test
+02-21 20:45:11 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:45:14 HeapStateSpace WARNING  Object ycb~cubed5 fell out of the workspace!
+02-21 20:45:14 root       INFO     Dataset testing5000/state_tensors: Writing tensor 202 to disk
+02-21 20:45:15 tools/generate_segmask_dataset.py INFO     State: 000203
+02-21 20:45:15 HeapStateSpace INFO     Sampling from train
+02-21 20:45:15 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:45:17 root       INFO     Dataset testing5000/state_tensors: Writing tensor 203 to disk
+02-21 20:45:18 tools/generate_segmask_dataset.py INFO     State: 000204
+02-21 20:45:18 HeapStateSpace INFO     Sampling from train
+02-21 20:45:18 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:45:19 root       INFO     Dataset testing5000/state_tensors: Writing tensor 204 to disk
+02-21 20:45:20 root       INFO     Dataset testing5000/image_tensors: Writing tensor 40 to disk
+02-21 20:45:20 tools/generate_segmask_dataset.py INFO     State: 000205
+02-21 20:45:20 HeapStateSpace INFO     Sampling from test
+02-21 20:45:20 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:45:21 HeapStateSpace WARNING  Object ycb~cubei7 fell out of the workspace!
+02-21 20:45:22 HeapStateSpace WARNING  Object ycb~cube_b9 fell out of the workspace!
+02-21 20:45:23 HeapStateSpace WARNING  Object ycb~cubei16 fell out of the workspace!
+02-21 20:45:23 root       INFO     Dataset testing5000/state_tensors: Writing tensor 205 to disk
+02-21 20:45:24 tools/generate_segmask_dataset.py INFO     State: 000206
+02-21 20:45:24 HeapStateSpace INFO     Sampling from train
+02-21 20:45:24 HeapStateSpace INFO     Sampling 11 objects
+02-21 20:45:25 HeapStateSpace WARNING  Object ycb~cubed3 fell out of the workspace!
+02-21 20:45:27 root       INFO     Dataset testing5000/state_tensors: Writing tensor 206 to disk
+02-21 20:45:28 tools/generate_segmask_dataset.py INFO     State: 000207
+02-21 20:45:28 HeapStateSpace INFO     Sampling from test
+02-21 20:45:28 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:45:30 root       INFO     Dataset testing5000/state_tensors: Writing tensor 207 to disk
+02-21 20:45:31 tools/generate_segmask_dataset.py INFO     State: 000208
+02-21 20:45:31 HeapStateSpace INFO     Sampling from train
+02-21 20:45:31 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:45:32 root       INFO     Dataset testing5000/state_tensors: Writing tensor 208 to disk
+02-21 20:45:33 tools/generate_segmask_dataset.py INFO     State: 000209
+02-21 20:45:33 HeapStateSpace INFO     Sampling from train
+02-21 20:45:33 HeapStateSpace INFO     Sampling 12 objects
+02-21 20:45:37 root       INFO     Dataset testing5000/state_tensors: Writing tensor 209 to disk
+02-21 20:45:38 root       INFO     Dataset testing5000/image_tensors: Writing tensor 41 to disk
+02-21 20:45:38 tools/generate_segmask_dataset.py INFO     Creating env took 0.007 sec
+02-21 20:45:38 tools/generate_segmask_dataset.py INFO     State: 000210
+02-21 20:45:38 HeapStateSpace INFO     Sampling from train
+02-21 20:45:38 HeapStateSpace INFO     Sampling 3 objects
+02-21 20:45:39 root       INFO     Dataset testing5000/state_tensors: Writing tensor 210 to disk
+02-21 20:45:39 tools/generate_segmask_dataset.py INFO     State: 000211
+02-21 20:45:40 HeapStateSpace INFO     Sampling from train
+02-21 20:45:40 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:45:41 root       INFO     Dataset testing5000/state_tensors: Writing tensor 211 to disk
+02-21 20:45:41 tools/generate_segmask_dataset.py INFO     State: 000212
+02-21 20:45:41 HeapStateSpace INFO     Sampling from train
+02-21 20:45:41 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:45:43 root       INFO     Dataset testing5000/state_tensors: Writing tensor 212 to disk
+02-21 20:45:44 tools/generate_segmask_dataset.py INFO     State: 000213
+02-21 20:45:44 HeapStateSpace INFO     Sampling from train
+02-21 20:45:44 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:45:46 root       INFO     Dataset testing5000/state_tensors: Writing tensor 213 to disk
+02-21 20:45:47 tools/generate_segmask_dataset.py INFO     State: 000214
+02-21 20:45:47 HeapStateSpace INFO     Sampling from train
+02-21 20:45:47 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:45:48 root       INFO     Dataset testing5000/state_tensors: Writing tensor 214 to disk
+02-21 20:45:49 root       INFO     Dataset testing5000/image_tensors: Writing tensor 42 to disk
+02-21 20:45:49 tools/generate_segmask_dataset.py INFO     State: 000215
+02-21 20:45:49 HeapStateSpace INFO     Sampling from train
+02-21 20:45:49 HeapStateSpace INFO     Sampling 3 objects
+02-21 20:45:50 HeapStateSpace WARNING  Object ycb~cubei1 fell out of the workspace!
+02-21 20:45:50 root       INFO     Dataset testing5000/state_tensors: Writing tensor 215 to disk
+02-21 20:45:50 tools/generate_segmask_dataset.py INFO     State: 000216
+02-21 20:45:50 HeapStateSpace INFO     Sampling from train
+02-21 20:45:50 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:45:52 root       INFO     Dataset testing5000/state_tensors: Writing tensor 216 to disk
+02-21 20:45:52 tools/generate_segmask_dataset.py INFO     State: 000217
+02-21 20:45:52 HeapStateSpace INFO     Sampling from train
+02-21 20:45:52 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:45:53 HeapStateSpace WARNING  Object ycb~cubed2 fell out of the workspace!
+02-21 20:45:54 root       INFO     Dataset testing5000/state_tensors: Writing tensor 217 to disk
+02-21 20:45:54 tools/generate_segmask_dataset.py INFO     State: 000218
+02-21 20:45:54 HeapStateSpace INFO     Sampling from train
+02-21 20:45:54 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:45:55 root       INFO     Dataset testing5000/state_tensors: Writing tensor 218 to disk
+02-21 20:45:56 tools/generate_segmask_dataset.py INFO     State: 000219
+02-21 20:45:56 HeapStateSpace INFO     Sampling from test
+02-21 20:45:56 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:45:56 HeapStateSpace WARNING  Object ycb~cubei10 fell out of the workspace!
+02-21 20:45:58 root       INFO     Dataset testing5000/state_tensors: Writing tensor 219 to disk
+02-21 20:45:59 root       INFO     Dataset testing5000/image_tensors: Writing tensor 43 to disk
+02-21 20:45:59 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:45:59 tools/generate_segmask_dataset.py INFO     State: 000220
+02-21 20:45:59 HeapStateSpace INFO     Sampling from test
+02-21 20:45:59 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:46:01 root       INFO     Dataset testing5000/state_tensors: Writing tensor 220 to disk
+02-21 20:46:02 tools/generate_segmask_dataset.py INFO     State: 000221
+02-21 20:46:02 HeapStateSpace INFO     Sampling from train
+02-21 20:46:02 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:46:03 root       INFO     Dataset testing5000/state_tensors: Writing tensor 221 to disk
+02-21 20:46:03 tools/generate_segmask_dataset.py INFO     State: 000222
+02-21 20:46:03 HeapStateSpace INFO     Sampling from train
+02-21 20:46:03 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:46:04 root       INFO     Dataset testing5000/state_tensors: Writing tensor 222 to disk
+02-21 20:46:05 tools/generate_segmask_dataset.py INFO     State: 000223
+02-21 20:46:05 HeapStateSpace INFO     Sampling from train
+02-21 20:46:05 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:46:07 root       INFO     Dataset testing5000/state_tensors: Writing tensor 223 to disk
+02-21 20:46:07 tools/generate_segmask_dataset.py INFO     State: 000224
+02-21 20:46:07 HeapStateSpace INFO     Sampling from train
+02-21 20:46:07 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:46:10 root       INFO     Dataset testing5000/state_tensors: Writing tensor 224 to disk
+02-21 20:46:10 root       INFO     Dataset testing5000/image_tensors: Writing tensor 44 to disk
+02-21 20:46:11 tools/generate_segmask_dataset.py INFO     State: 000225
+02-21 20:46:11 HeapStateSpace INFO     Sampling from train
+02-21 20:46:11 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:46:12 HeapStateSpace WARNING  Object ycb~cube_b1 fell out of the workspace!
+02-21 20:46:12 root       INFO     Dataset testing5000/state_tensors: Writing tensor 225 to disk
+02-21 20:46:13 tools/generate_segmask_dataset.py INFO     State: 000226
+02-21 20:46:13 HeapStateSpace INFO     Sampling from train
+02-21 20:46:13 HeapStateSpace INFO     Sampling 15 objects
+02-21 20:46:19 root       INFO     Dataset testing5000/state_tensors: Writing tensor 226 to disk
+02-21 20:46:20 tools/generate_segmask_dataset.py INFO     State: 000227
+02-21 20:46:20 HeapStateSpace INFO     Sampling from train
+02-21 20:46:20 HeapStateSpace INFO     Sampling 11 objects
+02-21 20:46:23 root       INFO     Dataset testing5000/state_tensors: Writing tensor 227 to disk
+02-21 20:46:24 tools/generate_segmask_dataset.py INFO     State: 000228
+02-21 20:46:24 HeapStateSpace INFO     Sampling from test
+02-21 20:46:24 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:46:24 HeapStateSpace WARNING  Object ycb~cubed5 fell out of the workspace!
+02-21 20:46:26 root       INFO     Dataset testing5000/state_tensors: Writing tensor 228 to disk
+02-21 20:46:26 tools/generate_segmask_dataset.py INFO     State: 000229
+02-21 20:46:27 HeapStateSpace INFO     Sampling from train
+02-21 20:46:27 HeapStateSpace INFO     Sampling 12 objects
+02-21 20:46:28 HeapStateSpace WARNING  Object ycb~cubei3 fell out of the workspace!
+02-21 20:46:31 root       INFO     Dataset testing5000/state_tensors: Writing tensor 229 to disk
+02-21 20:46:32 root       INFO     Dataset testing5000/image_tensors: Writing tensor 45 to disk
+02-21 20:46:32 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:46:32 tools/generate_segmask_dataset.py INFO     State: 000230
+02-21 20:46:32 HeapStateSpace INFO     Sampling from train
+02-21 20:46:32 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:46:33 root       INFO     Dataset testing5000/state_tensors: Writing tensor 230 to disk
+02-21 20:46:34 tools/generate_segmask_dataset.py INFO     State: 000231
+02-21 20:46:34 HeapStateSpace INFO     Sampling from train
+02-21 20:46:34 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:46:35 root       INFO     Dataset testing5000/state_tensors: Writing tensor 231 to disk
+02-21 20:46:36 tools/generate_segmask_dataset.py INFO     State: 000232
+02-21 20:46:36 HeapStateSpace INFO     Sampling from train
+02-21 20:46:36 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:46:37 HeapStateSpace WARNING  Object ycb~cube_b4 fell out of the workspace!
+02-21 20:46:38 HeapStateSpace WARNING  Object ycb~cubei14 fell out of the workspace!
+02-21 20:46:39 root       INFO     Dataset testing5000/state_tensors: Writing tensor 232 to disk
+02-21 20:46:40 tools/generate_segmask_dataset.py INFO     State: 000233
+02-21 20:46:40 HeapStateSpace INFO     Sampling from train
+02-21 20:46:40 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:46:41 HeapStateSpace WARNING  Object ycb~cube_b11 fell out of the workspace!
+02-21 20:46:41 HeapStateSpace WARNING  Object ycb~cubei19 fell out of the workspace!
+02-21 20:46:42 root       INFO     Dataset testing5000/state_tensors: Writing tensor 233 to disk
+02-21 20:46:42 tools/generate_segmask_dataset.py INFO     State: 000234
+02-21 20:46:42 HeapStateSpace INFO     Sampling from train
+02-21 20:46:42 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:46:45 root       INFO     Dataset testing5000/state_tensors: Writing tensor 234 to disk
+02-21 20:46:46 root       INFO     Dataset testing5000/image_tensors: Writing tensor 46 to disk
+02-21 20:46:46 tools/generate_segmask_dataset.py INFO     State: 000235
+02-21 20:46:46 HeapStateSpace INFO     Sampling from train
+02-21 20:46:46 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:46:48 root       INFO     Dataset testing5000/state_tensors: Writing tensor 235 to disk
+02-21 20:46:49 tools/generate_segmask_dataset.py INFO     State: 000236
+02-21 20:46:49 HeapStateSpace INFO     Sampling from train
+02-21 20:46:49 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:46:51 root       INFO     Dataset testing5000/state_tensors: Writing tensor 236 to disk
+02-21 20:46:52 tools/generate_segmask_dataset.py INFO     State: 000237
+02-21 20:46:52 HeapStateSpace INFO     Sampling from train
+02-21 20:46:52 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:46:52 HeapStateSpace WARNING  Object ycb~cubed1 fell out of the workspace!
+02-21 20:46:54 root       INFO     Dataset testing5000/state_tensors: Writing tensor 237 to disk
+02-21 20:46:55 tools/generate_segmask_dataset.py INFO     State: 000238
+02-21 20:46:55 HeapStateSpace INFO     Sampling from train
+02-21 20:46:55 HeapStateSpace INFO     Sampling 11 objects
+02-21 20:46:58 root       INFO     Dataset testing5000/state_tensors: Writing tensor 238 to disk
+02-21 20:46:59 tools/generate_segmask_dataset.py INFO     State: 000239
+02-21 20:46:59 HeapStateSpace INFO     Sampling from train
+02-21 20:46:59 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:47:01 root       INFO     Dataset testing5000/state_tensors: Writing tensor 239 to disk
+02-21 20:47:01 root       INFO     Dataset testing5000/image_tensors: Writing tensor 47 to disk
+02-21 20:47:01 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:47:01 tools/generate_segmask_dataset.py INFO     State: 000240
+02-21 20:47:02 HeapStateSpace INFO     Sampling from test
+02-21 20:47:02 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:47:03 root       INFO     Dataset testing5000/state_tensors: Writing tensor 240 to disk
+02-21 20:47:04 tools/generate_segmask_dataset.py INFO     State: 000241
+02-21 20:47:04 HeapStateSpace INFO     Sampling from test
+02-21 20:47:04 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:47:06 root       INFO     Dataset testing5000/state_tensors: Writing tensor 241 to disk
+02-21 20:47:06 tools/generate_segmask_dataset.py INFO     State: 000242
+02-21 20:47:06 HeapStateSpace INFO     Sampling from train
+02-21 20:47:06 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:47:07 HeapStateSpace WARNING  Object ycb~cubed2 fell out of the workspace!
+02-21 20:47:07 root       INFO     Dataset testing5000/state_tensors: Writing tensor 242 to disk
+02-21 20:47:08 tools/generate_segmask_dataset.py INFO     State: 000243
+02-21 20:47:08 HeapStateSpace INFO     Sampling from train
+02-21 20:47:08 HeapStateSpace INFO     Sampling 12 objects
+02-21 20:47:12 root       INFO     Dataset testing5000/state_tensors: Writing tensor 243 to disk
+02-21 20:47:13 tools/generate_segmask_dataset.py INFO     State: 000244
+02-21 20:47:13 HeapStateSpace INFO     Sampling from test
+02-21 20:47:13 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:47:15 root       INFO     Dataset testing5000/state_tensors: Writing tensor 244 to disk
+02-21 20:47:16 root       INFO     Dataset testing5000/image_tensors: Writing tensor 48 to disk
+02-21 20:47:16 tools/generate_segmask_dataset.py INFO     State: 000245
+02-21 20:47:16 HeapStateSpace INFO     Sampling from train
+02-21 20:47:16 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:47:17 root       INFO     Dataset testing5000/state_tensors: Writing tensor 245 to disk
+02-21 20:47:18 tools/generate_segmask_dataset.py INFO     State: 000246
+02-21 20:47:18 HeapStateSpace INFO     Sampling from train
+02-21 20:47:18 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:47:18 HeapStateSpace WARNING  Object ycb~cubei12 fell out of the workspace!
+02-21 20:47:20 root       INFO     Dataset testing5000/state_tensors: Writing tensor 246 to disk
+02-21 20:47:21 tools/generate_segmask_dataset.py INFO     State: 000247
+02-21 20:47:21 HeapStateSpace INFO     Sampling from train
+02-21 20:47:21 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:47:21 HeapStateSpace WARNING  Object ycb~cubei5 fell out of the workspace!
+02-21 20:47:22 HeapStateSpace WARNING  Object ycb~cubei8 fell out of the workspace!
+02-21 20:47:23 root       INFO     Dataset testing5000/state_tensors: Writing tensor 247 to disk
+02-21 20:47:23 tools/generate_segmask_dataset.py INFO     State: 000248
+02-21 20:47:24 HeapStateSpace INFO     Sampling from train
+02-21 20:47:24 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:47:24 HeapStateSpace WARNING  Object ycb~cubed2 fell out of the workspace!
+02-21 20:47:25 HeapStateSpace WARNING  Object ycb~cubed3 fell out of the workspace!
+02-21 20:47:26 root       INFO     Dataset testing5000/state_tensors: Writing tensor 248 to disk
+02-21 20:47:27 tools/generate_segmask_dataset.py INFO     State: 000249
+02-21 20:47:27 HeapStateSpace INFO     Sampling from train
+02-21 20:47:27 HeapStateSpace INFO     Sampling 13 objects
+02-21 20:47:32 root       INFO     Dataset testing5000/state_tensors: Writing tensor 249 to disk
+02-21 20:47:33 root       INFO     Dataset testing5000/image_tensors: Writing tensor 49 to disk
+02-21 20:47:33 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:47:33 tools/generate_segmask_dataset.py INFO     State: 000250
+02-21 20:47:33 HeapStateSpace INFO     Sampling from train
+02-21 20:47:33 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:47:35 root       INFO     Dataset testing5000/state_tensors: Writing tensor 250 to disk
+02-21 20:47:35 tools/generate_segmask_dataset.py INFO     State: 000251
+02-21 20:47:36 HeapStateSpace INFO     Sampling from train
+02-21 20:47:36 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:47:37 root       INFO     Dataset testing5000/state_tensors: Writing tensor 251 to disk
+02-21 20:47:37 tools/generate_segmask_dataset.py INFO     State: 000252
+02-21 20:47:37 HeapStateSpace INFO     Sampling from test
+02-21 20:47:37 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:47:39 root       INFO     Dataset testing5000/state_tensors: Writing tensor 252 to disk
+02-21 20:47:40 tools/generate_segmask_dataset.py INFO     State: 000253
+02-21 20:47:40 HeapStateSpace INFO     Sampling from train
+02-21 20:47:40 HeapStateSpace INFO     Sampling 12 objects
+02-21 20:47:44 HeapStateSpace WARNING  Object ycb~cubei4 fell out of the workspace!
+02-21 20:47:44 root       INFO     Dataset testing5000/state_tensors: Writing tensor 253 to disk
+02-21 20:47:45 tools/generate_segmask_dataset.py INFO     State: 000254
+02-21 20:47:45 HeapStateSpace INFO     Sampling from train
+02-21 20:47:45 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:47:47 root       INFO     Dataset testing5000/state_tensors: Writing tensor 254 to disk
+02-21 20:47:48 root       INFO     Dataset testing5000/image_tensors: Writing tensor 50 to disk
+02-21 20:47:48 tools/generate_segmask_dataset.py INFO     State: 000255
+02-21 20:47:48 HeapStateSpace INFO     Sampling from train
+02-21 20:47:48 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:47:48 HeapStateSpace WARNING  Object ycb~cube_base fell out of the workspace!
+02-21 20:47:49 root       INFO     Dataset testing5000/state_tensors: Writing tensor 255 to disk
+02-21 20:47:50 tools/generate_segmask_dataset.py INFO     State: 000256
+02-21 20:47:50 HeapStateSpace INFO     Sampling from test
+02-21 20:47:50 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:47:50 HeapStateSpace WARNING  Object ycb~cubei16 fell out of the workspace!
+02-21 20:47:51 HeapStateSpace WARNING  Object ycb~cubei10 fell out of the workspace!
+02-21 20:47:52 root       INFO     Dataset testing5000/state_tensors: Writing tensor 256 to disk
+02-21 20:47:53 tools/generate_segmask_dataset.py INFO     State: 000257
+02-21 20:47:53 HeapStateSpace INFO     Sampling from test
+02-21 20:47:53 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:47:55 root       INFO     Dataset testing5000/state_tensors: Writing tensor 257 to disk
+02-21 20:47:55 tools/generate_segmask_dataset.py INFO     State: 000258
+02-21 20:47:55 HeapStateSpace INFO     Sampling from test
+02-21 20:47:55 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:47:56 HeapStateSpace WARNING  Object ycb~cubei17 fell out of the workspace!
+02-21 20:47:56 HeapStateSpace WARNING  Object ycb~cubed5 fell out of the workspace!
+02-21 20:47:57 root       INFO     Dataset testing5000/state_tensors: Writing tensor 258 to disk
+02-21 20:47:58 tools/generate_segmask_dataset.py INFO     State: 000259
+02-21 20:47:58 HeapStateSpace INFO     Sampling from train
+02-21 20:47:58 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:47:58 HeapStateSpace WARNING  Object ycb~cube_base fell out of the workspace!
+02-21 20:47:59 root       INFO     Dataset testing5000/state_tensors: Writing tensor 259 to disk
+02-21 20:48:00 root       INFO     Dataset testing5000/image_tensors: Writing tensor 51 to disk
+02-21 20:48:00 tools/generate_segmask_dataset.py INFO     Creating env took 0.007 sec
+02-21 20:48:00 tools/generate_segmask_dataset.py INFO     State: 000260
+02-21 20:48:00 HeapStateSpace INFO     Sampling from train
+02-21 20:48:00 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:48:01 HeapStateSpace WARNING  Object ycb~cubei19 fell out of the workspace!
+02-21 20:48:02 root       INFO     Dataset testing5000/state_tensors: Writing tensor 260 to disk
+02-21 20:48:03 tools/generate_segmask_dataset.py INFO     State: 000261
+02-21 20:48:03 HeapStateSpace INFO     Sampling from train
+02-21 20:48:03 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:48:06 root       INFO     Dataset testing5000/state_tensors: Writing tensor 261 to disk
+02-21 20:48:07 tools/generate_segmask_dataset.py INFO     State: 000262
+02-21 20:48:07 HeapStateSpace INFO     Sampling from train
+02-21 20:48:07 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:48:09 root       INFO     Dataset testing5000/state_tensors: Writing tensor 262 to disk
+02-21 20:48:09 tools/generate_segmask_dataset.py INFO     State: 000263
+02-21 20:48:09 HeapStateSpace INFO     Sampling from train
+02-21 20:48:09 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:48:10 HeapStateSpace WARNING  Object ycb~cubei21 fell out of the workspace!
+02-21 20:48:11 HeapStateSpace WARNING  Object ycb~cubei4 fell out of the workspace!
+02-21 20:48:12 root       INFO     Dataset testing5000/state_tensors: Writing tensor 263 to disk
+02-21 20:48:13 tools/generate_segmask_dataset.py INFO     State: 000264
+02-21 20:48:13 HeapStateSpace INFO     Sampling from test
+02-21 20:48:13 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:48:14 HeapStateSpace WARNING  Object ycb~cubei6 fell out of the workspace!
+02-21 20:48:15 HeapStateSpace WARNING  Object ycb~cubei7 fell out of the workspace!
+02-21 20:48:16 root       INFO     Dataset testing5000/state_tensors: Writing tensor 264 to disk
+02-21 20:48:17 root       INFO     Dataset testing5000/image_tensors: Writing tensor 52 to disk
+02-21 20:48:17 tools/generate_segmask_dataset.py INFO     State: 000265
+02-21 20:48:17 HeapStateSpace INFO     Sampling from train
+02-21 20:48:17 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:48:19 root       INFO     Dataset testing5000/state_tensors: Writing tensor 265 to disk
+02-21 20:48:20 tools/generate_segmask_dataset.py INFO     State: 000266
+02-21 20:48:20 HeapStateSpace INFO     Sampling from test
+02-21 20:48:20 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:48:21 HeapStateSpace WARNING  Object ycb~cubei16 fell out of the workspace!
+02-21 20:48:23 HeapStateSpace WARNING  Object ycb~cubed5 fell out of the workspace!
+02-21 20:48:23 root       INFO     Dataset testing5000/state_tensors: Writing tensor 266 to disk
+02-21 20:48:24 tools/generate_segmask_dataset.py INFO     State: 000267
+02-21 20:48:24 HeapStateSpace INFO     Sampling from train
+02-21 20:48:24 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:48:24 HeapStateSpace WARNING  Object ycb~cubei5 fell out of the workspace!
+02-21 20:48:26 HeapStateSpace WARNING  Object ycb~cubei11 fell out of the workspace!
+02-21 20:48:28 root       INFO     Dataset testing5000/state_tensors: Writing tensor 267 to disk
+02-21 20:48:29 tools/generate_segmask_dataset.py INFO     State: 000268
+02-21 20:48:29 HeapStateSpace INFO     Sampling from train
+02-21 20:48:29 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:48:31 root       INFO     Dataset testing5000/state_tensors: Writing tensor 268 to disk
+02-21 20:48:32 tools/generate_segmask_dataset.py INFO     State: 000269
+02-21 20:48:32 HeapStateSpace INFO     Sampling from test
+02-21 20:48:32 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:48:36 root       INFO     Dataset testing5000/state_tensors: Writing tensor 269 to disk
+02-21 20:48:37 root       INFO     Dataset testing5000/image_tensors: Writing tensor 53 to disk
+02-21 20:48:37 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:48:37 tools/generate_segmask_dataset.py INFO     State: 000270
+02-21 20:48:37 HeapStateSpace INFO     Sampling from train
+02-21 20:48:37 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:48:39 root       INFO     Dataset testing5000/state_tensors: Writing tensor 270 to disk
+02-21 20:48:40 tools/generate_segmask_dataset.py INFO     State: 000271
+02-21 20:48:40 HeapStateSpace INFO     Sampling from train
+02-21 20:48:40 HeapStateSpace INFO     Sampling 11 objects
+02-21 20:48:43 HeapStateSpace WARNING  Object ycb~cubei5 fell out of the workspace!
+02-21 20:48:44 root       INFO     Dataset testing5000/state_tensors: Writing tensor 271 to disk
+02-21 20:48:44 tools/generate_segmask_dataset.py INFO     State: 000272
+02-21 20:48:44 HeapStateSpace INFO     Sampling from train
+02-21 20:48:44 HeapStateSpace INFO     Sampling 3 objects
+02-21 20:48:45 root       INFO     Dataset testing5000/state_tensors: Writing tensor 272 to disk
+02-21 20:48:45 tools/generate_segmask_dataset.py INFO     State: 000273
+02-21 20:48:45 HeapStateSpace INFO     Sampling from train
+02-21 20:48:45 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:48:46 HeapStateSpace WARNING  Object ycb~cube_b10 fell out of the workspace!
+02-21 20:48:48 root       INFO     Dataset testing5000/state_tensors: Writing tensor 273 to disk
+02-21 20:48:48 tools/generate_segmask_dataset.py INFO     State: 000274
+02-21 20:48:48 HeapStateSpace INFO     Sampling from train
+02-21 20:48:48 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:48:49 HeapStateSpace WARNING  Object ycb~cubei21 fell out of the workspace!
+02-21 20:48:50 HeapStateSpace WARNING  Object ycb~cubei5 fell out of the workspace!
+02-21 20:48:51 root       INFO     Dataset testing5000/state_tensors: Writing tensor 274 to disk
+02-21 20:48:51 root       INFO     Dataset testing5000/image_tensors: Writing tensor 54 to disk
+02-21 20:48:51 tools/generate_segmask_dataset.py INFO     State: 000275
+02-21 20:48:52 HeapStateSpace INFO     Sampling from train
+02-21 20:48:52 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:48:52 HeapStateSpace WARNING  Object ycb~cubed1 fell out of the workspace!
+02-21 20:48:54 root       INFO     Dataset testing5000/state_tensors: Writing tensor 275 to disk
+02-21 20:48:55 tools/generate_segmask_dataset.py INFO     State: 000276
+02-21 20:48:55 HeapStateSpace INFO     Sampling from train
+02-21 20:48:55 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:48:56 root       INFO     Dataset testing5000/state_tensors: Writing tensor 276 to disk
+02-21 20:48:57 tools/generate_segmask_dataset.py INFO     State: 000277
+02-21 20:48:57 HeapStateSpace INFO     Sampling from train
+02-21 20:48:57 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:48:59 root       INFO     Dataset testing5000/state_tensors: Writing tensor 277 to disk
+02-21 20:49:00 tools/generate_segmask_dataset.py INFO     State: 000278
+02-21 20:49:00 HeapStateSpace INFO     Sampling from train
+02-21 20:49:00 HeapStateSpace INFO     Sampling 11 objects
+02-21 20:49:01 HeapStateSpace WARNING  Object ycb~cubed3 fell out of the workspace!
+02-21 20:49:03 root       INFO     Dataset testing5000/state_tensors: Writing tensor 278 to disk
+02-21 20:49:04 tools/generate_segmask_dataset.py INFO     State: 000279
+02-21 20:49:04 HeapStateSpace INFO     Sampling from train
+02-21 20:49:04 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:49:06 root       INFO     Dataset testing5000/state_tensors: Writing tensor 279 to disk
+02-21 20:49:07 root       INFO     Dataset testing5000/image_tensors: Writing tensor 55 to disk
+02-21 20:49:07 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:49:07 tools/generate_segmask_dataset.py INFO     State: 000280
+02-21 20:49:07 HeapStateSpace INFO     Sampling from train
+02-21 20:49:07 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:49:09 root       INFO     Dataset testing5000/state_tensors: Writing tensor 280 to disk
+02-21 20:49:10 tools/generate_segmask_dataset.py INFO     State: 000281
+02-21 20:49:10 HeapStateSpace INFO     Sampling from train
+02-21 20:49:10 HeapStateSpace INFO     Sampling 4 objects
+02-21 20:49:11 root       INFO     Dataset testing5000/state_tensors: Writing tensor 281 to disk
+02-21 20:49:11 tools/generate_segmask_dataset.py INFO     State: 000282
+02-21 20:49:11 HeapStateSpace INFO     Sampling from test
+02-21 20:49:11 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:49:11 HeapStateSpace WARNING  Object ycb~cubei7 fell out of the workspace!
+02-21 20:49:14 root       INFO     Dataset testing5000/state_tensors: Writing tensor 282 to disk
+02-21 20:49:15 tools/generate_segmask_dataset.py INFO     State: 000283
+02-21 20:49:15 HeapStateSpace INFO     Sampling from train
+02-21 20:49:15 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:49:15 HeapStateSpace WARNING  Object ycb~cubei14 fell out of the workspace!
+02-21 20:49:16 root       INFO     Dataset testing5000/state_tensors: Writing tensor 283 to disk
+02-21 20:49:17 tools/generate_segmask_dataset.py INFO     State: 000284
+02-21 20:49:17 HeapStateSpace INFO     Sampling from train
+02-21 20:49:17 HeapStateSpace INFO     Sampling 4 objects
+02-21 20:49:18 root       INFO     Dataset testing5000/state_tensors: Writing tensor 284 to disk
+02-21 20:49:18 root       INFO     Dataset testing5000/image_tensors: Writing tensor 56 to disk
+02-21 20:49:18 tools/generate_segmask_dataset.py INFO     State: 000285
+02-21 20:49:18 HeapStateSpace INFO     Sampling from train
+02-21 20:49:18 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:49:18 HeapStateSpace WARNING  Object ycb~cubei1 fell out of the workspace!
+02-21 20:49:19 HeapStateSpace WARNING  Object ycb~cube_b5 fell out of the workspace!
+02-21 20:49:20 root       INFO     Dataset testing5000/state_tensors: Writing tensor 285 to disk
+02-21 20:49:21 tools/generate_segmask_dataset.py INFO     State: 000286
+02-21 20:49:21 HeapStateSpace INFO     Sampling from train
+02-21 20:49:21 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:49:22 root       INFO     Dataset testing5000/state_tensors: Writing tensor 286 to disk
+02-21 20:49:23 tools/generate_segmask_dataset.py INFO     State: 000287
+02-21 20:49:23 HeapStateSpace INFO     Sampling from train
+02-21 20:49:23 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:49:23 HeapStateSpace WARNING  Object ycb~cubed1 fell out of the workspace!
+02-21 20:49:24 root       INFO     Dataset testing5000/state_tensors: Writing tensor 287 to disk
+02-21 20:49:25 tools/generate_segmask_dataset.py INFO     State: 000288
+02-21 20:49:25 HeapStateSpace INFO     Sampling from train
+02-21 20:49:25 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:49:27 root       INFO     Dataset testing5000/state_tensors: Writing tensor 288 to disk
+02-21 20:49:28 tools/generate_segmask_dataset.py INFO     State: 000289
+02-21 20:49:28 HeapStateSpace INFO     Sampling from train
+02-21 20:49:28 HeapStateSpace INFO     Sampling 12 objects
+02-21 20:49:32 root       INFO     Dataset testing5000/state_tensors: Writing tensor 289 to disk
+02-21 20:49:33 root       INFO     Dataset testing5000/image_tensors: Writing tensor 57 to disk
+02-21 20:49:33 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:49:33 tools/generate_segmask_dataset.py INFO     State: 000290
+02-21 20:49:33 HeapStateSpace INFO     Sampling from train
+02-21 20:49:33 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:49:34 root       INFO     Dataset testing5000/state_tensors: Writing tensor 290 to disk
+02-21 20:49:35 tools/generate_segmask_dataset.py INFO     State: 000291
+02-21 20:49:35 HeapStateSpace INFO     Sampling from train
+02-21 20:49:35 HeapStateSpace INFO     Sampling 12 objects
+02-21 20:49:35 HeapStateSpace WARNING  Object ycb~cubei11 fell out of the workspace!
+02-21 20:49:35 HeapStateSpace WARNING  Object ycb~cubei14 fell out of the workspace!
+02-21 20:49:35 HeapStateSpace WARNING  Object ycb~cubed3 fell out of the workspace!
+02-21 20:49:36 HeapStateSpace WARNING  Object ycb~cubed4 fell out of the workspace!
+02-21 20:49:37 HeapStateSpace WARNING  Object ycb~cubed2 fell out of the workspace!
+02-21 20:49:38 HeapStateSpace WARNING  Object ycb~cubei21 fell out of the workspace!
+02-21 20:49:39 HeapStateSpace WARNING  Object ycb~cubei12 fell out of the workspace!
+02-21 20:49:40 root       INFO     Dataset testing5000/state_tensors: Writing tensor 291 to disk
+02-21 20:49:40 tools/generate_segmask_dataset.py INFO     State: 000292
+02-21 20:49:40 HeapStateSpace INFO     Sampling from train
+02-21 20:49:40 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:49:43 root       INFO     Dataset testing5000/state_tensors: Writing tensor 292 to disk
+02-21 20:49:44 tools/generate_segmask_dataset.py INFO     State: 000293
+02-21 20:49:44 HeapStateSpace INFO     Sampling from train
+02-21 20:49:44 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:49:47 root       INFO     Dataset testing5000/state_tensors: Writing tensor 293 to disk
+02-21 20:49:47 tools/generate_segmask_dataset.py INFO     State: 000294
+02-21 20:49:47 HeapStateSpace INFO     Sampling from train
+02-21 20:49:47 HeapStateSpace INFO     Sampling 12 objects
+02-21 20:49:47 HeapStateSpace WARNING  Object ycb~cubei2 fell out of the workspace!
+02-21 20:49:48 HeapStateSpace WARNING  Object ycb~cubei4 fell out of the workspace!
+02-21 20:49:49 HeapStateSpace WARNING  Object ycb~cubed4 fell out of the workspace!
+02-21 20:49:51 root       INFO     Dataset testing5000/state_tensors: Writing tensor 294 to disk
+02-21 20:49:52 root       INFO     Dataset testing5000/image_tensors: Writing tensor 58 to disk
+02-21 20:49:52 tools/generate_segmask_dataset.py INFO     State: 000295
+02-21 20:49:52 HeapStateSpace INFO     Sampling from train
+02-21 20:49:52 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:49:52 HeapStateSpace WARNING  Object ycb~cubei19 fell out of the workspace!
+02-21 20:49:54 root       INFO     Dataset testing5000/state_tensors: Writing tensor 295 to disk
+02-21 20:49:55 tools/generate_segmask_dataset.py INFO     State: 000296
+02-21 20:49:55 HeapStateSpace INFO     Sampling from train
+02-21 20:49:55 HeapStateSpace INFO     Sampling 11 objects
+02-21 20:49:58 root       INFO     Dataset testing5000/state_tensors: Writing tensor 296 to disk
+02-21 20:49:59 tools/generate_segmask_dataset.py INFO     State: 000297
+02-21 20:49:59 HeapStateSpace INFO     Sampling from train
+02-21 20:49:59 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:50:01 root       INFO     Dataset testing5000/state_tensors: Writing tensor 297 to disk
+02-21 20:50:02 tools/generate_segmask_dataset.py INFO     State: 000298
+02-21 20:50:02 HeapStateSpace INFO     Sampling from train
+02-21 20:50:02 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:50:03 HeapStateSpace WARNING  Object ycb~cubei2 fell out of the workspace!
+02-21 20:50:03 HeapStateSpace WARNING  Object ycb~cubed4 fell out of the workspace!
+02-21 20:50:04 HeapStateSpace WARNING  Object ycb~cube_b4 fell out of the workspace!
+02-21 20:50:05 root       INFO     Dataset testing5000/state_tensors: Writing tensor 298 to disk
+02-21 20:50:05 tools/generate_segmask_dataset.py INFO     State: 000299
+02-21 20:50:05 HeapStateSpace INFO     Sampling from train
+02-21 20:50:05 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:50:08 root       INFO     Dataset testing5000/state_tensors: Writing tensor 299 to disk
+02-21 20:50:08 root       INFO     Dataset testing5000/image_tensors: Writing tensor 59 to disk
+02-21 20:50:09 tools/generate_segmask_dataset.py INFO     Creating env took 0.006 sec
+02-21 20:50:09 tools/generate_segmask_dataset.py INFO     State: 000300
+02-21 20:50:09 HeapStateSpace INFO     Sampling from train
+02-21 20:50:09 HeapStateSpace INFO     Sampling 12 objects
+02-21 20:50:09 HeapStateSpace WARNING  Object ycb~cube_b5 fell out of the workspace!
+02-21 20:50:12 root       INFO     Dataset testing5000/state_tensors: Writing tensor 300 to disk
+02-21 20:50:13 tools/generate_segmask_dataset.py INFO     State: 000301
+02-21 20:50:13 HeapStateSpace INFO     Sampling from train
+02-21 20:50:13 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:50:13 HeapStateSpace WARNING  Object ycb~cubei9 fell out of the workspace!
+02-21 20:50:13 HeapStateSpace WARNING  Object ycb~cubed3 fell out of the workspace!
+02-21 20:50:15 root       INFO     Dataset testing5000/state_tensors: Writing tensor 301 to disk
+02-21 20:50:15 tools/generate_segmask_dataset.py INFO     State: 000302
+02-21 20:50:15 HeapStateSpace INFO     Sampling from test
+02-21 20:50:15 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:50:18 root       INFO     Dataset testing5000/state_tensors: Writing tensor 302 to disk
+02-21 20:50:19 tools/generate_segmask_dataset.py INFO     State: 000303
+02-21 20:50:19 HeapStateSpace INFO     Sampling from train
+02-21 20:50:19 HeapStateSpace INFO     Sampling 7 objects
+02-21 20:50:21 root       INFO     Dataset testing5000/state_tensors: Writing tensor 303 to disk
+02-21 20:50:21 tools/generate_segmask_dataset.py INFO     State: 000304
+02-21 20:50:21 HeapStateSpace INFO     Sampling from train
+02-21 20:50:21 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:50:22 HeapStateSpace WARNING  Object ycb~cubei12 fell out of the workspace!
+02-21 20:50:22 HeapStateSpace WARNING  Object ycb~cubei20 fell out of the workspace!
+02-21 20:50:24 root       INFO     Dataset testing5000/state_tensors: Writing tensor 304 to disk
+02-21 20:50:24 root       INFO     Dataset testing5000/image_tensors: Writing tensor 60 to disk
+02-21 20:50:25 tools/generate_segmask_dataset.py INFO     State: 000305
+02-21 20:50:25 HeapStateSpace INFO     Sampling from train
+02-21 20:50:25 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:50:27 root       INFO     Dataset testing5000/state_tensors: Writing tensor 305 to disk
+02-21 20:50:28 tools/generate_segmask_dataset.py INFO     State: 000306
+02-21 20:50:28 HeapStateSpace INFO     Sampling from train
+02-21 20:50:28 HeapStateSpace INFO     Sampling 8 objects
+02-21 20:50:29 root       INFO     Dataset testing5000/state_tensors: Writing tensor 306 to disk
+02-21 20:50:30 tools/generate_segmask_dataset.py INFO     State: 000307
+02-21 20:50:30 HeapStateSpace INFO     Sampling from train
+02-21 20:50:30 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:50:30 HeapStateSpace WARNING  Object ycb~cubei9 fell out of the workspace!
+02-21 20:50:34 root       INFO     Dataset testing5000/state_tensors: Writing tensor 307 to disk
+02-21 20:50:34 tools/generate_segmask_dataset.py INFO     State: 000308
+02-21 20:50:34 HeapStateSpace INFO     Sampling from train
+02-21 20:50:34 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:50:35 HeapStateSpace WARNING  Object ycb~cube_base fell out of the workspace!
+02-21 20:50:36 root       INFO     Dataset testing5000/state_tensors: Writing tensor 308 to disk
+02-21 20:50:37 tools/generate_segmask_dataset.py INFO     State: 000309
+02-21 20:50:37 HeapStateSpace INFO     Sampling from train
+02-21 20:50:37 HeapStateSpace INFO     Sampling 9 objects
+02-21 20:50:38 HeapStateSpace WARNING  Object ycb~cubed3 fell out of the workspace!
+02-21 20:50:40 root       INFO     Dataset testing5000/state_tensors: Writing tensor 309 to disk
+02-21 20:50:40 root       INFO     Dataset testing5000/image_tensors: Writing tensor 61 to disk
+02-21 20:50:41 tools/generate_segmask_dataset.py INFO     Creating env took 0.007 sec
+02-21 20:50:41 tools/generate_segmask_dataset.py INFO     State: 000310
+02-21 20:50:41 HeapStateSpace INFO     Sampling from test
+02-21 20:50:41 HeapStateSpace INFO     Sampling 4 objects
+02-21 20:50:42 root       INFO     Dataset testing5000/state_tensors: Writing tensor 310 to disk
+02-21 20:50:42 tools/generate_segmask_dataset.py INFO     State: 000311
+02-21 20:50:43 HeapStateSpace INFO     Sampling from train
+02-21 20:50:43 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:50:43 HeapStateSpace WARNING  Object ycb~cubei20 fell out of the workspace!
+02-21 20:50:43 root       INFO     Dataset testing5000/state_tensors: Writing tensor 311 to disk
+02-21 20:50:44 tools/generate_segmask_dataset.py INFO     State: 000312
+02-21 20:50:44 HeapStateSpace INFO     Sampling from train
+02-21 20:50:44 HeapStateSpace INFO     Sampling 6 objects
+02-21 20:50:46 root       INFO     Dataset testing5000/state_tensors: Writing tensor 312 to disk
+02-21 20:50:46 tools/generate_segmask_dataset.py INFO     State: 000313
+02-21 20:50:46 HeapStateSpace INFO     Sampling from test
+02-21 20:50:46 HeapStateSpace INFO     Sampling 3 objects
+02-21 20:50:47 root       INFO     Dataset testing5000/state_tensors: Writing tensor 313 to disk
+02-21 20:50:48 tools/generate_segmask_dataset.py INFO     State: 000314
+02-21 20:50:48 HeapStateSpace INFO     Sampling from test
+02-21 20:50:48 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:50:48 HeapStateSpace WARNING  Object ycb~cubei18 fell out of the workspace!
+02-21 20:50:48 HeapStateSpace WARNING  Object ycb~cubei16 fell out of the workspace!
+02-21 20:50:49 root       INFO     Dataset testing5000/state_tensors: Writing tensor 314 to disk
+02-21 20:50:50 root       INFO     Dataset testing5000/image_tensors: Writing tensor 62 to disk
+02-21 20:50:50 tools/generate_segmask_dataset.py INFO     State: 000315
+02-21 20:50:50 HeapStateSpace INFO     Sampling from test
+02-21 20:50:50 HeapStateSpace INFO     Sampling 4 objects
+02-21 20:50:51 root       INFO     Dataset testing5000/state_tensors: Writing tensor 315 to disk
+02-21 20:50:52 tools/generate_segmask_dataset.py INFO     State: 000316
+02-21 20:50:52 HeapStateSpace INFO     Sampling from train
+02-21 20:50:52 HeapStateSpace INFO     Sampling 4 objects
+02-21 20:50:53 root       INFO     Dataset testing5000/state_tensors: Writing tensor 316 to disk
+02-21 20:50:53 tools/generate_segmask_dataset.py INFO     State: 000317
+02-21 20:50:54 HeapStateSpace INFO     Sampling from train
+02-21 20:50:54 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:50:54 root       INFO     Dataset testing5000/state_tensors: Writing tensor 317 to disk
+02-21 20:50:55 tools/generate_segmask_dataset.py INFO     State: 000318
+02-21 20:50:55 HeapStateSpace INFO     Sampling from train
+02-21 20:50:55 HeapStateSpace INFO     Sampling 4 objects
+02-21 20:50:56 root       INFO     Dataset testing5000/state_tensors: Writing tensor 318 to disk
+02-21 20:50:57 tools/generate_segmask_dataset.py INFO     State: 000319
+02-21 20:50:57 HeapStateSpace INFO     Sampling from test
+02-21 20:50:57 HeapStateSpace INFO     Sampling 3 objects
+02-21 20:50:57 root       INFO     Dataset testing5000/state_tensors: Writing tensor 319 to disk
+02-21 20:50:58 root       INFO     Dataset testing5000/image_tensors: Writing tensor 63 to disk
+02-21 20:50:58 tools/generate_segmask_dataset.py INFO     Creating env took 0.007 sec
+02-21 20:50:58 tools/generate_segmask_dataset.py INFO     State: 000320
+02-21 20:50:58 HeapStateSpace INFO     Sampling from test
+02-21 20:50:58 HeapStateSpace INFO     Sampling 5 objects
+02-21 20:50:58 HeapStateSpace WARNING  Object ycb~cubei16 fell out of the workspace!
+02-21 20:50:59 HeapStateSpace WARNING  Object ycb~cubei7 fell out of the workspace!
+02-21 20:50:59 root       INFO     Dataset testing5000/state_tensors: Writing tensor 320 to disk
+02-21 20:51:00 tools/generate_segmask_dataset.py INFO     State: 000321
+02-21 20:51:00 HeapStateSpace INFO     Sampling from test
+02-21 20:51:00 HeapStateSpace INFO     Sampling 10 objects
+02-21 20:51:04 root       INFO     Dataset testing5000/state_tensors: Writing tensor 321 to disk

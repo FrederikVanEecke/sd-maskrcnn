@@ -1,0 +1,19 @@
+{
+  "datapoints_per_file": 5,
+  "fields": {
+    "camera_intrs": {
+      "dtype": "float32",
+      "height": 7
+    },
+    "camera_pose": {
+      "dtype": "float32",
+      "height": 7
+    },
+    "split": {
+      "dtype": "uint8"
+    },
+    "state_ind": {
+      "dtype": "uint32"
+    }
+  }
+}

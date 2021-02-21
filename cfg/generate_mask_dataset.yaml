@@ -1,5 +1,5 @@
-num_states: 1                              # Total number of states in dataset
-num_images_per_state: 5                            # Number of images per state
+num_states: 5000                              # Total number of states in dataset
+num_images_per_state: 1                            # Number of images per state
 states_per_flush: 10                                # Number of states before writing tensors (if saving tensors)
 states_per_garbage_collect: 10                      # Number of states before garbage collection (due to pybullet memory issues)
 log_rate: 1                                         # Rate at which to log dataset generation information

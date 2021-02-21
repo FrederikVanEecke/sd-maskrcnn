@@ -63,21 +63,21 @@ state_space:
 
   cameras: 
     general: 
-      im_width: 516 #2064
-      im_height: 386 #1544
-      fx: 566.56 # 2266.27
-      fy: 566.76 # 2267.04
-      cx: 259.55 # 1038.2 
-      cy: 197.19 # 788.761
+      im_width: 384 #2064
+      im_height: 320 #1544
+      fx: 421.63162790697675 #566.56 # 2266.27
+      fy: 469.85284974093264 #566.76 # 2267.04
+      cx: 193.15348837209302 #259.55 # 1038.2 
+      cy: 163.4737823834197 #197.19 # 788.761
       x: 0
       y: 0 
       radius: 0.7215
 
     send_cam: 
       name: camera
-      elevation: -11.75
+      elevation: 0 #-11.75
       azimuth: 0
-      roll: -90
+      roll: 0 #90
 
     view_cam: 
       name: view_camera
@@ -86,10 +86,10 @@ state_space:
       roll: 90
 
     variation: 
-      var_radius: 0.02
-      var_elevation: 1
-      var_azimuth: 2
-      var_roll: 1
+      var_radius: 0 #0.02
+      var_elevation: 0 #1
+      var_azimuth: 0 #2
+      var_roll: 0 #1
     # name: camera 
     # camera:
     #   name: camera

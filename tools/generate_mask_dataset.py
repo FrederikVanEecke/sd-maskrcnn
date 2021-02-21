@@ -452,7 +452,7 @@ def generate_segmask_dataset(output_dataset_path, config, save_tensors=True, war
                         if image_config['semantic']:
                             for j in range(env.num_objects):
                                 this_obj_px = np.where(modal_segmasks[:,:,j] > 0)
-                                stacked_segmask_arr[this_obj_px[0], this_obj_px[1],0] = 255-(j+1)
+                                stacked_segmask_arr[this_obj_px[0], this_obj_px[1],0] = j+1
 
                     # visualize
                     if vis_config['semantic']:
