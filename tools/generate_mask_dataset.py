@@ -363,6 +363,7 @@ def generate_segmask_dataset(output_dataset_path, config, save_tensors=True, war
             try:    
                 # reset env
                 env.reset()
+                obj_id_map = env.state_space.obj_id_map
                 state = env.state
                 split = state.metadata['split']
                 
@@ -378,6 +379,7 @@ def generate_segmask_dataset(output_dataset_path, config, save_tensors=True, war
                     obj_com_vec = np.zeros(obj_com_dim)
                     obj_id_vec = np.iinfo(np.uint32).max * np.ones(max_objs_per_state)
                     j = 0
+                    #print(obj_id_map)
                     for obj_state in state.obj_states:
                         obj_pose_vec[j*POSE_DIM:(j+1)*POSE_DIM] = obj_state.pose.vec
                         obj_com_vec[j*POINT_DIM:(j+1)*POINT_DIM] = obj_state.center_of_mass
@@ -415,7 +417,7 @@ def generate_segmask_dataset(output_dataset_path, config, save_tensors=True, war
                     obs = env.render_camera_image(transformed = image_config['tranformed_depth'])
                     if image_config['tranformed_depth']:
                         color_obs, depth_obs, trnf_depth = obs
-                    else:
+                    else:   
                         color_obs, depth_obs = obs
 
                     # vis obs

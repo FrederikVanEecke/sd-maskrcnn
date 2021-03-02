@@ -138,6 +138,7 @@ class HeapStateSpace(gym.Space):
         inds = np.arange(len(object_keys))
         np.random.shuffle(inds)
         self.all_object_keys = list(np.array(object_keys)[inds][:num_objects])
+        print(self.all_object_keys)
         all_mesh_filenames = list(np.array(mesh_filenames)[inds][:num_objects])
         self.train_keys = self.all_object_keys[:int(len(self.all_object_keys)*self._train_pct)]
         self.test_keys = self.all_object_keys[int(len(self.all_object_keys)*self._train_pct):]
@@ -183,6 +184,10 @@ class HeapStateSpace(gym.Space):
                 self.train_keys.append(k)
             else:
                 self.test_keys.append(k)
+
+    def reset_obj_ids(self, all_object_keys):
+        self.all_object_keys = all_object_keys
+        self.obj_ids = dict([(key, i+1) for i,key in enumerate(all_object_keys)])
 
     def in_workspace(self, pose):
         """ Check whether a pose is in the workspace. """
@@ -238,11 +243,20 @@ class HeapStateSpace(gym.Space):
         total_num_objs = len(sample_keys)
 
         # sample object ids
-        num_objs = min(self.num_objs_rv.rvs(size=1)[0], total_num_objs-1) + 1
+        #num_objs = min(self.num_objs_rv.rvs(size=1)[0], total_num_objs-1) + 1
+        num_objs = self.num_objs_rv.rvs(size=1)[0] + 1
         num_objs = min(num_objs, self.max_objs)
         num_objs = max(num_objs, self.min_objs)
-        obj_inds = np.random.permutation(np.arange(total_num_objs))
-            
+
+        # adaptation allowing for adding one object multiple times. 
+        
+        if num_objs < total_num_objs:
+            obj_inds = np.random.permutation(np.arange(total_num_objs))
+        else: 
+            obj_inds = np.random.randint(0,total_num_objs, num_objs)
+
+       
+
         # log
         self._logger.info('Sampling %d objects' %(num_objs))
 
@@ -254,11 +268,20 @@ class HeapStateSpace(gym.Space):
         # sample object, center of mass, pose
         objs_in_heap = []
         total_drops = 0
-        while total_drops < total_num_objs and len(objs_in_heap) < num_objs:
-            # add each object a random number of times 
+        obj_keys_in_heap = dict()
 
-            obj_key = sample_keys[obj_inds[total_drops]]
-            obj_mesh = trimesh.load_mesh(self.mesh_filenames[obj_key])
+        while len(objs_in_heap) < num_objs:
+            obj_base = sample_keys[obj_inds[total_drops]]
+            if obj_base in obj_keys_in_heap: 
+                c = obj_keys_in_heap.get(obj_base,0) 
+                #obj_key = np.char.add(obj_base, np.str("_{}".format(c)))
+                obj_key = np.str_(obj_base+"_{}".format(c))
+                obj_keys_in_heap[obj_base] = c + 1
+            else: 
+                obj_keys_in_heap[obj_base] = 1
+                obj_key = obj_base
+
+            obj_mesh = trimesh.load_mesh(self.mesh_filenames[obj_base])
             obj_mesh.visual = trimesh.visual.ColorVisuals(obj_mesh, vertex_colors=(0.7,0.7,0.7,1.0))
             obj_mesh.density = self.obj_density
             obj = ObjectState(obj_key, obj_mesh)
@@ -303,72 +326,76 @@ class HeapStateSpace(gym.Space):
                 continue
             
             objs_in_heap.append(obj)
+            total_drops += 1
         
-            # setup until approx zero velocity
-            wait = time.time()
-            objects_in_motion = True
-            num_steps = 0
-            while objects_in_motion and num_steps < self.max_settle_steps:
-                
-                # step simulation
-                self._physics_engine.step()
+        # setup until approx zero velocity
+        wait = time.time()
+        objects_in_motion = True
+        num_steps = 0
+        while objects_in_motion and num_steps < self.max_settle_steps:
+            
+            # step simulation
+            self._physics_engine.step()
 
-                # check velocities
-                max_mag_v = 0
-                max_mag_w = 0
-                objs_to_remove = set()
-                for o in objs_in_heap:
-                    try:
-                        v, w = self._physics_engine.get_velocity(o.key)
-                    except:
-                        self._logger.warning('Could not get base velocity for object %s. Skipping ...' %(o.key))
-                        objs_to_remove.add(o)
-                        continue
-                    mag_v = np.linalg.norm(v)
-                    mag_w = np.linalg.norm(w)
-                    if mag_v > max_mag_v:
-                        max_mag_v = mag_v
-                    if mag_w > max_mag_w:
-                        max_mag_w = mag_w                    
-
-                # Remove invalid objects
-                for o in objs_to_remove:
-                    self._physics_engine.remove(o.key)
-                    objs_in_heap.remove(o)
-
-                # check objs in motion
-                if max_mag_v < self.mag_v_thresh and max_mag_w < self.mag_w_thresh:
-                    objects_in_motion = False
-
-                num_steps += 1
-
-            # read out object poses
+            # check velocities
+            max_mag_v = 0
+            max_mag_w = 0
             objs_to_remove = set()
             for o in objs_in_heap:
-                obj_pose = self._physics_engine.get_pose(o.key)
-                o.pose = obj_pose.copy()
-
-                # remove the object if its outside of the workspace
-                if not self.in_workspace(obj_pose):
-                    self._logger.warning('Object {} fell out of the workspace!'.format(o.key))
+                try:
+                    v, w = self._physics_engine.get_velocity(o.key)
+                except:
+                    self._logger.warning('Could not get base velocity for object %s. Skipping ...' %(o.key))
                     objs_to_remove.add(o)
-                  
-            # remove invalid objects
+                    continue
+                mag_v = np.linalg.norm(v)
+                mag_w = np.linalg.norm(w)
+                if mag_v > max_mag_v:
+                    max_mag_v = mag_v
+                if mag_w > max_mag_w:
+                    max_mag_w = mag_w                    
+
+            # Remove invalid objects
             for o in objs_to_remove:
                 self._physics_engine.remove(o.key)
                 objs_in_heap.remove(o)
 
-            total_drops += 1
-            self._logger.debug('Waiting for zero velocity took %.3f sec' %(time.time()-wait))
+            # check objs in motion
+            if max_mag_v < self.mag_v_thresh and max_mag_w < self.mag_w_thresh:
+                objects_in_motion = False
+
+            num_steps += 1
+
+        # read out object poses
+        objs_to_remove = set()
+        for o in objs_in_heap:
+            obj_pose = self._physics_engine.get_pose(o.key)
+            o.pose = obj_pose.copy()
+
+            # remove the object if its outside of the workspace
+            if not self.in_workspace(obj_pose):
+                self._logger.warning('Object {} fell out of the workspace!'.format(o.key))
+                objs_to_remove.add(o)
+              
+        # remove invalid objects
+        for o in objs_to_remove:
+            self._physics_engine.remove(o.key)
+            objs_in_heap.remove(o)
+
+        self._logger.debug('Waiting for zero velocity took %.3f sec' %(time.time()-wait))
         
         # Stop physics engine
         self._physics_engine.stop()
+
+        # reset all objects keys 
+        all_object_keys = [obj.key for obj in objs_in_heap]
+        print('sample')
+        self.reset_obj_ids(all_object_keys)
 
         # add metadata for heap state and return it
         metadata = {'split': TRAIN_ID}
         if not train:
             metadata['split'] = TEST_ID
-
         return HeapState(workspace_obj_states, objs_in_heap, metadata=metadata)
 
 
@@ -419,5 +446,4 @@ class HeapAndCameraStateSpace(gym.Space):
         # sample individual states
         heap_state = self.heap.sample()
         cam_state, view_cam_state = self.camera.sample()
-
         return HeapAndCameraState(heap_state, cam_state, view_cam_state)

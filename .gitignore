@@ -9,6 +9,10 @@ Scripts/
 lib64/
 share/
 test_dataset/
+monkeyData/
+Cubes1000/
+testing5000/
+models/
 /pyvenv.cfg
 **/__pycache__
 *~

@@ -1,0 +1,7 @@
+02-26 11:29:14 root       INFO     Root logger now logging to testing/dataset_generation.log
+02-26 11:29:14 tools/generate_segmask_dataset.py INFO     Creating env took 0.004 sec
+02-26 11:29:14 tools/generate_segmask_dataset.py INFO     State: 000000
+02-26 11:29:14 HeapStateSpace INFO     Sampling from train
+02-26 11:29:14 HeapStateSpace INFO     Sampling 106 objects
+02-26 11:36:43 tools/generate_segmask_dataset.py INFO     Generated 1 image datapoints
+02-26 11:36:43 tools/generate_segmask_dataset.py INFO     Mask dataset generation took 448.797 sec

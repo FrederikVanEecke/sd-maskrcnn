@@ -1,0 +1,131 @@
+!!omap
+- num_states: 1
+- num_images_per_state: 1
+- states_per_flush: 10
+- states_per_garbage_collect: 10
+- log_rate: 1
+- debug: 0
+- urdf_cache_dir: datasets/oneCube/urdf/cache/
+- state_space: !!omap
+  - heap: !!omap
+    - workspace: !!omap
+      - min:
+        - -0.5
+        - -0.5
+        - 0.0
+      - max:
+        - 0.5
+        - 0.5
+        - 0.3
+      - objects: !!omap
+        - bin: !!omap
+          - mesh_filename: data/bin/bin.obj
+          - pose_filename: data/bin/bin_pose_new.tf
+        - plane: !!omap
+          - mesh_filename: data/plane/plane.obj
+          - pose_filename: data/plane/plane_pose.tf
+    - center: !!omap
+      - min:
+        - -0.1
+        - -0.1
+      - max:
+        - 0.1
+        - 0.1
+    - mean_objs: 100
+    - min_objs: 100
+    - max_objs: 200
+    - replace: 0
+    - max_obj_diam: 0.3
+    - drop_height: 0.2
+    - max_settle_steps: 500
+    - mag_v_thresh: 0.005
+    - mag_w_thresh: 0.1
+    - objects: !!omap
+      - mesh_dir: datasets/oneCube/meshes/
+      - num_objects: 1
+      - times_min: 1
+      - times_max: 10
+      - train_pct: 1
+      - object_keys: !!omap
+        - ycb: all
+      - planar_translation: !!omap
+        - min:
+          - -0.1
+          - -0.1
+        - max:
+          - 0.1
+          - 0.1
+      - center_of_mass: !!omap
+        - sigma: 0.0
+      - density: 4000
+  - cameras: !!omap
+    - general: !!omap
+      - im_width: 384
+      - im_height: 320
+      - fx: 421.63162790697675
+      - fy: 469.85284974093264
+      - cx: 193.15348837209302
+      - cy: 163.4737823834197
+      - x: 0
+      - y: 0
+      - radius: 0.7215
+    - send_cam: !!omap
+      - name: camera
+      - elevation: 0
+      - azimuth: 0
+      - roll: 0
+    - view_cam: !!omap
+      - name: view_camera
+      - elevation: 11.75
+      - azimuth: 0
+      - roll: 90
+    - variation: !!omap
+      - var_radius: 0
+      - var_elevation: 0
+      - var_azimuth: 0
+      - var_roll: 0
+- dataset: !!omap
+  - states: !!omap
+    - tensors: !!omap
+      - datapoints_per_file: 1
+      - fields: !!omap
+        - obj_poses: !!omap
+          - dtype: float32
+        - obj_coms: !!omap
+          - dtype: float32
+        - obj_ids: !!omap
+          - dtype: uint32
+        - image_start_ind: !!omap
+          - dtype: uint32
+        - image_end_ind: !!omap
+          - dtype: uint32
+        - state_id: !!omap
+          - dtype: uint32
+        - split: !!omap
+          - dtype: uint8
+  - images: !!omap
+    - tensors: !!omap
+      - datapoints_per_file: 5
+      - fields: !!omap
+        - camera_pose: !!omap
+          - dtype: float32
+        - camera_intrs: !!omap
+          - dtype: float32
+          - height: 7
+        - state_ind: !!omap
+          - dtype: uint32
+        - split: !!omap
+          - dtype: uint8
+- images: !!omap
+  - color: 1
+  - trf_color: 0
+  - depth: 1
+  - tranformed_depth: 0
+  - modal: 1
+  - amodal: 1
+  - semantic: 1
+- downsample_factor: 1
+- vis: !!omap
+  - state: 0
+  - obs: 0
+  - semantic: 0

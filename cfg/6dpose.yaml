@@ -1,0 +1,18 @@
+model:
+  path: /home/frederik/Documents/GitHub/sd-maskrcnn/models/sd_maskrcnn.h5  # /home/frederik/Documents/GitHub/sd-maskrcnn/models/finetuned_on_30k/mask_rcnn_my_model_0002.h5
+  mode: inference
+  settings:
+    image_shape: [320, 384]
+    image_channel_count: 3
+    mean_pixel: [128,128,128]
+    backbone: resnet35
+    post_nms_rois_inference: 2000
+    rpn_nms_threshold: 1.0
+    detection_nms_threshold: 0.35
+
+pointcloud_templates: 
+  path: /home/frederik/Documents/GitHub/sd-maskrcnn/datasets/monkeyHead
+  viewpoints: 3 # number of different viewpoints for each template pointcloud
+
+dir: 
+  path: /home/frederik/Documents/GitHub/sd-maskrcnn

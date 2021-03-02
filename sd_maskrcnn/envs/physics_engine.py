@@ -76,9 +76,9 @@ class PybulletPhysicsEngine(PhysicsEngine):
 
 
     def add(self, obj, static=False):
-
+        key = str(obj.key).split('_',1)[0]
         # create URDF
-        urdf_filename = os.path.join(self._urdf_cache_dir, obj.key, '{}.urdf'.format(obj.key))
+        urdf_filename = os.path.join(self._urdf_cache_dir, np.str_(key), '{}.urdf'.format(np.str_(key)))
         urdf_dir = os.path.dirname(urdf_filename)
         if not os.path.exists(urdf_filename):
             try:

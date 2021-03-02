@@ -27,34 +27,34 @@ state_space:
         - 0.1
         - 0.1
 
-    mean_objs: 8      # Poisson dist mean for number of objects in each heap
-    min_objs: 3       # Min objs in each heap
-    max_objs: 15        # Max objs in each heap
+    mean_objs: 6      # Poisson dist mean for number of objects in each heap
+    min_objs: 2       # Min objs in each heap
+    max_objs: 10        # Max objs in each heap
     replace: 0          # Sample objects with replacement?
     max_obj_diam: 0.3   # Max diameter of object to be dropped (otherwise it will be skipped)
-    drop_height: 0.2
+    drop_height: 0.05
     
     # Dynamic sim parameters
-    max_settle_steps: 500
+    max_settle_steps: 1000
     mag_v_thresh: 0.005
     mag_w_thresh: 0.1
 
     objects:
-      mesh_dir: datasets/objects_custom/meshes/    # Directory containing meshes to be dropped
-      num_objects: 37                   # Number of objects in dataset (test and train)
+      mesh_dir: datasets/monkeyHead/meshes/    # Directory containing meshes to be dropped
+      num_objects: 20                       # Number of objects in dataset (test and train)
       times_min: 1                        # add each object minimal times_min times
       times_max: 10                        # add each onject maximally times_min times 
-      train_pct: 0.75                        # Percentage of objects to be designated as train
+      train_pct: 1                      # Percentage of objects to be designated as train
       object_keys:                          # Folders containing meshes
         ycb: all                            # all -> all meshes in folder. Can also specify list of mesh names
 
       planar_translation:                   # Amount of translation around the center point to drop each object
         min:                                # Uniform random variable
-          - -0.3
-          - -0.3
+          - -0.1
+          - -0.1
         max:
-          - 0.3
-          - 0.3
+          - 0.1
+          - 0.1
 
       center_of_mass:                       # Std deviation for normal perturbation of object center of mass
         sigma: 0.0

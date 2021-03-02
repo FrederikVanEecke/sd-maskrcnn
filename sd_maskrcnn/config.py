@@ -20,7 +20,9 @@ MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 
 Author: Mike Danielczuk
 """
-
+import os
+import sys
+sys.path.append("/home/frederik/Documents/GitHub/sd-maskrcnn/maskrcnn")
 from mrcnn.config import Config
 
 class MaskConfig(Config):
@@ -33,6 +35,7 @@ class MaskConfig(Config):
   # Number of classes (including background)
   NUM_CLASSES = 1 + 1  # background + object
   USE_MINI_MASK = False
+  IMAGES_PER_GPU = 1
 
   # Use smaller anchors because our image and objects are small
   # RPN_ANCHOR_SCALES = (8, 16, 32, 64, 128)  # anchor side in pixels
