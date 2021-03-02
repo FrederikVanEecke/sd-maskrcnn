@@ -75,7 +75,7 @@ state_space:
 
     send_cam: 
       name: camera
-      elevation: -60 #-11.75
+      elevation: 0 #-11.75
       azimuth: 0
       roll: 0 #90
 
