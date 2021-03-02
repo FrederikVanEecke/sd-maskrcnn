@@ -328,61 +328,61 @@ class HeapStateSpace(gym.Space):
             objs_in_heap.append(obj)
             total_drops += 1
         
-        # setup until approx zero velocity
-        wait = time.time()
-        objects_in_motion = True
-        num_steps = 0
-        while objects_in_motion and num_steps < self.max_settle_steps:
-            
-            # step simulation
-            self._physics_engine.step()
+            # setup until approx zero velocity
+            wait = time.time()
+            objects_in_motion = True
+            num_steps = 0
+            while objects_in_motion and num_steps < self.max_settle_steps:
+                
+                # step simulation
+                self._physics_engine.step()
 
-            # check velocities
-            max_mag_v = 0
-            max_mag_w = 0
+                # check velocities
+                max_mag_v = 0
+                max_mag_w = 0
+                objs_to_remove = set()
+                for o in objs_in_heap:
+                    try:
+                        v, w = self._physics_engine.get_velocity(o.key)
+                    except:
+                        self._logger.warning('Could not get base velocity for object %s. Skipping ...' %(o.key))
+                        objs_to_remove.add(o)
+                        continue
+                    mag_v = np.linalg.norm(v)
+                    mag_w = np.linalg.norm(w)
+                    if mag_v > max_mag_v:
+                        max_mag_v = mag_v
+                    if mag_w > max_mag_w:
+                        max_mag_w = mag_w                    
+
+                # Remove invalid objects
+                for o in objs_to_remove:
+                    self._physics_engine.remove(o.key)
+                    objs_in_heap.remove(o)
+
+                # check objs in motion
+                if max_mag_v < self.mag_v_thresh and max_mag_w < self.mag_w_thresh:
+                    objects_in_motion = False
+
+                num_steps += 1
+
+            # read out object poses
             objs_to_remove = set()
             for o in objs_in_heap:
-                try:
-                    v, w = self._physics_engine.get_velocity(o.key)
-                except:
-                    self._logger.warning('Could not get base velocity for object %s. Skipping ...' %(o.key))
-                    objs_to_remove.add(o)
-                    continue
-                mag_v = np.linalg.norm(v)
-                mag_w = np.linalg.norm(w)
-                if mag_v > max_mag_v:
-                    max_mag_v = mag_v
-                if mag_w > max_mag_w:
-                    max_mag_w = mag_w                    
+                obj_pose = self._physics_engine.get_pose(o.key)
+                o.pose = obj_pose.copy()
 
-            # Remove invalid objects
+                # remove the object if its outside of the workspace
+                if not self.in_workspace(obj_pose):
+                    self._logger.warning('Object {} fell out of the workspace!'.format(o.key))
+                    objs_to_remove.add(o)
+                  
+            # remove invalid objects
             for o in objs_to_remove:
                 self._physics_engine.remove(o.key)
                 objs_in_heap.remove(o)
 
-            # check objs in motion
-            if max_mag_v < self.mag_v_thresh and max_mag_w < self.mag_w_thresh:
-                objects_in_motion = False
-
-            num_steps += 1
-
-        # read out object poses
-        objs_to_remove = set()
-        for o in objs_in_heap:
-            obj_pose = self._physics_engine.get_pose(o.key)
-            o.pose = obj_pose.copy()
-
-            # remove the object if its outside of the workspace
-            if not self.in_workspace(obj_pose):
-                self._logger.warning('Object {} fell out of the workspace!'.format(o.key))
-                objs_to_remove.add(o)
-              
-        # remove invalid objects
-        for o in objs_to_remove:
-            self._physics_engine.remove(o.key)
-            objs_in_heap.remove(o)
-
-        self._logger.debug('Waiting for zero velocity took %.3f sec' %(time.time()-wait))
+            self._logger.debug('Waiting for zero velocity took %.3f sec' %(time.time()-wait))
         
         # Stop physics engine
         self._physics_engine.stop()

@@ -32,7 +32,7 @@ state_space:
     max_objs: 10        # Max objs in each heap
     replace: 0          # Sample objects with replacement?
     max_obj_diam: 0.3   # Max diameter of object to be dropped (otherwise it will be skipped)
-    drop_height: 0.05
+    drop_height: 0.1
     
     # Dynamic sim parameters
     max_settle_steps: 1000
@@ -75,7 +75,7 @@ state_space:
 
     send_cam: 
       name: camera
-      elevation: 0 #-11.75
+      elevation: -60 #-11.75
       azimuth: 0
       roll: 0 #90
 
