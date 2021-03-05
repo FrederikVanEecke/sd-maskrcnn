@@ -1,0 +1,19 @@
+03-05 20:06:44 root       INFO     Root logger now logging to test_dataset2/dataset_generation.log
+03-05 20:06:44 tools/generate_segmask_dataset.py INFO     Creating datasets
+03-05 20:06:44 tools/generate_segmask_dataset.py INFO     Creating env took 0.004 sec
+03-05 20:06:44 tools/generate_segmask_dataset.py INFO     State: 000000
+03-05 20:06:44 HeapStateSpace INFO     Sampling from train
+03-05 20:06:44 HeapStateSpace INFO     Sampling 6 objects
+03-05 20:06:44 root       INFO     Dataset test_dataset2/state_tensors: Writing tensor 0 to disk
+03-05 20:06:45 tools/generate_segmask_dataset.py INFO     State: 000001
+03-05 20:06:45 HeapStateSpace INFO     Sampling from train
+03-05 20:06:45 HeapStateSpace INFO     Sampling 8 objects
+03-05 20:06:48 root       INFO     Dataset test_dataset2/state_tensors: Writing tensor 1 to disk
+03-05 20:06:49 tools/generate_segmask_dataset.py INFO     State: 000002
+03-05 20:06:49 HeapStateSpace INFO     Sampling from train
+03-05 20:06:49 HeapStateSpace INFO     Sampling 5 objects
+03-05 20:06:50 root       INFO     Dataset test_dataset2/state_tensors: Writing tensor 2 to disk
+03-05 20:06:51 tools/generate_segmask_dataset.py INFO     State: 000003
+03-05 20:06:51 HeapStateSpace INFO     Sampling from train
+03-05 20:06:51 HeapStateSpace INFO     Sampling 4 objects
+03-05 20:06:51 root       INFO     Dataset test_dataset2/state_tensors: Writing tensor 3 to disk
