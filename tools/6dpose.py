@@ -29,40 +29,47 @@ def load_image(path, file):
 
 def main(): 
 	pose_config = YamlConfig("/home/frederik/Documents/GitHub/sd-maskrcnn/cfg/6dpose.yaml")
-	dataset_config= YamlConfig("/home/frederik/Documents/GitHub/sd-maskrcnn/monkeyData/dataset_generation_params.yaml")
+	dataset_config= YamlConfig("/home/frederik/Documents/GitHub/sd-maskrcnn/test_dataset/dataset_generation_params.yaml")
 
-	dataset_path = "/home/frederik/Documents/GitHub/sd-maskrcnn/monkeyData/" #"/home/frederik/Documents/GitHub/sd-maskrcnn/test_dataset/"
+	dataset_path = "/home/frederik/Documents/GitHub/sd-maskrcnn/test_dataset/"
 
 	depth_im_path = "images/depth_ims/" 
 
 	ds = DatasetHandler(dataset_path, depth_im_path)
 	detector = detection.Detector(pose_config)
 
-	templates = TemplatePointclouds(pose_config, dataset_config)
-
-	temp=templates.get_templates(1)
-
-	masked_pcls = MaskedPointclouds()
-
 	ds_image = ds.load_image()
-
 	_=detector.detect(ds_image)
 
-	ds_image.visualizePreditions()
-	
+	templates = TemplatePointclouds(ds_image, pose_config, dataset_config)
+
+	#templates.render_templates(1)
+	temp = templates.get_templates(class_id=1)
+
+	masked_pcls = MaskedPointclouds()
 	masked_pcls.feed_image(ds_image)
-
-	icp = ICP(pose_config, dataset_config)
-
-	masked_pcls.render_masked_pointclouds()
-
 	(classes, pointclouds_cleaned) = masked_pcls.get_pointcloudsFor_ICP()
 
-	masked_pcls.render_masked_pointclouds(option='cleaned')
-
-	icp.feed_pointcloudsAndClasses(pointclouds_cleaned, classes)
-
 	masked_pcls.render_templates(temp)
+
+	# masked_pcls = MaskedPointclouds()
+
+
+	# ds_image.visualizePreditions()
+	
+	# masked_pcls.feed_image(ds_image)
+
+	# icp = ICP(pose_config, dataset_config)
+
+	# masked_pcls.render_masked_pointclouds()
+
+	# (classes, pointclouds_cleaned) = masked_pcls.get_pointcloudsFor_ICP()
+
+	# masked_pcls.render_masked_pointclouds(option='cleaned')
+
+	# icp.feed_pointcloudsAndClasses(pointclouds_cleaned, classes)
+
+	# masked_pcls.render_templates(temp)
 
 	# _,_,transformations,matching_template = icp.get_best_transformations()
 	# icp.render_ipc_results()

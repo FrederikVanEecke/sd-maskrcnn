@@ -11,12 +11,17 @@ from .cam_utils import *
 
 import open3d as o3d
 import PIL
+from PIL import Image
 import cv2
 from perception import DepthImage
 from sklearn.cluster import DBSCAN 
 from collections import Counter
 import matplotlib.pyplot as plt 
 import time
+
+import pybullet 
+from pyrender import (Scene, IntrinsicsCamera, Mesh, DirectionalLight, Viewer,
+                      MetallicRoughnessMaterial, Node, OffscreenRenderer, RenderFlags)
 
 from scipy.spatial.transform import Rotation as R
 # from open3d.geometry.PointCloud import create_from_depth_image
@@ -26,96 +31,130 @@ from scipy.spatial.transform import Rotation as R
 class TemplatePointclouds(): 
 	"""
 		Class for constructing/retrieving object templates correpsonding to found maskedPointcloud objects. 
+		Template pointclouds are ds_image specific. This because we assume each ds_image will be linked with different camera_matrices
 	"""
-	def __init__(self, config_6dpose, config_dataset):
+	def __init__(self,ds_image, config_6dpose, config_dataset):
 		self.dataset_config = config_dataset
 		self.pose_config = config_6dpose
+		self.nbr_of_viewpoints = self.pose_config['pointcloud_templates']['viewpoints']
+
+		self.ds_image = ds_image
 
 		self.meshes_dir = self.dataset_config['urdf_cache_dir'] 
-		path = self.pose_config['pointcloud_templates']['path']
 
-		if not os.path.isabs(path): 
-			path = os.path.join(os.getcwd(), path)
+		if not os.path.isabs(self.meshes_dir):
+			self.meshes_dir = os.path.join(os.getcwd(), '..' , self.meshes_dir)
 
-		self.templates_dir = os.path.join(path, 'pointcloud_templates')
-
-		if not os.path.exists(self.templates_dir): 
-			os.mkdir(self.templates_dir)
-
-		self.camera_pose =  np.array([[ 1.  ,        0.   ,       0.    ,      0.        ],
-							 [ 0.    ,     -1.    ,      0.    ,      0.        ],
-							 [ 0.    ,      0.    ,     -1.    ,      0.72149998],
-							 [ 0.    ,      0.    ,      0.    ,      1.        ]])
+		
 
 
-		#self.mapping = {1:'ycb~cubei7'} # temporary mapping for 1 cube case. 
-		self.mapping = {1: 'ycb~monkeyHead'}
-
-
-	def get_templates(self, class_id): 
-		# check if template folder exists for this class.
-		class_name  = self.mapping[class_id] 
-		path = os.path.join(self.templates_dir, class_name)
-		if not os.path.exists(path): 
-			# create folder 
-			os.mkdir(path)
-			# create pointcloud templates within this folder 
-			self.create_templates(path, class_name)
+		# templates related to this ds_image are stored as a dictionnary. Templates are created for each class recognized within the ds_image 
+		# templates are added in the following manner: self.templates[class] = [templ1, templ2, ..., templ_n]
+		self.templates = dict()
 
 	
-		templates = self.read_templates(path)
-		return templates 
+
+		self.mapping = {1:'ycb~cubei7'} # temporary mapping for 1 cube case. 
+		#self.mapping = {1: 'ycb~monkeyHead'}
 
 
-	def create_templates(self, templates_path, class_name): 
+		self.create_templates()
+
+	def create_templates(self):
 		"""
-			Creates pointcloud templates of the class class_name within the given  path. 
+			Creates templates for every class predicted to be presented within the ds_image. 
 		"""
 
-		nbrOfTemplates = self.pose_config['pointcloud_templates']['viewpoints']
+		intrinsics = self.ds_image.get_intrinsics()
 
-		# read obj file from meshes dir 
-		rel_path_to_obj = os.path.join(self.meshes_dir, '{}/{}_convex_piece_0.obj'.format(class_name, class_name))
-		abs_path_to_obj = os.path.join(self.pose_config['dir']['path'], rel_path_to_obj)
+		fx=intrinsics.fx
+		fy=intrinsics.fy
+		ppx=intrinsics.cx
+		ppy=intrinsics.cy
+		w=intrinsics.width 
+		h=intrinsics.height
 
-		obj_mesh = o3d.io.read_triangle_mesh(abs_path_to_obj) 
+		far=1.118
+		near=0.458
+		opengl_mtx = np.array([
+							[2*fx/w, 0.0, (w - 2*ppx)/w, 0.0],
+							[0.0, 2*fy/h, -(h - 2*ppy)/h, 0.0],
+							[0.0, 0.0, (-far - near) / (far - near), -2.0*far*near/(far-near)],
+							[0.0, 0.0, -1.0, 0.0]
+							]).T.reshape(-1).tolist()
 
-		pcd = obj_mesh.sample_points_uniformly(number_of_points=10000, use_triangle_normal=False, seed=- 1)
-		#pcd.translate(translate=np.array([0,0,0]), relative=False) # translate to the origin. 
-		#pcd.scale(3,np.zeros(3))
+		pose = self.ds_image.get_pose()
+		pose[2,3] = -pose[2,3] # convention mismatches (i guess)
+		pose[1,1] = -pose[1,1]
+		pose[2,2] = -pose[2,2]
 
-		points = np.asarray(pcd.points)
+		unique_classes = np.unique(self.ds_image.get_classes())
+		obj_t = np.array([0,0,0]) # objects fixed at the origin. 
+
+		for class_id in unique_classes: 
+			depth_im = []
+			class_templates = [] # array to store class specific pointclouds
+			# get class urdf file 
+			file = os.path.join(self.meshes_dir, '{}/{}.urdf'.format(self.mapping[class_id], self.mapping[class_id]))
+
+			# connect to pybullet: 
+			pybullet.connect(pybullet.DIRECT)
+			q=pybullet.getQuaternionFromEuler(np.random.uniform(low=[0]*3,high=[0]*3))
+
+			obj = pybullet.loadURDF(file, 
+									obj_t,
+									q, 
+									useFixedBase=False)
+
+			# build images 
+			for i in range(self.nbr_of_viewpoints): 
+				data_cam=pybullet.getCameraImage(w,h,pose.T.reshape(-1).tolist(),opengl_mtx)
+
+				depthSample = 2.0 * data_cam[3]- 1.0;
+				zLinear = 2.0 * near * far / (far + near - depthSample * (far - near)) 
+				im=np.array(zLinear*255,dtype=np.float64)
+				
+				depth_im.append(im)
+				# show_im=Image.fromarray(im)
+				# show_im.show()
+				
+
+				pcl_1 = intrinsics.deproject(DepthImage(im.astype('float'), frame='view_camera'))
+				pcl = np.array(pcl_1.data).T # reshaping 
+				idx = np.where(pcl[:,2] == np.max(pcl[:,2]))[0]
+				pcl[idx,2] = np.nan
+				pcl = pcl[~np.isnan(pcl[:,2])]
+
+
+				pcd = o3d.geometry.PointCloud()
+				pcd.points = o3d.utility.Vector3dVector(pcl)
+				class_templates.append(pcd)
+
+				q=pybullet.getQuaternionFromEuler(np.random.uniform(low=[-np.pi]*3,high=[np.pi]*3))
+				pybullet.resetBasePositionAndOrientation(obj,obj_t,q)
+				pybullet.stepSimulation()
+
+			self.templates[class_id] = class_templates
 		
-		o3d.io.write_point_cloud(os.path.join(templates_path, '{}.pcd'.format(class_name)), pcd)
+			# use images and camera intrinsics to get pointclouds. 
 
-		for idx in range(nbrOfTemplates): 
-			# random rotation matrix 
-			rot=R.random(random_state=np.random.randint(1000)).as_matrix()
-			rotatedPoints = points@rot 
 
-			pcd = o3d.geometry.PointCloud()
-			pcd.points = o3d.utility.Vector3dVector(rotatedPoints)
-			pcd.paint_uniform_color(np.random.random(3))
+			# do pybullet simulation with random obj orientation. 
+				# take picture 
+				# pic -> pcd
+				# store pcd 
 
-			o3d.io.write_point_cloud(os.path.join(templates_path, '{}_rot{}.pcd'.format(class_name, idx)), pcd)
 
-		return None 
-
-	def read_templates(self, path): 
+	def get_templates(self, class_id):
 		"""
-			read and return all template pointclouds within the given path.
-			returns list with open3d pointcloud objects 
+			Return templates related to the given class_id 
 		"""
-		templates = [ o3d.io.read_point_cloud(os.path.join(path, pcdfile)) for pcdfile in os.listdir(path) ]
 
+		return self.templates[class_id]
 
-		return templates
-
-	def set_camera_pose(self, pose): 
-		self.camera_pose = pose
+		
 
 	def render_templates(self, class_id): 
-		templates = self.get_templates(class_id)
 		w = self.dataset_config['state_space']['cameras']['general']['im_width']
 		h = self.dataset_config['state_space']['cameras']['general']['im_height']
 		fx = self.dataset_config['state_space']['cameras']['general']['fx']
@@ -134,17 +173,19 @@ class TemplatePointclouds():
 		open3d_intrinsics.set_intrinsics(width=w, height=h, fx=fx, fy=fy, cx=w/2-0.5, cy=h/2-0.5)
 
 		open3d_camera = o3d.camera.PinholeCameraParameters()
-		pose = self.camera_pose
+		pose = self.ds_image.get_pose()
 		pose[2,3] = -pose[2,3] # convention mismatches (i guess)
 		pose[1,1] = -pose[1,1]
 		pose[2,2] = -pose[2,2]
-		open3d_camera.extrinsic = self.camera_pose
+		open3d_camera.extrinsic = pose
 		open3d_camera.intrinsic = open3d_intrinsics
 
 		view_controls  = vis.get_view_control()
 		view_controls.convert_from_pinhole_camera_parameters(open3d_camera)
 
-		for pcd in templates:
+		pcds = self.templates[class_id]
+
+		for pcd in pcds:
 			vis.add_geometry(pcd)
 
 		vis.run()
@@ -321,7 +362,7 @@ class MaskedPointclouds():
 			print(f"point cloud has {max_label + 1} clusters")
 			colors = plt.get_cmap("tab20")(labels / (max_label if max_label > 0 else 1))
 			colors[labels < 0] = 0
-			print(labels)
+			
 			pcd.colors = o3d.utility.Vector3dVector(colors[:, :3])
 
 			points = np.asarray(pcd.points)
@@ -334,7 +375,7 @@ class MaskedPointclouds():
 
 
 
-			cleaned_pointclouds.append(pcd)
+			cleaned_pointclouds.append(pcd_cluster)
 
 		self.pointclouds_cleaned = cleaned_pointclouds
 
@@ -353,11 +394,11 @@ class MaskedPointclouds():
 			c+=1
 			ds_pcd = pcd.voxel_down_sample(voxel_size)
 			fraction=0.1
-			print(pcd)
+			
 			#step = int(len(np.asarray(pcd.points))/int(fraction*len(np.asarray(pcd.points))))
 			#ds_pcd = pcd.uniform_down_sample(step)
 			downsampled_pcd.append(ds_pcd)
-			print(ds_pcd)
+			
 		
 		self.pointclouds_downsampled = downsampled_pcd
 

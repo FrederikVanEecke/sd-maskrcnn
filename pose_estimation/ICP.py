@@ -11,10 +11,11 @@ import copy
 
 class ICP():
 	
-	def __init__(self, config_6dpose, config_dataset):
+	def __init__(self, config_6dpose, config_dataset, ds_image):
 		self.classes=None 
 		self.pointclouds=None 
-		self.templates=TemplatePointclouds(config_6dpose, config_dataset)
+		self.ds_image = ds_image
+		self.templates=TemplatePointclouds(ds_image, config_6dpose, config_dataset)
 
 	def feed_pointcloudsAndClasses(self, pointclouds, classes):
 		self.classes=classes
@@ -42,7 +43,7 @@ class ICP():
 				reg_p2p = o3d.pipelines.registration.registration_icp(
 													    trf_template, pcd, threshold, np.identity(4),
 													    o3d.pipelines.registration.TransformationEstimationPointToPoint(with_scaling=True),
-													    o3d.pipelines.registration.ICPConvergenceCriteria(max_iteration=3000))
+													    o3d.pipelines.registration.ICPConvergenceCriteria(max_iteration=500))
 				if reg_p2p.fitness > best_fitness:
 					best_fitness = reg_p2p.fitness 
 					current_transformation = reg_p2p.transformation

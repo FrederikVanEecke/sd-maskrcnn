@@ -95,6 +95,7 @@ def getTransformation(pointcloud, template):
     copyTemplate.points = o3d.utility.Vector3dVector(np.asarray(template.points))
 
     copyTemplate.transform(-transform_matrix)
+
     _,pcd_cov = pointcloud.compute_mean_and_covariance()
     _,temp_cov = copyTemplate.compute_mean_and_covariance()
 
@@ -104,6 +105,7 @@ def getTransformation(pointcloud, template):
     copyTemplate.scale(scale=scalefactor, center=copyTemplate.get_center())
 
     return copyTemplate
+
 
 
 

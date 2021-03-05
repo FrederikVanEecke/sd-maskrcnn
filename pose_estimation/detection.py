@@ -40,4 +40,8 @@ class Detector():
 
 		return results
 
+	def set_new_weights(path_to_weights): 
+		model.load_weights(path_to_weights, by_name=True)
+		print('new weights set')
+
 

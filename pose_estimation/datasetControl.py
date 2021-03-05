@@ -147,4 +147,5 @@ class DatasetImage():
 		file_name = os.path.join(os.getcwd(), 'visualization')
 		fig.savefig(file_name, transparent=True, dpi=300)
 		print('saved to: {}'.format(os.getcwd()))
+		plt.show()
 		plt.close()
