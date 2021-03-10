@@ -3,15 +3,15 @@ model:
   weights: new     # new, last, coco, imagenet or custom path
   epochs: 20       # number of epochs to train for
   settings:
-    name: topViewModel10k
+    name: RealCamera_30k_resnet101
     image_shape: [320, 384, 3]
     image_channel_count: 3
     mean_pixel: [128, 128, 128]
-    backbone: resnet35
+    backbone: resnet101
     max_gt_instances: 20
     gpu_count: 1
     images_per_gpu: 5
-    learning_rate: 0.01
+    learning_rate: 0.015
     
 dataset:
   path: /home/frederik/Documents/GitHub/realCamera_train_30k/
@@ -23,4 +23,4 @@ dataset:
 # name of the config file to save (within the dataset folder)
 # note that this will be overwritten between multiple runs so
 # you should name this uniquely for each run.
-save_conf_name: realCam30k.yaml
+save_conf_name: realCam30k_resnet101.yaml
