@@ -6,7 +6,7 @@
 
 import os
 import sys
-sys.path.append("/home/frederik/Documents/GitHub/sd-maskrcnn")
+sys.path.append("/home/frederik/Documents/vintecc/sd-maskrcnn")
 from .cam_utils import * 
 
 import open3d as o3d
@@ -31,34 +31,50 @@ from scipy.spatial.transform import Rotation as R
 class TemplatePointclouds(): 
 	"""
 		Class for constructing/retrieving object templates correpsonding to found maskedPointcloud objects. 
-		Template pointclouds are ds_image specific. This because we assume each ds_image will be linked with different camera_matrices
 	"""
-	def __init__(self,ds_image, config_6dpose, config_dataset):
+	def __init__(self, config_6dpose, config_dataset):
 		self.dataset_config = config_dataset
 		self.pose_config = config_6dpose
 		self.nbr_of_viewpoints = self.pose_config['pointcloud_templates']['viewpoints']
+		self.nbr_of_view_axis_rotations = self.pose_config['pointcloud_templates']['view_axis_rot']
 
-		self.ds_image = ds_image
 
 		self.meshes_dir = self.dataset_config['urdf_cache_dir'] 
 
 		if not os.path.isabs(self.meshes_dir):
-			self.meshes_dir = os.path.join(os.getcwd(), '..' , self.meshes_dir)
+			self.meshes_dir = os.path.join(os.getcwd(), self.meshes_dir)
 
 		
 
 
 		# templates related to this ds_image are stored as a dictionnary. Templates are created for each class recognized within the ds_image 
 		# templates are added in the following manner: self.templates[class] = [templ1, templ2, ..., templ_n]
-		self.templates = dict()
+
 
 	
 
 		self.mapping = {1:'ycb~cubei7'} # temporary mapping for 1 cube case. 
 		#self.mapping = {1: 'ycb~monkeyHead'}
 
+		self.ds_image = None
+		self.templates = None
 
+	def reset(self):
+		self.ds_image = None
+		self.templates = None
+
+
+
+	def feed_image(self, ds_image):
+		"""
+			Feeding a dataset image to the template object. 
+		"""
+		self.reset()
+		self.ds_image = ds_image
+		self.templates = dict()
 		self.create_templates()
+
+
 
 	def create_templates(self):
 		"""
@@ -89,7 +105,7 @@ class TemplatePointclouds():
 		pose[2,2] = -pose[2,2]
 
 		unique_classes = np.unique(self.ds_image.get_classes())
-		obj_t = np.array([0,0,0]) # objects fixed at the origin. 
+		obj_t = np.array([0,0,0.05]) # objects fixed at the origin. 
 
 		for class_id in unique_classes: 
 			depth_im = []
@@ -98,41 +114,87 @@ class TemplatePointclouds():
 			file = os.path.join(self.meshes_dir, '{}/{}.urdf'.format(self.mapping[class_id], self.mapping[class_id]))
 
 			# connect to pybullet: 
-			pybullet.connect(pybullet.DIRECT)
+			pybullet.connect(pybullet.DIRECT) # change to DIRECT/GUI when done debugging. 
 			q=pybullet.getQuaternionFromEuler(np.random.uniform(low=[0]*3,high=[0]*3))
 
 			obj = pybullet.loadURDF(file, 
 									obj_t,
 									q, 
 									useFixedBase=False)
+			# bak = pybullet.loadURDF("/home/frederik/Documents/vintecc/sd-maskrcnn/datasets/oneCube/urdf/cache/bin/bin.urdf", 
+			# 						np.zeros(3), 
+			# 						pybullet.getQuaternionFromEuler(np.random.uniform(low=[0]*3,high=[0]*3)), 
+			# 						useFixedBase=True
+			# 						)
 
-			# build images 
+			# build images with complitely random orientations
 			for i in range(self.nbr_of_viewpoints): 
+				# creatre viewpoints of a specific object class 
 				data_cam=pybullet.getCameraImage(w,h,pose.T.reshape(-1).tolist(),opengl_mtx)
 
 				depthSample = 2.0 * data_cam[3]- 1.0;
 				zLinear = 2.0 * near * far / (far + near - depthSample * (far - near)) 
 				im=np.array(zLinear*255,dtype=np.float64)
 				
-				depth_im.append(im)
+				depth_im.append(im) # get depth image
+
 				# show_im=Image.fromarray(im)
 				# show_im.show()
-				
+				idx = np.where(im == np.max(im))
+				im[idx] = np.nan
 
-				pcl_1 = intrinsics.deproject(DepthImage(im.astype('float'), frame='view_camera'))
-				pcl = np.array(pcl_1.data).T # reshaping 
-				idx = np.where(pcl[:,2] == np.max(pcl[:,2]))[0]
-				pcl[idx,2] = np.nan
-				pcl = pcl[~np.isnan(pcl[:,2])]
-
+				pcl = intrinsics.deproject(DepthImage(im.astype('float'), frame='view_camera')) # retrieve pointcloud using camera intrinsics 
 
 				pcd = o3d.geometry.PointCloud()
-				pcd.points = o3d.utility.Vector3dVector(pcl)
-				class_templates.append(pcd)
+				pcd.points = o3d.utility.Vector3dVector(np.array(pcl.data).T)
+				ds_pcd = pcd.voxel_down_sample(0.01)
 
+				class_templates.append(ds_pcd)
+
+				# reset to random orientation for new viewpoint
 				q=pybullet.getQuaternionFromEuler(np.random.uniform(low=[-np.pi]*3,high=[np.pi]*3))
+				obj_t = np.array([np.random.uniform(0,0.05), np.random.uniform(0,0.05), 0.05])
 				pybullet.resetBasePositionAndOrientation(obj,obj_t,q)
 				pybullet.stepSimulation()
+
+			# build images with rotations along view axis. 
+			rotationAxis = np.array([0,0,1])
+			rotationUnit = (2*np.pi)/(self.nbr_of_view_axis_rotations)
+			RotationAngle = 0
+
+			for i in range(self.nbr_of_view_axis_rotations): 
+				RotationAngle = RotationAngle + rotationUnit
+				#q=pybullet.getQuaternionFromEuler(np.random.uniform(low=[-np.pi]*3,high=[np.pi]*3))
+
+				x = rotationAxis[0] * np.sin(RotationAngle / 2)
+				y = rotationAxis[1] * np.sin(RotationAngle / 2)
+				z = rotationAxis[2] * np.sin(RotationAngle / 2)
+				ww = np.cos(RotationAngle / 2)
+				q = np.array([x,y,z,ww])
+				obj_t = np.array([np.random.uniform(0,0.05), np.random.uniform(0,0.05), 0.05])
+				pybullet.resetBasePositionAndOrientation(obj,obj_t,q)
+
+				data_cam=pybullet.getCameraImage(w,h,pose.T.reshape(-1).tolist(),opengl_mtx)
+
+				depthSample = 2.0 * data_cam[3]- 1.0;
+				zLinear = 2.0 * near * far / (far + near - depthSample * (far - near)) 
+				im=np.array(zLinear*255,dtype=np.float64)
+				
+				depth_im.append(im) # get depth image
+
+				# show_im=Image.fromarray(im)
+				# show_im.show()
+				idx = np.where(im == np.max(im))
+				im[idx] = np.nan
+
+				pcl = intrinsics.deproject(DepthImage(im.astype('float'), frame='view_camera')) # retrieve pointcloud using camera intrinsics 
+
+				pcd = o3d.geometry.PointCloud()
+				pcd.points = o3d.utility.Vector3dVector(np.array(pcl.data).T)
+				ds_pcd = pcd.voxel_down_sample(0.01)
+
+				class_templates.append(ds_pcd)
+
 
 			self.templates[class_id] = class_templates
 		
@@ -238,6 +300,7 @@ class MaskedPointclouds():
 		self.DatasetImage = None 
 		self.clusters = None 
 		self.image = None 
+
 		self.pointclouds = None
 		self.pointclouds_downsampled = None 
 		self.pointclouds_cleaned = None

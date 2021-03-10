@@ -20,7 +20,7 @@
 
 import os
 import sys
-sys.path.append("/home/frederik/Documents/GitHub/sd-maskrcnn/maskrcnn")
+sys.path.append("/home/frederik/Documents/vintecc/sd-maskrcnn")
 
 from autolab_core import YamlConfig, RigidTransform
 from perception import CameraIntrinsics

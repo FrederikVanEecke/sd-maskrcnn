@@ -8,6 +8,7 @@ import numpy as np
 import cv2
 import open3d as o3d
 import os
+import copy
 
 def rotx(angle):
     """ angle in radians"""
@@ -92,19 +93,20 @@ def getTransformation(pointcloud, template):
 
 
     copyTemplate = o3d.geometry.PointCloud()
-    copyTemplate.points = o3d.utility.Vector3dVector(np.asarray(template.points))
+    copyTemplate.points = o3d.utility.Vector3dVector(copy.deepcopy(np.asarray(template.points)))
 
     copyTemplate.transform(-transform_matrix)
 
     _,pcd_cov = pointcloud.compute_mean_and_covariance()
     _,temp_cov = copyTemplate.compute_mean_and_covariance()
 
-    scalefactor = (np.mean(pcd_cov)/np.mean(temp_cov))**(1/3)
-
+    scalefactor = 0.7 #(np.mean(pcd_cov)/np.mean(temp_cov))**(1/3)
+    # need to think about this, scaling could be possible since z-coordinate of both template and pcd is known, together with camera position. 
+    #scalefactor=1
 
     copyTemplate.scale(scale=scalefactor, center=copyTemplate.get_center())
 
-    return copyTemplate
+    return copyTemplate, -transform_matrix
 
 
 

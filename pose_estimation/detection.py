@@ -5,7 +5,7 @@
 """
 import sys 
 import os 
-sys.path.append("/home/frederik/Documents/GitHub/sd-maskrcnn")
+sys.path.append("/home/frederik/Documents/vintecc/sd-maskrcnn")
 print(os.getcwd())
 
 from sd_maskrcnn.config import MaskConfig

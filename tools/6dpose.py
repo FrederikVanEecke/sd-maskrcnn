@@ -6,7 +6,7 @@
 
 import os
 import sys
-sys.path.append("/home/frederik/Documents/GitHub/sd-maskrcnn")
+sys.path.append("/home/frederik/Documents/vintecc/sd-maskrcnn")
 
 from pose_estimation import detection 
 from autolab_core import YamlConfig
@@ -28,10 +28,10 @@ def load_image(path, file):
 	return im
 
 def main(): 
-	pose_config = YamlConfig("/home/frederik/Documents/GitHub/sd-maskrcnn/cfg/6dpose.yaml")
-	dataset_config= YamlConfig("/home/frederik/Documents/GitHub/sd-maskrcnn/test_dataset/dataset_generation_params.yaml")
+	pose_config = YamlConfig("/home/frederik/Documents/vintecc/sd-maskrcnn/cfg/6dpose.yaml")
+	dataset_config= YamlConfig("/home/frederik/Documents/vintecc/sd-maskrcnn/test_dataset_best/dataset_generation_params.yaml")
 
-	dataset_path = "/home/frederik/Documents/GitHub/sd-maskrcnn/test_dataset/"
+	dataset_path = "/home/frederik/Documents/vintecc/sd-maskrcnn/test_dataset_best/"
 
 	depth_im_path = "images/depth_ims/" 
 
@@ -41,19 +41,33 @@ def main():
 	ds_image = ds.load_image()
 	_=detector.detect(ds_image)
 
-	# templates = TemplatePointclouds(ds_image, pose_config, dataset_config)
+	icp = ICP(pose_config, dataset_config)
+	icp.feed_image(ds_image)
+	#icp.show_templates(class_id=1, option='all')
+	icp.perform_ICP(threshold=1)
+	icp.render_results()
+	icp.render_results(option='rmseBased')
+
+
+	# # templates
+	# templates = TemplatePointclouds(pose_config, dataset_config)
+	# templates.feed_image(ds_image)
+
+	# # pointclouds
+	# masked_pcls = MaskedPointclouds()
+	# masked_pcls.feed_image(ds_image)
+
+	# showing templates 
+	# templates.render_templates(class_id=1)
 
 	# #templates.render_templates(1)
 	# temp = templates.get_templates(class_id=1)
 
-	# masked_pcls = MaskedPointclouds()
-	# masked_pcls.feed_image(ds_image)
+
 	# (classes, pointclouds_cleaned) = masked_pcls.get_pointcloudsFor_ICP()
 
+	# # showing templates within the bin environment
 	# masked_pcls.render_templates(temp)
-
-	# masked_pcls = MaskedPointclouds()
-
 
 	# ds_image.visualizePreditions()
 	
