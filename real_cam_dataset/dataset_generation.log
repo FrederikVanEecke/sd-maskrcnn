@@ -1,0 +1,2 @@
+03-10 22:20:03 root       INFO     Root logger now logging to real_cam_dataset/dataset_generation.log
+03-10 22:20:03 tools/generate_segmask_dataset.py INFO     Creating datasets

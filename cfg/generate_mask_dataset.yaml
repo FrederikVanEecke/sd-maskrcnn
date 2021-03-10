@@ -4,7 +4,7 @@ states_per_flush: 10                                # Number of states before wr
 states_per_garbage_collect: 10                      # Number of states before garbage collection (due to pybullet memory issues)
 log_rate: 1                                         # Rate at which to log dataset generation information
 debug: 0                               # Debug flag to see physics simulation, set random seed
-urdf_cache_dir: datasets/oneCube/urdf/cache/        # Directory to store URDF files for meshes
+urdf_cache_dir: datasets/objects_custom/urdf/cache/        # Directory to store URDF files for meshes
 
 !include partials/states.yaml
 !include partials/mask_dataset.yaml
@@ -14,7 +14,7 @@ images:
   color: 1
   trf_color: 0
   depth: 1
-  tranformed_depth: 0 # vintecc depth 
+  tranformed_depth: 1 # vintecc depth 
   modal: 1
   amodal: 1
   semantic: 1

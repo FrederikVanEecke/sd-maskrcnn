@@ -25,6 +25,7 @@ class Detector():
 
 		model = modellib.MaskRCNN(mode=config['model']['mode'], config=inference_config, model_dir=model_dir)
 
+		print(config['model']['path'])
 		model.load_weights(config['model']['path'], by_name=True)
 
 		self.model = model 

@@ -1,0 +1,29 @@
+{
+  "datapoints_per_file": 10,
+  "fields": {
+    "image_end_ind": {
+      "dtype": "uint32"
+    },
+    "image_start_ind": {
+      "dtype": "uint32"
+    },
+    "obj_coms": {
+      "dtype": "float32",
+      "height": 30
+    },
+    "obj_ids": {
+      "dtype": "uint32",
+      "height": 10
+    },
+    "obj_poses": {
+      "dtype": "float32",
+      "height": 70
+    },
+    "split": {
+      "dtype": "uint8"
+    },
+    "state_id": {
+      "dtype": "uint32"
+    }
+  }
+}

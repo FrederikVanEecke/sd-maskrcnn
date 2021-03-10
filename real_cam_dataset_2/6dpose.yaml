@@ -1,0 +1,19 @@
+model:
+  path: /home/frederik/Documents/GitHub/sd-maskrcnn/models/training_realCam_30k/mask_rcnn_topviewmodel10k_0020.h5
+  mode: inference
+  settings:
+    image_shape: [320, 384,3]
+    image_channel_count: 3
+    mean_pixel: [128,128,128]
+    backbone: resnet35
+    post_nms_rois_inference: 2000
+    rpn_nms_threshold: 1.0
+    detection_nms_threshold: 0.35
+
+pointcloud_templates: 
+  viewpoints: 3 # number of different viewpoints for each template pointcloud
+  view_axis_rot: 10
+
+dir: 
+  # path where dataset is located. 
+  path: /home/frederik/Documents/GitHub/sd-maskrcnn
