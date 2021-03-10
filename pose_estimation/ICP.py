@@ -19,18 +19,23 @@ class ICP():
 	def __init__(self, config_6dpose, config_dataset):
 		# classes detected
 		self.classes=None 
-		self.pointclouds=None 
 		
 		self.templates=TemplatePointclouds(config_6dpose, config_dataset)
 		self.pointclouds = MaskedPointclouds()
 
-	
+	def reset(self): 
+		self.classes = None
+		self.detected_classes = None 
+		self.detected_pointclouds = None
+		
 	def feed_image(self, ds_image): 
 
 		"""
 			feed a dataset_image for ICP
 			IMAGES SHOULD HAVE BEEN FED TO A DETECTOR FIRST!
 		"""
+
+		self.reset()
 
 		self.ds_image = ds_image
 
@@ -74,7 +79,7 @@ class ICP():
 		templates_fitnessBased = []
 		templates_rmseBased = []
 
-		count = 0 
+		count = 1 
 		total = len(self.detected_pointclouds)
 		for (pcd, pcd_class) in zip(self.detected_pointclouds, self.detected_classes): 
 			print('performing ICP on pointcloud {}/{}'.format(count, total))
@@ -199,7 +204,7 @@ class ICP():
 			vis.run()
 			vis.destroy_window()
 
-		elif option =='all': 
+		if option =='all': 
 			for template in templates: 
 				vis = o3d.visualization.Visualizer()
 				vis.create_window(width=intrin['w'], height = intrin['h'])

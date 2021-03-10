@@ -1,0 +1,19 @@
+info on benchmarking datasets: 
+
+1. benchmark_pretrained: 
+	benchmarking done on topviewcamera dataset, using the pretrained weights from sd-maskrcnn. 
+	link for download: https://berkeley.box.com/shared/static/obj0b2o589gc1odr2jwkx4qjbep11t0o.h5
+
+2. benchmark_results_zelf_30k:
+	benchmarking done on topviewCamera dataset_30k. We use self trained weights for 2 epochs. 
+	weights can be found within the weights_30k_from scratch folder. 
+
+3. benchmark_finetuned_on30k: 
+	benchmarking done  on topviewCamera dataset 30k. We use the sd-maskrcnn weights (as in 1) finetuned for 2 epochs. 
+	weights can be found in folder: finetuned_on_30k
+
+
+4. benchmark_results_realCam_30k: 	
+	benchmarking done on the real_cam30k dataset. weights where trained for 20 epochs. 
+	
+

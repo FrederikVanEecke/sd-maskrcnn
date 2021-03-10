@@ -12,6 +12,7 @@ model:
 
 pointcloud_templates: 
   viewpoints: 3 # number of different viewpoints for each template pointcloud
+  view_axis_rot: 10
 
 dir: 
   path: /home/frederik/Documents/GitHub/sd-maskrcnn

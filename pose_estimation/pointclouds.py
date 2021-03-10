@@ -42,7 +42,7 @@ class TemplatePointclouds():
 		self.meshes_dir = self.dataset_config['urdf_cache_dir'] 
 
 		if not os.path.isabs(self.meshes_dir):
-			self.meshes_dir = os.path.join(os.getcwd(), self.meshes_dir)
+			self.meshes_dir = os.path.join(os.getcwd(), '..',  self.meshes_dir)
 
 		
 
@@ -116,11 +116,12 @@ class TemplatePointclouds():
 			# connect to pybullet: 
 			pybullet.connect(pybullet.DIRECT) # change to DIRECT/GUI when done debugging. 
 			q=pybullet.getQuaternionFromEuler(np.random.uniform(low=[0]*3,high=[0]*3))
-
+			print(file)
 			obj = pybullet.loadURDF(file, 
 									obj_t,
 									q, 
 									useFixedBase=False)
+
 			# bak = pybullet.loadURDF("/home/frederik/Documents/vintecc/sd-maskrcnn/datasets/oneCube/urdf/cache/bin/bin.urdf", 
 			# 						np.zeros(3), 
 			# 						pybullet.getQuaternionFromEuler(np.random.uniform(low=[0]*3,high=[0]*3)), 
