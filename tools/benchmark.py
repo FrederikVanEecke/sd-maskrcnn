@@ -29,23 +29,29 @@ Run this file with the tag --config [config file name] if different config from 
 Here is an example run command (GPU selection included):
 CUDA_VISIBLE_DEVICES=0 python tools/benchmark.py --config cfg/benchmark.yaml
 """
-
 import os
+import sys
+sys.path.append("/home/frederik/Documents/GitHub/sd-maskrcnn")
 import argparse
 from tqdm import tqdm
 import numpy as np
 import skimage.io as io
 from copy import copy
 import matplotlib.pyplot as plt
-import tensorflow as tf
-from keras.backend.tensorflow_backend import set_session
+
+#import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior() 
+
+#from keras.backend.tensorflow_backend import set_session
+from tensorflow.compat.v1.keras.backend import set_session
 
 from autolab_core import YamlConfig
 
 from sd_maskrcnn import utils
 from sd_maskrcnn.config import MaskConfig
 from sd_maskrcnn.dataset import ImageDataset
-from sd_maskrcnn.coco_benchmark import coco_benchmark
+#from sd_maskrcnn.coco_benchmark import coco_benchmark
 from sd_maskrcnn.supplement_benchmark import s_benchmark
 
 from mrcnn import model as modellib, utils as utilslib, visualize
@@ -84,7 +90,7 @@ def benchmark(config):
 
     vis_config = copy(config)
     vis_config['dataset']['images'] = 'depth_ims'
-    vis_config['dataset']['masks'] = 'modal_segmasks'
+    vis_config['dataset']['masks'] = 'semantic_masks'
     vis_dataset = ImageDataset(config)
     vis_dataset.load(config['dataset']['indices'])
     vis_dataset.prepare()
@@ -103,10 +109,9 @@ def benchmark(config):
         overlap_thresh = 0
 
     # Create predictions and record where everything gets stored.
-    pred_mask_dir, pred_info_dir, gt_mask_dir = \
-        detect(config['output_dir'], inference_config, model, test_dataset, bin_mask_dir, overlap_thresh)
+    pred_mask_dir, pred_info_dir, gt_mask_dir = detect(config['output_dir'], inference_config, model, test_dataset, bin_mask_dir, overlap_thresh)
 
-    ap, ar = coco_benchmark(pred_mask_dir, pred_info_dir, gt_mask_dir)
+    #ap, ar = coco_benchmark(pred_mask_dir, pred_info_dir, gt_mask_dir)
     if config['vis']['predictions']:
         visualize_predictions(config['output_dir'], vis_dataset, inference_config, pred_mask_dir, pred_info_dir, 
                               show_bbox=config['vis']['show_bbox_pred'], show_scores=config['vis']['show_scores_pred'], show_class=config['vis']['show_class_pred'])
@@ -116,7 +121,7 @@ def benchmark(config):
         s_benchmark(config['output_dir'], vis_dataset, inference_config, pred_mask_dir, pred_info_dir)
 
     print("Saved benchmarking output to {}.\n".format(config['output_dir']))
-    return ap, ar
+    
 
 def detect(run_dir, inference_config, model, dataset, bin_mask_dir=False, overlap_thresh=0.5):
     """
@@ -304,6 +309,13 @@ if __name__ == "__main__":
     config = YamlConfig(conf_args.conf_file)
     
     # Set up tf session to use what GPU mem it needs and benchmark
+
+    # gpu_devices = tf.config.experimental.list_physical_devices('GPU')
+    # for device in gpu_devices:
+    #     tf.config.experimental.set_memory_growth(device, True)
+    #     benchmark(config)
+
+    # tensorflow 1.13.1
     tf_config = tf.ConfigProto()
     tf_config.gpu_options.allow_growth = True
     with tf.Session(config=tf_config) as sess:

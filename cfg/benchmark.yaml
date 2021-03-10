@@ -1,11 +1,11 @@
-output_dir: benchmark_results
+output_dir: benchmark_results_realCam_30k
 save_conf_name: config.yaml
 
 model:
-  path: models/sd_maskrcnn.h5
+  path: /home/frederik/Documents/GitHub/sd-maskrcnn/models/training_realCam_30k/mask_rcnn_topviewmodel10k_0020.h5
   mode: inference
   settings:
-    image_shape: [512, 512]
+    image_shape: [320, 384, 3]
     image_channel_count: 3
     mean_pixel: [128,128,128]
     backbone: resnet35
@@ -14,13 +14,13 @@ model:
     detection_nms_threshold: 0.35
 
 dataset:
-  path: datasets/wisdom/wisdom-real/high-res/
+  path: /home/frederik/Documents/GitHub/realCamera_train_30k/
   images: depth_ims
-  masks: modal_segmasks
+  masks: semantic_masks
   indices: test_indices.npy
 
 mask:                                                                                                                                                              
-  remove_bin_pixels: 1              # Set to True if we want to discard predictions based on if they have bin pixels
+  remove_bin_pixels: 0              # Set to True if we want to discard predictions based on if they have bin pixels
   bin_masks: segmasks_filled        # Directory containing bin masks                                                                                                                                                                                                                         
   overlap_thresh: 0.5               # Overlap threshold
 
@@ -28,7 +28,7 @@ mask:
 vis:
   # Prediction vis settings
   predictions: 1
-  show_bbox_pred: 0
+  show_bbox_pred: 1
   show_scores_pred: 0
   show_class_pred: 0
 

@@ -135,7 +135,7 @@ class ImageDataset(Dataset):
         if len(Is) > 0:
             mask = np.concatenate(Is, 2)
         else:
-            mask = np.zeros([info['height'], info['width'], 0], dtype=np.bool)
+            mask = np.zeros([320, 384, 0], dtype=np.bool)
 
         class_ids = np.array([1 for _ in range(mask.shape[2])])
         return mask, class_ids.astype(np.int32)

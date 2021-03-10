@@ -41,16 +41,16 @@ def main():
 	ds_image = ds.load_image()
 	_=detector.detect(ds_image)
 
-	templates = TemplatePointclouds(ds_image, pose_config, dataset_config)
+	# templates = TemplatePointclouds(ds_image, pose_config, dataset_config)
 
-	#templates.render_templates(1)
-	temp = templates.get_templates(class_id=1)
+	# #templates.render_templates(1)
+	# temp = templates.get_templates(class_id=1)
 
-	masked_pcls = MaskedPointclouds()
-	masked_pcls.feed_image(ds_image)
-	(classes, pointclouds_cleaned) = masked_pcls.get_pointcloudsFor_ICP()
+	# masked_pcls = MaskedPointclouds()
+	# masked_pcls.feed_image(ds_image)
+	# (classes, pointclouds_cleaned) = masked_pcls.get_pointcloudsFor_ICP()
 
-	masked_pcls.render_templates(temp)
+	# masked_pcls.render_templates(temp)
 
 	# masked_pcls = MaskedPointclouds()
 

@@ -1,0 +1,57 @@
+versions: 
+
+python version: 3.7
+
+Name: tensorflow
+Version: 2.4.0
+Summary: TensorFlow is an open source machine learning framework for everyone.
+Home-page: https://www.tensorflow.org/
+Author: Google Inc.
+Author-email: packages@tensorflow.org
+License: Apache 2.0
+Location: /home/frederik/Documents/GitHub/sd-maskrcnn/lib/python3.7/site-packages
+Requires: h5py, numpy, wheel, astunparse, flatbuffers, gast, keras-preprocessing, grpcio, protobuf, six, absl-py, opt-einsum, termcolor, google-pasta, tensorboard, typing-extensions, wrapt, tensorflow-estimator
+Required-by: 
+Name: Keras
+Version: 2.2.5
+Summary: Deep Learning for humans
+Home-page: https://github.com/keras-team/keras
+Author: Francois Chollet
+Author-email: francois.chollet@gmail.com
+License: MIT
+Location: /home/frederik/Documents/GitHub/sd-maskrcnn/lib/python3.7/site-packages
+Requires: scipy, h5py, keras-preprocessing, pyyaml, six, numpy, keras-applications
+Required-by: autolab-perception
+Name: numpy
+Version: 1.19.5
+Summary: NumPy is the fundamental package for array computing with Python.
+Home-page: https://www.numpy.org
+Author: Travis E. Oliphant et al.
+Author-email: None
+License: BSD
+Location: /home/frederik/Documents/GitHub/sd-maskrcnn/lib/python3.7/site-packages
+Requires: 
+Required-by: trimesh, tifffile, tensorflow, tensorboard, tb-nightly, scipy, scikit-video, scikit-learn, scikit-image, PyWavelets, pyrender, plyfile, pandas, opt-einsum, opencv-python, open3d, matplotlib, Keras, Keras-Preprocessing, Keras-Applications, imageio, h5py, gym, autolab-perception, autolab-core
+
+
+
+within keras make the following changes: 
+go to: lib/python3.7/site-packages/keras
+
+1. within optimizers.py 
+	at line 16:
+	if K.backend() == 'tensorflow':
+    #import tensorflow as tf
+    import tensorflow.compat.v1 as tf
+    tf.disable_v2_behavior()
+
+2. within backend/tensorflow_backed.py
+	at line 5: 
+	#import tensorflow as tf
+	import tensorflow.compat.v1 as tf
+	tf.disable_v2_behavior()
+
+	at line 505: within definition of is_tensor
+	return tf_ops.is_dense_tensor_like(x)
+    #return isinstance(x, tf_ops._TENSOR_LIKE_TYPES) or tf_ops.is_dense_tensor_like(x)
+

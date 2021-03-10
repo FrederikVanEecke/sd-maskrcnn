@@ -23,11 +23,16 @@ Author: Mike Danielczuk
 
 import os
 import sys
+sys.path.append("/home/frederik/Documents/GitHub/sd-maskrcnn")
 import time
 import argparse
 import numpy as np
-import tensorflow as tf
-from keras.backend.tensorflow_backend import set_session
+#import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior() 
+
+#from keras.backend.tensorflow_backend import set_session
+from tensorflow.compat.v1.keras.backend import set_session
 
 from autolab_core import YamlConfig
 
@@ -40,16 +45,19 @@ from mrcnn import model as modellib, utils as utilslib
 def train(config):
 
     # Training dataset
+    print('load/prepare train data')
     dataset_train = ImageDataset(config)
     dataset_train.load(config['dataset']['train_indices'], augment=True)
     dataset_train.prepare()
 
     # Validation dataset
+    print('load/prepare validate train')
     dataset_val = ImageDataset(config)
     dataset_val.load(config['dataset']['val_indices'])
     dataset_val.prepare()
 
     # Load config
+    print('setting config')
     image_shape = config['model']['settings']['image_shape']
     config['model']['settings']['image_min_dim'] = min(image_shape)
     config['model']['settings']['image_max_dim'] = max(image_shape)
@@ -60,6 +68,7 @@ def train(config):
     # Create directory if it doesn't currently exist
     utils.mkdir_if_missing(config['model']['path'])
 
+    print('create model')
     # Create the model.
     model = modellib.MaskRCNN(mode='training', config=train_config,
                               model_dir=config['model']['path'])
@@ -101,6 +110,7 @@ def train(config):
     config.save(os.path.join(config['model']['path'], config['save_conf_name']))
 
     # train and save weights to model_path
+    print('start training')
     model.train(dataset_train, dataset_val, learning_rate=train_config.LEARNING_RATE,
                 epochs=config['model']['epochs'], layers='all')
 
@@ -124,8 +134,18 @@ if __name__ == "__main__":
     os.environ['TF_ENABLE_AUTO_MIXED_PRECISION'] = '1'
 
     # Set up tf session to use what GPU mem it needs and train
+
+    # # tensorflow 1 training 
     tf_config = tf.ConfigProto()
     tf_config.gpu_options.allow_growth = True
     with tf.Session(config=tf_config) as sess:
         set_session(sess)
         train(config)
+
+    # tensorflow 2 training 
+    # gpu_devices = tf.config.experimental.list_physical_devices('GPU')
+    # for device in gpu_devices:
+    #     tf.config.experimental.set_memory_growth(device, True)
+    #     train(config)
+
+

@@ -3,8 +3,8 @@ model:
   weights: new     # new, last, coco, imagenet or custom path
   epochs: 20       # number of epochs to train for
   settings:
-    name: my_model
-    image_shape: [512,512]
+    name: topViewModel10k
+    image_shape: [320, 384, 3]
     image_channel_count: 3
     mean_pixel: [128, 128, 128]
     backbone: resnet35
@@ -12,15 +12,15 @@ model:
     gpu_count: 1
     images_per_gpu: 5
     learning_rate: 0.01
-
+    
 dataset:
-  path: datasets/wisdom/wisdom-sim/
+  path: /home/frederik/Documents/GitHub/realCamera_train_30k/
   train_indices: train_indices.npy
   val_indices: test_indices.npy
   images: depth_ims
-  masks: modal_segmasks
+  masks: semantic_masks
 
 # name of the config file to save (within the dataset folder)
 # note that this will be overwritten between multiple runs so
 # you should name this uniquely for each run.
-save_conf_name: config_1e-2_e20_res35.yaml
+save_conf_name: realCam30k.yaml
