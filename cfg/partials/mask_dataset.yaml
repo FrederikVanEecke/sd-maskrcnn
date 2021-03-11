@@ -2,7 +2,7 @@
 dataset:
   states:
     tensors:
-      datapoints_per_file: 100
+      datapoints_per_file: 10
       fields:
         obj_poses:
           dtype: float32
@@ -20,7 +20,7 @@ dataset:
           dtype: uint8
   images:
     tensors:
-      datapoints_per_file:  100
+      datapoints_per_file:  10
       fields:
         camera_pose:
           dtype: float32

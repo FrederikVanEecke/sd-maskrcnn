@@ -1,0 +1,155 @@
+!!python/object:autolab_core.yaml_config.YamlConfig
+config: !!omap [num_states: 10, num_images_per_state: 1, states_per_flush: 10, states_per_garbage_collect: 10,
+  log_rate: 1, debug: 0, urdf_cache_dir: datasets/oneCube/urdf/cache/, state_space: !!omap [
+      heap: !!omap [workspace: !!omap [min: [-0.5, -0.5, 0.0], max: [0.5, 0.5, 0.3],
+              objects: !!omap [bin: !!omap [mesh_filename: data/bin/bin.obj, pose_filename: data/bin/bin_pose_new.tf],
+                  plane: !!omap [mesh_filename: data/plane/plane.obj, pose_filename: data/plane/plane_pose.tf]]],
+          center: !!omap [min: [-0.1, -0.1], max: [0.1, 0.1]], mean_objs: 6, min_objs: 2,
+          max_objs: 10, replace: 0, max_obj_diam: 0.3, drop_height: 0.05, max_settle_steps: 500,
+          mag_v_thresh: 0.005, mag_w_thresh: 0.1, objects: !!omap [mesh_dir: datasets/oneCube/meshes/,
+              num_objects: 20, times_min: 1, times_max: 10, train_pct: 1, object_keys: !!omap [
+                  ycb: all], planar_translation: !!omap [min: [-0.1, -0.1], max: [
+                      0.1, 0.1]], center_of_mass: !!omap [sigma: 0.0], density: 4000]],
+      cameras: !!omap [general: !!omap [im_width: 384, im_height: 320, fx: 421.63162790697675,
+              fy: 469.85284974093264, cx: 193.15348837209302, cy: 163.4737823834197,
+              x: 0, y: 0, radius: 0.7215], send_cam: !!omap [name: camera, elevation: -11.75,
+              azimuth: 0, roll: -90], view_cam: !!omap [name: view_camera, elevation: 11.75,
+              azimuth: 0, roll: 90], variation: !!omap [var_radius: 0, var_elevation: 0,
+              var_azimuth: 0, var_roll: 0]]], dataset: !!omap [states: !!omap [tensors: !!omap [
+              datapoints_per_file: 10, fields: !!omap [obj_poses: !!omap [dtype: float32],
+                  obj_coms: !!omap [dtype: float32], obj_ids: !!omap [dtype: uint32],
+                  image_start_ind: !!omap [dtype: uint32], image_end_ind: !!omap [
+                      dtype: uint32], state_id: !!omap [dtype: uint32], split: !!omap [
+                      dtype: uint8]]]], images: !!omap [tensors: !!omap [datapoints_per_file: 10,
+              fields: !!omap [camera_pose: !!omap [dtype: float32], camera_intrs: !!omap [
+                      dtype: float32, height: 7], state_ind: !!omap [dtype: uint32],
+                  split: !!omap [dtype: uint8]]]]], images: !!omap [color: 1, trf_color: 0,
+      depth: 1, tranformed_depth: 1, modal: 1, amodal: 1, semantic: 1], downsample_factor: 1,
+  vis: !!omap [state: 0, obs: 0, semantic: 0]]
+file_contents: "num_states: 10                              # Total number of states\
+  \ in dataset\nnum_images_per_state: 1                            # Number of images\
+  \ per state\nstates_per_flush: 10                                # Number of states\
+  \ before writing tensors (if saving tensors)\nstates_per_garbage_collect: 10   \
+  \                   # Number of states before garbage collection (due to pybullet\
+  \ memory issues)\nlog_rate: 1                                         # Rate at\
+  \ which to log dataset generation information\ndebug: 0                        \
+  \       # Debug flag to see physics simulation, set random seed\nurdf_cache_dir:\
+  \ datasets/oneCube/urdf/cache/        # Directory to store URDF files for meshes\n\
+  \nstate_space:\n  heap:\n    workspace:          # Workspace boundaries define what\
+  \ region the objects can be dropped in\n      min:              # x,y,z\n      \
+  \  - -0.5\n        - -0.5\n        - 0.0\n      max:              # x,y,z\n    \
+  \    - 0.5\n        - 0.5\n        - 0.3\n\n      objects:          # static workspace\
+  \ objects\n        bin:\n          mesh_filename: data/bin/bin.obj\n          pose_filename:\
+  \ data/bin/bin_pose_new.tf\n\n        plane:\n          mesh_filename: data/plane/plane.obj\n\
+  \          pose_filename: data/plane/plane_pose.tf\n\n    center:             #\
+  \ x,y coordinates for the center of the workspace (where the center dropping point\
+  \ can be)\n      min:              # This is a uniform random variable from \"min\"\
+  \ to \"max\"\n        - -0.1\n        - -0.1\n      max:\n        - 0.1\n      \
+  \  - 0.1\n\n    mean_objs: 6      # Poisson dist mean for number of objects in each\
+  \ heap\n    min_objs: 2       # Min objs in each heap\n    max_objs: 10        #\
+  \ Max objs in each heap\n    replace: 0          # Sample objects with replacement?\n\
+  \    max_obj_diam: 0.3   # Max diameter of object to be dropped (otherwise it will\
+  \ be skipped)\n    drop_height: 0.05\n    \n    # Dynamic sim parameters\n    max_settle_steps:\
+  \ 500\n    mag_v_thresh: 0.005\n    mag_w_thresh: 0.1\n\n    objects:\n      mesh_dir:\
+  \ datasets/oneCube/meshes/    # Directory containing meshes to be dropped\n    \
+  \  num_objects: 20                       # Number of objects in dataset (test and\
+  \ train)\n      times_min: 1                        # add each object minimal times_min\
+  \ times\n      times_max: 10                        # add each onject maximally\
+  \ times_min times \n      train_pct: 1                      # Percentage of objects\
+  \ to be designated as train\n      object_keys:                          # Folders\
+  \ containing meshes\n        ycb: all                            # all -> all meshes\
+  \ in folder. Can also specify list of mesh names\n\n      planar_translation:  \
+  \                 # Amount of translation around the center point to drop each object\n\
+  \        min:                                # Uniform random variable\n       \
+  \   - -0.1\n          - -0.1\n        max:\n          - 0.1\n          - 0.1\n\n\
+  \      center_of_mass:                       # Std deviation for normal perturbation\
+  \ of object center of mass\n        sigma: 0.0\n\n      density: 4000          \
+  \               # Fixed density for each object\n\n  cameras: \n    general: \n\
+  \      im_width: 384 #2064\n      im_height: 320 #1544\n      fx: 421.63162790697675\
+  \ #566.56 # 2266.27\n      fy: 469.85284974093264 #566.76 # 2267.04\n      cx: 193.15348837209302\
+  \ #259.55 # 1038.2 \n      cy: 163.4737823834197 #197.19 # 788.761\n      x: 0\n\
+  \      y: 0 \n      radius: 0.7215\n\n    send_cam: \n      name: camera\n     \
+  \ elevation: -11.75\n      azimuth: 0\n      roll: -90\n\n    view_cam: \n     \
+  \ name: view_camera\n      elevation: 11.75\n      azimuth: 0\n      roll: 90\n\n\
+  \    variation: \n      var_radius: 0 #0.02\n      var_elevation: 0 #1\n      var_azimuth:\
+  \ 0 #2\n      var_roll: 0 #1\n    # name: camera \n    # camera:\n    #   name:\
+  \ camera\n    #   # Image size \n    #   im_width: 2064\n    #   im_height: 1544\n\
+  \n\n    #   focal_length:\n    #     fx: 2266.27\n    #     fy: 2267.04\n      \n\
+  \    #   optical_center: \n    #     cx: 1038.2\n    #     cy: 788.761\n\n    #\
+  \   radius:                                 # Uniform random variable for camera\
+  \ distance\n    #     min: 0.7215434844830905\n    #     max: 0.7215434844830905\n\
+  \    #   elevation:     #z                         # Uniform random variable for\
+  \ camera elevation\n    #     min: -11.75\n    #     max: -11.75\n    #   azimuth:\
+  \      # x                         # Uniform random variable for camera azimuth\n\
+  \    #     min: 0                    \n    #     max: 0\n    #   roll:         \
+  \                          # Uniform random variable for camera roll\n    #    \
+  \ min: -90\n    #     max: -90\n    #   x:                                     \
+  \ # Variation in x position and y position\n    #     min: 0                   \
+  \      # Sampled uniformly over the given range\n    #     max: 0\n    #   y:\n\
+  \    #     min: 0\n    #     max: 0\n\n    # view_camera: \n    #   name: view_camera\n\
+  \    #   # Image size \n    #   im_width: 2064\n    #   im_height: 1544\n\n\n  \
+  \  #   focal_length:\n    #     fx: 2266.27\n    #     fy: 2267.04\n      \n   \
+  \ #   optical_center: \n    #     cx: 1038.2\n    #     cy: 788.761\n\n    #   radius:\
+  \                                 # Uniform random variable for camera distance\n\
+  \    #     min: 0.7215434844830905      #0.7215434844830905\n    #     max: 0.7215434844830905\n\
+  \    #   elevation:                              # Uniform random variable for camera\
+  \ elevation\n    #     min: 11.75\n    #     max: 11.75\n    #   azimuth:      \
+  \                         # Uniform random variable for camera azimuth\n    #  \
+  \   min: 0\n    #     max: 0\n    #   roll:                                   #\
+  \ Uniform random variable for camera roll\n    #     min: 90\n    #     max: 90\n\
+  \    #   x:                                      # Variation in x position and y\
+  \ position\n    #     min: 0 #0.175                         # Sampled uniformly\
+  \ over the given range\n    #     max: 0 #0.175\n    #   y:\n    #     min: 0\n\
+  \    #     max: 0\n\n\n#   fx=2266.27/precision\n# fy=2267.04/precision\n# ppx=1038.02/precision\n\
+  # ppy=788.761/precision\n# w=int(2064/precision)\n# h=int(1544/precision) # TO GET!\n\
+  # intrin={\"fx\":fx,\"fy\":fy,\"ppx\":ppx,\"ppy\":ppy,\"w\":w,\"h\":h}\n# intrinsics=np.array([[fx,0,ppx,0],[0,fy,ppy,0],[0,0,0,1]])\n\
+  # far=1.118\n# near=0.458\n# arctanx=(826-590)/(2*(1118-650))\n# arctany=(686-404)/(2*(1118-650))\n\
+  \  ## nice look from the left \n    #  radius:                                 #\
+  \ Uniform random variable for camera distance\n    #   min: 0.7826237921249264\n\
+  \    #   max: 0.7826237921249264\n    # elevation:                             \
+  \ # Uniform random variable for camera elevation\n    #   min: -11.75\n    #   max:\
+  \ -11.75\n    # azimuth:                               # Uniform random variable\
+  \ for camera azimuth\n    #   min: 0\n    #   max: 0\n    # roll:              \
+  \                     # Uniform random variable for camera roll\n    #   min: -90\n\
+  \    #   max: -90\n\n  ## nice look from the right \n  # radius:               \
+  \                  # Uniform random variable for camera distance\n  #     min: 0.7826237921249264\n\
+  \  #     max: 0.7826237921249264\n  #   elevation:                             \
+  \ # Uniform random variable for camera elevation\n  #     min: -11.75\n  #     max:\
+  \ -11.75\n  #   azimuth:                               # Uniform random variable\
+  \ for camera azimuth\n  #     min: 0\n  #     max: 0\n  #   roll:              \
+  \                     # Uniform random variable for camera roll\n  #     min: 90\n\
+  \  #     max: 90\n    \n  ## original camera setting   \n  # camera:\n  #   name:\
+  \ camera\n\n  #   # Image size\n  #   im_width: 512\n  #   im_height: 384\n\n  #\
+  \   focal_length:                           # Camera intrinsics: fx and fy\n  #\
+  \     min: 535                              # Sampled uniformly over the given range\n\
+  \  #     max: 560\n  #   delta_optical_center:                   # Camera intrinsics:\
+  \ cx and cy\n  #     min: -2.5                             # Sampled uniformly over\
+  \ the given range\n  #     max: 2.5\n\n  #   x:                                \
+  \      # Variation in x position and y position\n  #     min: -0.05            \
+  \                # Sampled uniformly over the given range\n  #     max: 0.05\n \
+  \ #   y:\n  #     min: -0.05\n  #     max: 0.05\n\n  #   radius:               \
+  \                  # Uniform random variable for camera distance\n  #     min: 0.7\n\
+  \  #     max: 0.9\n  #   elevation:                              # Uniform random\
+  \ variable for camera elevation\n  #     min: 0.01\n  #     max: 10\n  #   azimuth:\
+  \                                # Uniform random variable for camera azimuth\n\
+  \  #     min: 0\n  #     max: 360\n  #   roll:                                 \
+  \  # Uniform random variable for camera roll\n  #     min: -10\n  #     max: 10\n\
+  \n  ## original workspace \n      # workspace:          # Workspace boundaries define\
+  \ what region the objects can be dropped in\n      # min:              # x,y,z\n\
+  \      #   - -0.2\n      #   - -0.25\n      #   - 0.0\n      # max:            \
+  \  # x,y,z\n      #   - 0.2\n      #   - 0.25\n      #   - 0.3\n\n# dataset params\n\
+  dataset:\n  states:\n    tensors:\n      datapoints_per_file: 10\n      fields:\n\
+  \        obj_poses:\n          dtype: float32\n        obj_coms:\n          dtype:\
+  \ float32\n        obj_ids:\n          dtype: uint32\n        image_start_ind:\n\
+  \          dtype: uint32\n        image_end_ind:\n          dtype: uint32\n    \
+  \    state_id:\n          dtype: uint32\n        split:\n          dtype: uint8\n\
+  \  images:\n    tensors:\n      datapoints_per_file:  10\n      fields:\n      \
+  \  camera_pose:\n          dtype: float32\n        camera_intrs:\n          dtype:\
+  \ float32\n          height: 7\n        state_ind:\n          dtype: uint32\n  \
+  \      split:\n          dtype: uint8\n\n\n# color, depth and tranformed_depth should\
+  \ be 1 -> error otherwhise (or fix the code)\nimages:\n  color: 1\n  trf_color:\
+  \ 0\n  depth: 1\n  tranformed_depth: 1 # vintecc depth \n  modal: 1\n  amodal: 1\n\
+  \  semantic: 1\n\ndownsample_factor: 1 # all images are downsampled by this factor\
+  \ \n\nvis:                                                # Visualization flags\
+  \ for viewing each state and generated images\n  state: 0\n  obs: 0\n  semantic:\
+  \ 0\n"

@@ -1,0 +1,77 @@
+03-10 23:45:31 root       INFO     Root logger now logging to oneCubeData_30k/dataset_generation.log
+03-10 23:45:31 tools/generate_segmask_dataset.py INFO     Creating datasets
+03-10 23:45:33 tools/generate_segmask_dataset.py INFO     Creating env took 0.004 sec
+03-10 23:45:33 tools/generate_segmask_dataset.py INFO     State: 000000
+03-10 23:45:33 HeapStateSpace INFO     Sampling from train
+03-10 23:45:33 HeapStateSpace INFO     Sampling 3 objects
+03-10 23:45:33 HeapStateSpace WARNING  Object ycb~cubei7 fell out of the workspace!
+03-10 23:45:33 HeapStateSpace WARNING  Object ycb~cubei7_2 fell out of the workspace!
+03-10 23:45:33 tools/generate_segmask_dataset.py WARNING  Heap failed!
+03-10 23:45:33 tools/generate_segmask_dataset.py WARNING  index 3 is out of bounds for axis 0 with size 3
+03-10 23:45:33 tools/generate_segmask_dataset.py WARNING  None
+03-10 23:45:33 tools/generate_segmask_dataset.py INFO     State: 000000
+03-10 23:45:33 HeapStateSpace INFO     Sampling from train
+03-10 23:45:33 HeapStateSpace INFO     Sampling 5 objects
+03-10 23:45:33 HeapStateSpace WARNING  Object ycb~cubei7 fell out of the workspace!
+03-10 23:45:33 HeapStateSpace WARNING  Object ycb~cubei7_1 fell out of the workspace!
+03-10 23:45:33 HeapStateSpace WARNING  Object ycb~cubei7_2 fell out of the workspace!
+03-10 23:45:33 HeapStateSpace WARNING  Object ycb~cubei7_3 fell out of the workspace!
+03-10 23:45:33 HeapStateSpace WARNING  Object ycb~cubei7_4 fell out of the workspace!
+03-10 23:45:33 tools/generate_segmask_dataset.py WARNING  Heap failed!
+03-10 23:45:33 tools/generate_segmask_dataset.py WARNING  index 5 is out of bounds for axis 0 with size 5
+03-10 23:45:33 tools/generate_segmask_dataset.py WARNING  None
+03-10 23:45:33 tools/generate_segmask_dataset.py INFO     State: 000000
+03-10 23:45:33 HeapStateSpace INFO     Sampling from train
+03-10 23:45:33 HeapStateSpace INFO     Sampling 3 objects
+03-10 23:45:33 HeapStateSpace WARNING  Object ycb~cubei7 fell out of the workspace!
+03-10 23:45:33 HeapStateSpace WARNING  Object ycb~cubei7_1 fell out of the workspace!
+03-10 23:45:33 HeapStateSpace WARNING  Object ycb~cubei7_2 fell out of the workspace!
+03-10 23:45:33 tools/generate_segmask_dataset.py WARNING  Heap failed!
+03-10 23:45:33 tools/generate_segmask_dataset.py WARNING  index 3 is out of bounds for axis 0 with size 3
+03-10 23:45:33 tools/generate_segmask_dataset.py WARNING  None
+03-10 23:45:34 tools/generate_segmask_dataset.py INFO     State: 000000
+03-10 23:45:34 HeapStateSpace INFO     Sampling from train
+03-10 23:45:34 HeapStateSpace INFO     Sampling 6 objects
+03-10 23:45:34 HeapStateSpace WARNING  Object ycb~cubei7 fell out of the workspace!
+03-10 23:45:34 HeapStateSpace WARNING  Object ycb~cubei7_1 fell out of the workspace!
+03-10 23:45:34 HeapStateSpace WARNING  Object ycb~cubei7_2 fell out of the workspace!
+03-10 23:45:34 HeapStateSpace WARNING  Object ycb~cubei7_3 fell out of the workspace!
+03-10 23:45:34 HeapStateSpace WARNING  Object ycb~cubei7_5 fell out of the workspace!
+03-10 23:45:34 tools/generate_segmask_dataset.py WARNING  Heap failed!
+03-10 23:45:34 tools/generate_segmask_dataset.py WARNING  index 6 is out of bounds for axis 0 with size 6
+03-10 23:45:34 tools/generate_segmask_dataset.py WARNING  None
+03-10 23:45:34 tools/generate_segmask_dataset.py INFO     State: 000000
+03-10 23:45:34 HeapStateSpace INFO     Sampling from train
+03-10 23:45:34 HeapStateSpace INFO     Sampling 4 objects
+03-10 23:45:34 HeapStateSpace WARNING  Object ycb~cubei7_1 fell out of the workspace!
+03-10 23:45:34 HeapStateSpace WARNING  Object ycb~cubei7_3 fell out of the workspace!
+03-10 23:45:34 tools/generate_segmask_dataset.py WARNING  Heap failed!
+03-10 23:45:34 tools/generate_segmask_dataset.py WARNING  index 4 is out of bounds for axis 0 with size 4
+03-10 23:45:34 tools/generate_segmask_dataset.py WARNING  None
+03-10 23:45:34 tools/generate_segmask_dataset.py INFO     State: 000000
+03-10 23:45:34 HeapStateSpace INFO     Sampling from train
+03-10 23:45:34 HeapStateSpace INFO     Sampling 2 objects
+03-10 23:45:34 HeapStateSpace WARNING  Object ycb~cubei7 fell out of the workspace!
+03-10 23:45:34 tools/generate_segmask_dataset.py WARNING  Heap failed!
+03-10 23:45:34 tools/generate_segmask_dataset.py WARNING  index 2 is out of bounds for axis 0 with size 2
+03-10 23:45:34 tools/generate_segmask_dataset.py WARNING  None
+03-10 23:45:34 tools/generate_segmask_dataset.py INFO     State: 000000
+03-10 23:45:34 HeapStateSpace INFO     Sampling from train
+03-10 23:45:34 HeapStateSpace INFO     Sampling 4 objects
+03-10 23:45:34 HeapStateSpace WARNING  Object ycb~cubei7_1 fell out of the workspace!
+03-10 23:45:34 HeapStateSpace WARNING  Object ycb~cubei7_3 fell out of the workspace!
+03-10 23:45:34 tools/generate_segmask_dataset.py WARNING  Heap failed!
+03-10 23:45:34 tools/generate_segmask_dataset.py WARNING  index 4 is out of bounds for axis 0 with size 4
+03-10 23:45:34 tools/generate_segmask_dataset.py WARNING  None
+03-10 23:45:34 tools/generate_segmask_dataset.py INFO     State: 000000
+03-10 23:45:34 HeapStateSpace INFO     Sampling from train
+03-10 23:45:34 HeapStateSpace INFO     Sampling 4 objects
+03-10 23:45:35 HeapStateSpace WARNING  Object ycb~cubei7_1 fell out of the workspace!
+03-10 23:45:35 HeapStateSpace WARNING  Object ycb~cubei7_3 fell out of the workspace!
+03-10 23:45:35 tools/generate_segmask_dataset.py WARNING  Heap failed!
+03-10 23:45:35 tools/generate_segmask_dataset.py WARNING  index 4 is out of bounds for axis 0 with size 4
+03-10 23:45:35 tools/generate_segmask_dataset.py WARNING  None
+03-10 23:45:35 tools/generate_segmask_dataset.py INFO     State: 000000
+03-10 23:45:35 HeapStateSpace INFO     Sampling from train
+03-10 23:45:35 HeapStateSpace INFO     Sampling 7 objects
+03-10 23:45:35 HeapStateSpace WARNING  Object ycb~cubei7 fell out of the workspace!

@@ -13,6 +13,7 @@ monkeyData/
 Cubes1000/
 testing5000/
 benchmark_results_realCam_30k/
+benchmark_results_realCam_30k_2/
 models/
 /pyvenv.cfg
 **/__pycache__

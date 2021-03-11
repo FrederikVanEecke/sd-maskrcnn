@@ -1,0 +1,12 @@
+{
+  "meshes": {
+    "ycb~cubei7": "/home/frederik/Documents/GitHub/sd-maskrcnn/datasets/oneCube/meshes/ycb/cubei7.stl"
+  },
+  "obj_ids": {
+    "1": "ycb~cubei7",
+    "4294967295": "environment"
+  },
+  "obj_splits": {
+    "ycb~cubei7": 0
+  }
+}

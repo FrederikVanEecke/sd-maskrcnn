@@ -40,7 +40,7 @@ state_space:
     mag_w_thresh: 0.1
 
     objects:
-      mesh_dir: datasets/monkeyHead/meshes/    # Directory containing meshes to be dropped
+      mesh_dir: datasets/oneCube/meshes/    # Directory containing meshes to be dropped
       num_objects: 20                       # Number of objects in dataset (test and train)
       times_min: 1                        # add each object minimal times_min times
       times_max: 10                        # add each onject maximally times_min times 

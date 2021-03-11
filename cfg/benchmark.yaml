@@ -1,8 +1,8 @@
-output_dir: benchmark_results_realCam_30k
+output_dir: benchmark_results_test
 save_conf_name: config.yaml
 
 model:
-  path: /home/frederik/Documents/GitHub/sd-maskrcnn/models/training_realCam_30k/mask_rcnn_topviewmodel10k_0020.h5
+  path: /home/frederik/Documents/GitHub/sd-maskrcnn/models/realcamera_30k_sgd/mask_rcnn_realcamera_30k_sgd_0020.h5
   mode: inference
   settings:
     image_shape: [320, 384, 3]
@@ -14,10 +14,10 @@ model:
     detection_nms_threshold: 0.35
 
 dataset:
-  path: /home/frederik/Documents/GitHub/realCamera_train_30k/
+  path: /home/frederik/Documents/GitHub/sd-maskrcnn/real_cam_dataset_2/images/
   images: depth_ims
   masks: semantic_masks
-  indices: test_indices.npy
+  indices: train_indices.npy
 
 mask:                                                                                                                                                              
   remove_bin_pixels: 0              # Set to True if we want to discard predictions based on if they have bin pixels

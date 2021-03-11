@@ -20,7 +20,7 @@
 
 import os
 import sys
-sys.path.append("/home/frederik/Documents/vintecc/sd-maskrcnn")
+sys.path.append("/home/frederik/Documents/GitHub/sd-maskrcnn")
 
 from autolab_core import YamlConfig, RigidTransform
 from perception import CameraIntrinsics
@@ -134,6 +134,8 @@ class DatasetImage():
 		self.predictions = predictions[0]
 		# set masks seperatly for quick access	
 		self.masks = self.predictions['masks']
+	def get_matrix(self):
+		return np.array(self.image)
 
 
 
